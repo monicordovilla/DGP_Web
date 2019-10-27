@@ -1,1 +1,17 @@
-
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #EAEAEA;
+ $textcolor: #063940;
+ $textcolorSec: #050505;
+ $fontsize: 18px;
+ $minfontsize : 12px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Arial;
+ 
+ /* Clases */
+ body {
+   background-color: $bgcolor;
+   color: $textcolor;
+   font-size: $fontsize;
+   font-family: $fontFamily;
+ } 
