@@ -6,8 +6,12 @@
  $fontsize: 18px;
  $minfontsize : 12px;
  $minButtonSize: 48 dp;
- $fontFamily: Arial;
- 
+ $fontFamily: Arial; //Preguntar a Nana cual es mejor
+ $colorValeLight : #E8F6DA;
+ $colorValeMain : #2C8B80;
+ $colorValeDark : #356061;
+ $headerSize : 20px;
+
  /* Clases */
  body {
    background-color: $bgcolor;
@@ -15,3 +19,22 @@
    font-size: $fontsize;
    font-family: $fontFamily;
  } 
+
+ #container{
+  background-color: $colorValeLight;
+ }
+
+ h2{
+   font-family: $fontFamily;
+   color: $textcolor;
+   font-size: 16px;
+ }
+
+  #site-header{
+   padding: $headerSize;
+   background-color: $colorValeMain;
+   font-family: $fontFamily;
+   font-size: $fontsize;
+   size: 100px;
+   color: white;
+ }
