@@ -6,7 +6,7 @@
  $fontsize: 18px;
  $minfontsize : 12px;
  $minButtonSize: 48 dp;
- $fontFamily: Arial; //Preguntar a Nana cual es mejor
+ $fontFamily: Tahoma;
  $colorValeLight : #E8F6DA;
  $colorValeMain : #2C8B80;
  $colorValeDark : #356061;
@@ -22,6 +22,18 @@
 
  #container{
   background-color: $colorValeLight;
+  padding: 5%;
+ }
+
+ .boxleft{
+    box-sizing: 30%;
+    align-content: left;
+    float: left;
+ }
+ .boxright{
+    box-sizing: 30%;
+    align-content: right;
+    float: right;
  }
 
  h2{
