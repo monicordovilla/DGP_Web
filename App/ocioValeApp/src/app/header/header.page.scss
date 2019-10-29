@@ -1,0 +1,43 @@
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #EAEAEA;
+ $textcolor: #063940;
+ $textcolorSec: #050505;
+ $fontsize: 30px;
+ $minfontsize : 12px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Tahoma;
+ $colorValeLight : #E8F6DA;
+ $colorValeMain : #2C8B80;
+ $colorValeDark : #356061;
+ $headerSize : 20px;
+
+
+ 
+ /* Clases */
+
+ ion-header{
+  padding: $headerSize;
+  background-image: linear-gradient(to bottom right, $colorValeMain,   $textcolor);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+ion-header > button{
+  background-color: transparent;
+}
+
+ion-header > button > img{
+  width: 50px;
+}
+
+ion-header > h1{
+  font-size: $fontsize;
+  font-family: $fontFamily;
+  padding-right: 0.25em;
+  padding-left: 0.25em;
+}
