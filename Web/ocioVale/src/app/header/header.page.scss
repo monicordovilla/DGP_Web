@@ -15,30 +15,28 @@
  $tamHeader: 50px;
 
  /* Clases */
- .boxleft{
-    box-sizing: 30%;
-    align-content: left;
-    float: left;
- }
- .boxright{
-    box-sizing: 30%;
-    align-content: right;
-    float: right;
- }
-
   header{
    padding: 1%;
-   display: flex;
-   flex-wrap: wrap;
    background-color: $colorSec;
    font-family: $fontFamily;
    font-size: $tamHeader;
    size: $headerSize;
    color: white;
+
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   justify-content: space-between;
  }
  
+ button{
+   background-color: transparent;
+ }
+
  .img-header{
+    background: transparent;
     width: $tamHeader;
     height: $tamHeader;
-    border: 0px;
+    border-radius: 25px;
+    border: 5px solid white;
  }
