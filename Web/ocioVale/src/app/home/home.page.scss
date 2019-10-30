@@ -15,28 +15,10 @@
  $tamHeader: 50px;
 
  /* Clases */
- body {
-   background-color: $bgcolor;
-   color: $textcolor;
-   font-size: $fontsize;
-   font-family: $fontFamily;
- } 
-
- #container{
+ .container{
   background-color: $bgcolor;
   padding: 5%;
-  margin: 1%;
- }
-
- .boxleft{
-    box-sizing: 30%;
-    align-content: left;
-    float: left;
- }
- .boxright{
-    box-sizing: 30%;
-    align-content: right;
-    float: right;
+  font-family: $fontFamily;
  }
 
  h2{
@@ -45,33 +27,29 @@
    font-size: $fontsize;
  }
 
-  #site-header{
-   padding: 1%;
-   background-color: $colorSec;
-   font-family: $fontFamily;
-   font-size: $tamHeader;
-   size: $headerSize;
-   color: white;
+ .boton{
+  padding: 5%;
+  margin-top: 5%;
+  background-color: $colorSec;
+  font-family: $fontFamily;
+  color: white;
+  font-size: $fontsize;
+
+  /**&:hover{
+    opacity: 0.9;
+  }**/
  }
 
- .boton-invisible{
-   background:transparent;
-   border:none;
-   color: white;
-   font-size: $fontsize;
-   font-family: $fontFamily;
- }
+ input{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: 2px solid $colorSec;
+    background: $bgcolorSec;
+    opacity: 1;
 
- .boton-verde{
-   background:$colorSec;
-   border:none;
-   color: white;
-   font-size: $fontsize;
-   font-family: $fontFamily;
- }
-
- .img-header{
-    width: $tamHeader;
-    height: $tamHeader;
-    border: 0px;
+    &:focus{
+      opacity: 0.8;
+    }
  }
