@@ -15,19 +15,6 @@
  $tamHeader: 50px;
 
  /* Clases */
- body {
-   background-color: $bgcolor;
-   color: $textcolor;
-   font-size: $fontsize;
-   font-family: $fontFamily;
- } 
-
- #container{
-  background-color: $bgcolor;
-  padding: 5%;
-  margin: 1%;
- }
-
  .boxleft{
     box-sizing: 30%;
     align-content: left;
@@ -39,37 +26,17 @@
     float: right;
  }
 
- h2{
-   font-family: $fontFamily;
-   color: $textcolor;
-   font-size: $fontsize;
- }
-
-  #site-header{
+  header{
    padding: 1%;
+   display: flex;
+   flex-wrap: wrap;
    background-color: $colorSec;
    font-family: $fontFamily;
    font-size: $tamHeader;
    size: $headerSize;
    color: white;
  }
-
- .boton-invisible{
-   background:transparent;
-   border:none;
-   color: white;
-   font-size: $fontsize;
-   font-family: $fontFamily;
- }
-
- .boton-verde{
-   background:$colorSec;
-   border:none;
-   color: white;
-   font-size: $fontsize;
-   font-family: $fontFamily;
- }
-
+ 
  .img-header{
     width: $tamHeader;
     height: $tamHeader;
