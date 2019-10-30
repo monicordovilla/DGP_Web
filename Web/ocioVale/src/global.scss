@@ -42,63 +42,46 @@
  $tamHeader: 50px;
 
   /* Clases */
-  body {
+  .container{
     background-color: $bgcolor;
-    color: $textcolor;
-    font-size: $fontsize;
+    padding: 5%;
     font-family: $fontFamily;
-  } 
- 
-  #container{
-   background-color: $bgcolor;
-   padding: 5%;
-   margin: 1%;
-  }
- 
-  .boxleft{
-     box-sizing: 30%;
-     align-content: left;
-     float: left;
-  }
-  .boxright{
-     box-sizing: 30%;
-     align-content: right;
-     float: right;
-  }
- 
-   #site-header{
-    padding: 1%;
+   }
+  
+   h2{
+     font-family: $fontFamily;
+     color: $textcolor;
+     font-size: $fontsize;
+   }
+  
+   .boton{
+    padding: 5%;
+    margin-top: 5%;
     background-color: $colorSec;
     font-family: $fontFamily;
-    font-size: $tamHeader;
-    size: $headerSize;
     color: white;
+    font-size: $fontsize;
+  
+   }
+  
+  input{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: 2px solid $colorSec;
+    background: $bgcolorSec;
+    opacity: 1;
+  
+    &:focus{
+      opacity: 0.8;
+    }
   }
   
-  h2{
-    font-family: $fontFamily;
-    color: $textcolor;
-    font-size: $fontsize;
-  }
-
   .boton-invisible{
     background:transparent;
     border:none;
     color: white;
     font-size: $fontsize;
     font-family: $fontFamily;
-  }
- 
-  .boton-verde{
-    background:$colorSec;
-    border:none;
-    color: white;
-    font-size: $fontsize;
-    font-family: $fontFamily;
-  }
- 
-  .img-header{
-     width: $tamHeader;
-     height: $tamHeader;
-     border: 0px;
   }
