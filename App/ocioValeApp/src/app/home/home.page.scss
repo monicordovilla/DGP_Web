@@ -35,13 +35,14 @@ main{
 }
 
 #busqueda > input{
-  width: 250px;
+  width: 280px;
   font-size: 12px;
 }
 
-#busqueda > ion-button{
-  background-color: transparent;
-  width: 60px;
+#busqueda > a{
+  background: transparent;
+  width: 40px;
+  padding-left: 10px;
 }
 
 #lista{

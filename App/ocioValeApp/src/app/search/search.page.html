@@ -8,10 +8,12 @@
 
         <div id="busqueda">
             <input type="text" name="barra de busqueda" value="Introduce una actividad..." id="">
-            <ion-button href="/search"><img src="../assets/icon/lupa.png" alt="lupa"></ion-button>   
-        </div>
+            <ion-button class="button-small" (click)='filtros()'><img src="../assets/icon/mas.png" alt="mas"></ion-button>
         
-        <div id="filtros">
+        </div>
+
+        
+        <div id="filtros" class="filtros">
 
             <h3>Categoría</h3>
             <div class="filtro">
@@ -22,24 +24,33 @@
             </div>
 
             <h3>Fecha</h3>
-            <div class="opcion">
-                <h4>Desde</h4>
-                <input type="date" name="inicio" value="Inicio">
-            </div>
-            <div class="opcion">
-                <h4>Hasta</h4>
-                <input type="date" name="fin" value="Fin">
+            <div class="filtro">
+                <h4>Desde</h4><input type="date" name="inicio" value="Inicio">
+                <h4>Hasta</h4><input type="date" name="fin" value="Fin" >
             </div>
 
 
             <div class="filtro">
                 <h3>Ordenar Por</h3>
-                <select name="" id="" style="font-size:16px">
+                <select name="" id="">
                     <option value=""><h4>Fecha</h4></option>
                     <option value=""><h4>Precio</h4></option>
                 </select>
             </div>
 
+        </div>
+
+        <div id="lista">
+        
+            <div class="actividad">
+                <img src="../assets/img/imagen.jpg" alt="imagen"/>
+                <div id="contenido">
+                <h3>TITULO</h3>
+                <h4>Fecha y Hora</h4>
+                <h4>Lugar</h4>
+                <h4>Precio</h4>
+                </div>
+            </div>
         </div>
 
     </main>
