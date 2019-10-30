@@ -16,32 +16,6 @@
  
  /* Clases */
 
-ion-header{
-  padding: $headerSize;
-  background-image: linear-gradient(to bottom right, $colorValeMain,   $textcolor);
-  color: white;
-
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-ion-header > button{
-  background-color: transparent;
-}
-
-ion-header > button > img{
-  width: 50px;
-}
-
-ion-header > h1{
-  font-size: $fontsize;
-  font-family: $fontFamily;
-  padding-right: 0.25em;
-  padding-left: 0.25em;
-}
-
 main{
   background-color: $colorValeLight;
   padding: 7.5% 2.5%;
@@ -65,7 +39,7 @@ main{
   font-size: 12px;
 }
 
-#busqueda > button{
+#busqueda > ion-button{
   background-color: transparent;
   width: 60px;
 }
