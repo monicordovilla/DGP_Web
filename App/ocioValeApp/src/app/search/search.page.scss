@@ -1,0 +1,103 @@
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #EAEAEA;
+ $textcolor: #063940;
+ $textcolorSec: #050505;
+ $fontsize: 30px;
+ $minfontsize : 12px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Tahoma;
+ $colorValeLight : #E8F6DA;
+ $colorValeMain : #2C8B80;
+ $colorValeDark : #356061;
+ $headerSize : 20px;
+
+
+ 
+ /* Clases */
+
+main{
+  background-color: $colorValeLight;
+  padding: 5% 2.5%;
+  color: $textcolor;
+  font-size: $fontsize;
+  font-family: $fontFamily;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#busqueda{
+  background-color: $colorValeMain;
+  padding: 2.5%;
+  margin-bottom: 10%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+#busqueda > input{
+  width: 250px;
+  font-size: 12px;
+}
+
+#busqueda > ion-button{
+  background-color: transparent;
+  width: 55px;
+}
+
+#filtros > .filtro{
+  display: flex;
+  align-items: center;
+  flex-wrap: row;
+  justify-content: left;
+  padding-top: 10%;
+}
+
+h3{
+    margin: 0;
+    font-size: 18px;
+}
+
+h4{
+    font-size: 15px;
+    padding-left: 5%;
+}
+
+#filtros > .filtro > .opcion{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2.5%;
+}
+#filtros > .opcion{
+    display: flex;
+    align-items: center;
+    flex-wrap: row;
+    justify-content: left;
+    padding-left: 2.5%;
+}
+
+#filtros > .filtro > .opcion > input[type=checkbox]{
+    transform: scale(1.75);
+}
+#filtros > .filtro > select{
+    margin:0;
+    margin-left: 5%;
+}
+#filtros > .opcion > input[type=date]{
+    transform: scale(0.5);
+}
+
+
+h2{
+  font-family: $fontFamily;
+  color: $textcolor;
+  font-size: 18px;
+  font-weight: bold;
+}

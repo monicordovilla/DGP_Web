@@ -1,0 +1,46 @@
+<ion-header>
+    <app-header></app-header>
+</ion-header>
+
+<ion-content>
+    <main>
+        <h2>BÚSQUEDA</h2>
+
+        <div id="busqueda">
+            <input type="text" name="barra de busqueda" value="Introduce una actividad..." id="">
+            <ion-button href="/search"><img src="../assets/icon/lupa.png" alt="lupa"></ion-button>   
+        </div>
+        
+        <div id="filtros">
+
+            <h3>Categoría</h3>
+            <div class="filtro">
+                <div class="opcion"><input type="checkbox" name="cat1" value="Todas" checked> <h4>Todas</h4></div>
+                <div class="opcion"><input type="checkbox" name="cat2" value="Deportes"> <h4>Deportes</h4></div>
+                <div class="opcion"><input type="checkbox" name="cat3" value="Arte"> <h4>Arte</h4></div>
+                <div class="opcion"><input type="checkbox" name="cat3" value="Cocina"> <h4>Cocina</h4></div>
+            </div>
+
+            <h3>Fecha</h3>
+            <div class="opcion">
+                <h4>Desde</h4>
+                <input type="date" name="inicio" value="Inicio">
+            </div>
+            <div class="opcion">
+                <h4>Hasta</h4>
+                <input type="date" name="fin" value="Fin">
+            </div>
+
+
+            <div class="filtro">
+                <h3>Ordenar Por</h3>
+                <select name="" id="" style="font-size:16px">
+                    <option value=""><h4>Fecha</h4></option>
+                    <option value=""><h4>Precio</h4></option>
+                </select>
+            </div>
+
+        </div>
+
+    </main>
+</ion-content>

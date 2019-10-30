@@ -16,7 +16,7 @@
  
  /* Clases */
 
- ion-header{
+header{
   padding: $headerSize;
   background-image: linear-gradient(to bottom right, $colorValeMain,   $textcolor);
   color: white;
@@ -27,15 +27,15 @@
   justify-content: space-between;
 }
 
-ion-header > button{
+header > button{
   background-color: transparent;
 }
 
-ion-header > button > img{
+header > button > img{
   width: 50px;
 }
 
-ion-header > h1{
+header > h1{
   font-size: $fontsize;
   font-family: $fontFamily;
   padding-right: 0.25em;
