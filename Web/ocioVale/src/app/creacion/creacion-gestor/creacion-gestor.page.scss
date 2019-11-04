@@ -1,0 +1,55 @@
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #eaeaea;
+ $colorSec: #063940;
+ $textcolor: #063940;
+ $textcolorSec: #050505;
+ $fontsize: 18px;
+ $minfontsize : 12px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Tahoma;
+ $colorValeLight : #E8F6DA;
+ $colorValeMain : #2C8B80;
+ $colorValeDark : #356061;
+ $headerSize : 100px;
+ $tamHeader: 50px;
+
+ /* Clases */
+ .container{
+  background-color: $bgcolor;
+  padding: 5%;
+  font-family: $fontFamily;
+ }
+
+ h2{
+   font-family: $fontFamily;
+   color: $textcolor;
+   font-size: $fontsize;
+ }
+
+ .boton{
+  padding: 5%;
+  margin-top: 5%;
+  background-color: $colorSec;
+  font-family: $fontFamily;
+  color: white;
+  font-size: $fontsize;
+
+  /**&:hover{
+    opacity: 0.9;
+  }**/
+ }
+
+ input{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: 2px solid $colorSec;
+    background: $bgcolorSec;
+    opacity: 1;
+
+    &:focus{
+      opacity: 0.8;
+    }
+ }
