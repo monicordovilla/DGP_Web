@@ -22,17 +22,12 @@ main{
   color: $textcolor;
   font-size: $fontsize;
   font-family: $fontFamily;
-
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 #busqueda{
   background-color: $colorValeMain;
-  padding: 2.5%;
-  margin-bottom: 10%;
+  padding: 2%;
+  margin-bottom: -2px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -41,63 +36,156 @@ main{
 }
 
 #busqueda > input{
-  width: 250px;
+  width: 280px;
   font-size: 12px;
 }
 
-#busqueda > ion-button{
-  background-color: transparent;
-  width: 55px;
+#busqueda > a{
+  background: transparent;
+  width: 40px;
+  padding-left: 10px;
+}
+
+ion-button{
+  --background: transparent;
+  --background-hover: $colorValeLight;
+  --padding-start:0;
+  --padding-end:0;
+  width: 60px;
+  height: 35px;
+}
+
+ion-button{
+  width: 40px;
+}
+
+.filtros{
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  overflow: auto;
+
+}
+
+#filtros{
+  padding: 10px;
+  border-radius: 2px;
+  border-width: 7.5px;
+  border-color:  $colorValeMain ;
+  border-style: ridge;
 }
 
 #filtros > .filtro{
+  width: 100%;
   display: flex;
   align-items: center;
-  flex-wrap: row;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: left;
-  padding-top: 10%;
 }
 
 h3{
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
+    margin-bottom: 0;
+    font-weight: bold;
 }
 
 h4{
-    font-size: 15px;
-    padding-left: 5%;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    padding-left: 10px;
 }
 
 #filtros > .filtro > .opcion{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     margin: 2.5%;
 }
-#filtros > .opcion{
-    display: flex;
-    align-items: center;
-    flex-wrap: row;
-    justify-content: left;
-    padding-left: 2.5%;
-}
 
 #filtros > .filtro > .opcion > input[type=checkbox]{
-    transform: scale(1.75);
-}
-#filtros > .filtro > select{
-    margin:0;
-    margin-left: 5%;
-}
-#filtros > .opcion > input[type=date]{
-    transform: scale(0.5);
+    transform: scale(1.6);
+    margin-bottom: 8px;
+    border: none;
 }
 
+#filtros > .filtro > input[type=date]{
+    margin-left: 5px;
+    width: 100px;
+    font-size: 10px;
+}
+
+#filtros > .filtro > select{
+  margin-left: 15px;
+  font-size: 12px;
+}
 
 h2{
   font-family: $fontFamily;
   color: $textcolor;
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
 }
+
+
+//Actividades
+
+
+#lista{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10%;
+}
+
+
+#lista > h2{
+  font-family: $fontFamily;
+  color: $textcolor;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#lista > .actividad{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3%;
+  margin: 5%;
+
+  border-radius: 2px;
+  border-width: 7.5px;
+  border-color:  $colorValeMain ;
+  border-style: inset;
+}
+
+#lista > .actividad > img{
+  width: 50%;
+}
+
+#lista > .actividad > #contenido{
+  width: 50%;
+  padding-left: 10%;
+}
+
+#lista > .actividad > #contenido > h3{
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+#lista > .actividad > #contenido > h4{
+  font-size: 14px;
+  margin: 2.5%;
+}
+

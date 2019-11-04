@@ -12,4 +12,8 @@ export class SearchPage implements OnInit {
   ngOnInit() {
   }
 
+  filtros() {
+    document.getElementById("filtros").classList.toggle("filtros");
+}
+
 }
