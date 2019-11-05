@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  { path: 'gestion-gestor', loadChildren: () => import('./gestion-gestor/gestion-gestor.module').then( m => m.GestionGestorModule)},
 ];
 
 @NgModule({
