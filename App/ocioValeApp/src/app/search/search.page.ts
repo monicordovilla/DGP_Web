@@ -14,6 +14,6 @@ export class SearchPage implements OnInit {
 
   filtros() {
     document.getElementById("filtros").classList.toggle("filtros");
-}
+  }
 
 }

@@ -1,0 +1,75 @@
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #EAEAEA;
+ $textcolor: #063940;
+ $textcolorSec: #050505;
+ $fontsize: 30px;
+ $minfontsize : 12px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Tahoma;
+ $colorValeLight : #E8F6DA;
+ $colorValeMain : #2C8B80;
+ $colorValeDark : #356061;
+ $headerSize : 20px;
+
+ main{
+    background-color: $colorValeLight;
+    padding: 7.5% 2.5%;
+    color: $textcolor;
+    font-size: $fontsize;
+    font-family: $fontFamily;
+    text-align: center;
+  }
+
+  h2 {
+    width: 100%;
+    font-family: $fontFamily;
+    color: $textcolor;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  h3{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
+
+  h4{
+    font-size: 16px;
+    margin: 7px;
+
+  }
+
+  ul{
+    font-size: 14px;
+    margin: 5px;
+    padding: 0;
+  }
+
+  #datos{
+    align-items: center;
+    padding: 3%;
+
+    border-top-width: 3px;
+    border-top-color:  $colorValeMain ;
+    border-top-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color:  $colorValeMain ;
+    border-bottom-style: solid;
+  }
+
+  #gustos{
+    align-items: center;
+    padding: 3%;
+
+    border-bottom-width: 3px;
+    border-bottom-color:  $colorValeMain ;
+    border-bottom-style: solid;
+  }
+
+  ion-button{
+    padding-top: 10px;
+    //--background: $red;
+  }
