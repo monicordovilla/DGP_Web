@@ -4,7 +4,7 @@
 
     <!-- Menu lateral -->
     <div class="menu-lateral">
-      
+        <div class="elementos-menu">
           <button type="submit" class="boton">Administrar Gestor</button>
 
           <button type="submit" class="boton">Administrar Socio</button>
@@ -14,7 +14,7 @@
           <button type="submit" class="boton">Administrar Familiar</button>
 
           <button type="submit" class="boton">Administrar Actividad</button>
-
+        </div>
     </div>
       
     <div class="container">
@@ -25,6 +25,7 @@
 
           <br><br>
 
+          
           <div class = "nombre-user">
             <input type="text" placeholder="Nombre de usuario" name="nombreUsuario" required><br><br>
           </div>
@@ -38,26 +39,48 @@
             </div>
           </div>
           
-          <br>
 
           <!-- Botones -->
           <div class = "en-linea-centrado">
-              <div class = "flex-boton">
-                <button type="submit" class="boton-accion">Añadir</button>
+            <div class = "flex-boton">
+              <button type="submit" class="boton-accion">Añadir</button>
+            </div>
+            <div class = "flex-boton">
+              <button type="submit" class="boton-accion">Buscar</button>
               </div>
-              <div class = "flex-boton">
-                <button type="submit" class="boton-accion">Buscar</button>
-                </div>
           </div>
 
       </div>
       
       <!-- Lista de Gestores -->
 
-      <div class = "lista">
+      <div class = "lista-gestores">
+        <div class = "separacion">
+        <div class = "gestor-focus">
+          <div class= "gestor-imagen">
+            <img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+          </div>
+          <div class= "gestor-info">
+            <h2>Nombre de usuario</h2>
+            <h2>Nombre y apellidos</h2>
+          </div>
+        </div>
+        </div>
 
-        
+        <div class = "separacion">
+        <div class = "gestor">
+          <div class= "gestor-imagen">
+            <img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+          </div>
+          <div class= "gestor-info">
+            <h2>Nombre de usuario 2</h2>
+            <h2>Nombre y apellidos 2</h2>
+          </div>
+        </div>
+        </div>
       </div>
+
+      
       
 
     </div>
