@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'perfilGestor', loadChildren: () => import('./perfilGestor/perfilGestor.module').then( m=> m.perfilGestorPageModule)},
   { path: 'perfilVoluntario', loadChildren: () => import('./perfilVoluntario/perfilVoluntario.module').then( m=> m.perfilVoluntarioPageModule)},
+  { path: 'creacion-gestor', loadChildren: () => import('./creacion/creacion-gestor/creacion-gestor.module').then( m=> m.CrearGestorPageModule)},
 ];
 
 @NgModule({

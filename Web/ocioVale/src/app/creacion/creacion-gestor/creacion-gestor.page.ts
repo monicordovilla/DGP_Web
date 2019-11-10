@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-creacion-gestor',
+  templateUrl: 'creacion-gestor.page.html',
+  styleUrls: ['creacion-gestor.page.scss'],
 })
-export class HomePage {
+export class CrearGestorPage {
 
   constructor() {}
 
