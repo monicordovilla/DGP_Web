@@ -37,16 +37,22 @@
   }**/
  }
 
- input{
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: 2px solid $colorSec;
-    background: $bgcolorSec;
-    opacity: 1;
+ ion-input{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 2px solid $colorSec;
+  background: $bgcolorSec;
+  opacity: 1;
 
-    &:focus{
-      opacity: 0.8;
-    }
- }
+  &:focus{
+    opacity: 0.8;
+  }
+}
+
+ ion-button{
+  --background: tranparent;
+  --padding-start: 10px;
+  --padding-end: 10px;
+}
