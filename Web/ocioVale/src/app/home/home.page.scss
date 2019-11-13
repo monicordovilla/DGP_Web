@@ -5,12 +5,9 @@
  $textcolor: #063940;
  $textcolorSec: #050505;
  $fontsize: 18px;
- $minfontsize : 12px;
+ $minfontsize : 18px;
  $minButtonSize: 48 dp;
  $fontFamily: Tahoma;
- $colorValeLight : #E8F6DA;
- $colorValeMain : #2C8B80;
- $colorValeDark : #356061;
  $headerSize : 100px;
  $tamHeader: 50px;
 
@@ -40,16 +37,22 @@
   }**/
  }
 
- input{
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: 2px solid $colorSec;
-    background: $bgcolorSec;
-    opacity: 1;
+ ion-input{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 2px solid $colorSec;
+  background: $bgcolorSec;
+  opacity: 1;
 
-    &:focus{
-      opacity: 0.8;
-    }
- }
+  &:focus{
+    opacity: 0.8;
+  }
+}
+
+ ion-button{
+  --background: tranparent;
+  --padding-start: 10px;
+  --padding-end: 10px;
+}

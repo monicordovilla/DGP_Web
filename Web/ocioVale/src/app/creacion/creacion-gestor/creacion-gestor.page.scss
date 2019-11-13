@@ -4,13 +4,10 @@
  $colorSec: #063940;
  $textcolor: #063940;
  $textcolorSec: #050505;
- $fontsize: 18px;
- $minfontsize : 12px;
+ $fontsize: 20px;
+ $minfontsize : 18px;
  $minButtonSize: 48 dp;
  $fontFamily: Tahoma;
- $colorValeLight : #E8F6DA;
- $colorValeMain : #2C8B80;
- $colorValeDark : #356061;
  $headerSize : 100px;
  $tamHeader: 50px;
 
@@ -27,20 +24,7 @@
    font-size: $fontsize;
  }
 
- .boton{
-  padding: 5%;
-  margin-top: 5%;
-  background-color: $colorSec;
-  font-family: $fontFamily;
-  color: white;
-  font-size: $fontsize;
-
-  /**&:hover{
-    opacity: 0.9;
-  }**/
- }
-
- input{
+ ion-input{
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -67,4 +51,15 @@
   font-family: $fontFamily;
   color: $textcolorSec;
   font-size: $minfontsize;
+ }
+
+ .select{
+    color: $textcolorSec;
+    font-family: $fontFamily;
+ }
+
+ ion-button{
+   --background: tranparent;
+   --padding-start: 10px;
+   --padding-end: 10px;
  }
