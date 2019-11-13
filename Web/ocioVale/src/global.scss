@@ -26,66 +26,33 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
  /* Variables estandar para la página*/
- $bgcolor: #FEFEFE;
- $bgcolorSec: #EAEAEA;
- $colorSec: #063940;
- $textcolor: #063940;
- $textcolorSec: #050505;
- $fontsize: 18px;
- $minfontsize : 18px;
- $minButtonSize: 48 dp;
- $fontFamily: Tahoma;
- $headerSize : 100px;
- $tamHeader: 50px;
+ :root {
+  --ion-background-color: #FEFEFE;
+  --ion-background-color-rgb: 254,254,254;
 
-  /* Clases */
-  .container{
-    background-color: $bgcolor;
-    padding: 5%;
-    font-family: $fontFamily;
-   }
-  
-   h2{
-     font-family: $fontFamily;
-     color: $textcolor;
-     font-size: $fontsize;
-   }
-  
-   .boton{
-    padding: 5%;
-    margin-top: 5%;
-    background-color: $colorSec;
-    font-family: $fontFamily;
-    color: white;
-    font-size: $fontsize;
-  
-   }
-  
-  input{
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: 2px solid $colorSec;
-    background: $bgcolorSec;
-    opacity: 1;
-  
-    &:focus{
-      opacity: 0.8;
-    }
-  }
-  
-  .boton-invisible{
-    background:transparent;
-    border:none;
-    color: white;
-    font-size: $fontsize;
-    font-family: $fontFamily;
-  }
+  --ion-text-color: #050505;
+  --ion-text-color-rgb: 5,5,5;
 
-  p{
-    font-family: $fontFamily;
-    color: $textcolorSec;
-    font-size: $minfontsize;
-   }
+  --ion-placeholder-color: #063940;
+
+  --ion-color-step-50: #f2f2f2;
+  --ion-color-step-100: #e5e5e5;
+  --ion-color-step-150: #d9d9d9;
+  --ion-color-step-200: #cccccc;
+  --ion-color-step-250: #c0c0c0;
+  --ion-color-step-300: #b3b3b3;
+  --ion-color-step-350: #a7a7a7;
+  --ion-color-step-400: #9a9a9a;
+  --ion-color-step-450: #8e8e8e;
+  --ion-color-step-500: #828282;
+  --ion-color-step-550: #757575;
+  --ion-color-step-600: #696969;
+  --ion-color-step-650: #5c5c5c;
+  --ion-color-step-700: #505050;
+  --ion-color-step-750: #434343;
+  --ion-color-step-800: #373737;
+  --ion-color-step-850: #2a2a2a;
+  --ion-color-step-900: #1e1e1e;
+  --ion-color-step-950: #111111;
+}
   
