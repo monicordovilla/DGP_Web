@@ -53,20 +53,17 @@
 
 /* Contenedor para agrupar más de un botón */
  .button-container {
-  padding: 0% 0% 0% 35%;
+  padding: 0% 0% 0% 32.5%;
  }
 
  .boton{
   padding: 5%;
   margin-top: 5%;
+  margin-left: 2.5%;
   background-color: $colorSec;
   font-family: $fontFamily;
   color: white;
   font-size: $fontsize;
-
-  /**&:hover{
-    opacity: 0.9;
-  }**/
  }
 
  input{

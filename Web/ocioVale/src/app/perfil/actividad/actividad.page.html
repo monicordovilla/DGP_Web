@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<ion-content>
+
+  <div class="navegation"> Admistrar actividades >> Añadir actividad </div><br>
+ 
+  <div class="container">
+    <section class="information">
+      <div class="information-block">
+        <input class="nombre-actividad" type="text" placeholder="Nombre de actividad" name="nombreActividad" required><br><br>    
+        <input class="lugar-actividad" type="text" placeholder="Lugar" name="lugarActividad" required><br><br>
+      </div>
+      <input class="categoria-actividad" type="text" placeholder="Categoría" name="categoriaActividad" required><br><br>
+    </section>
+
+
+    <section class="information">
+        <div class="information-block">
+          <section class="subsection">
+              <input class="hora-actividad" type="text" placeholder="Hora" name="hora" required><br><br>
+              <input class="fecha-actividad" type="text" placeholder="Fecha" name="fecha" required><br><br>
+          </section>
+          
+          <input class="tipo-actividad" type="text" placeholder="Tipo" name="tipo" required><br><br>  
+
+          <section class="subsection">
+            <input class="max-voluntarios" type="text" placeholder="Max. voluntarios" name="maxVoluntarios" required><br><br>
+            <input class="max-socios" type="text" placeholder="Max. socios" name="maxSocios" required><br><br>
+          </section>
+        </div>
+  
+        <input class="descripcion-voluntario" type="text" placeholder="Descripción" name="descripcion" required><br><br>
+    </section>
+
+    
+    <div class="button-container">
+      <button type="submit" class="button-modificar">MODIFICAR</button>
+      <button type="submit" class="button-eliminar">ELIMINAR</button>
+    </div>
+
+  </div>
+</ion-content>

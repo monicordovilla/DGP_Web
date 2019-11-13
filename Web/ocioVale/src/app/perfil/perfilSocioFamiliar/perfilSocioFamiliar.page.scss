@@ -1,0 +1,200 @@
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #eaeaea;
+ $colorSec: #063940;
+ $textcolor: #063940;
+ $textcolorSec: #050505;
+ $fontsize: 18px;
+ $minfontsize : 12px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Tahoma;
+ $colorValeLight : #E8F6DA;
+ $colorValeMain : #2C8B80;
+ $colorValeDark : #356061;
+ $colorNavegation : #88A3B5;
+ $headerSize : 100px;
+ $tamHeader: 50px;
+
+ /* Clases */
+ .container{
+  background-color: $bgcolor;
+  padding: 5%;
+  font-family: $fontFamily;
+ }
+
+ h2{
+   font-family: $fontFamily;
+   color: $textcolor;
+   font-size: $fontsize;
+ }
+
+ .navegation{
+  padding: 3% 0% 0% 3%;
+  font-family: $fontFamily;
+  color: $colorNavegation;
+  font-size: $fontsize;
+ }
+
+ /* Datos personales en dos columnas de los gestores */
+.information {
+    display: flex;
+    margin: 0 0 20px 0;
+}
+.name {
+  display: flex;
+  margin: 0 0 15px 0;
+  flex: 40%;
+}
+.surname {
+  display: flex;
+  margin: 0px 0 15px 15px;
+  flex: 60%;
+}
+
+/* Datos personales en dos columnas de los Voluntarios */
+.subsection {
+  display: flex;
+  flex: 50%;
+}
+.information-block {
+  flex: 50%;
+}
+.username-voluntario {
+  display: flex;
+  margin: 0 0 15px 0;
+  flex: 50%;
+}
+.dni-voluntario {
+  display: flex;
+  margin: 0px 0 15px 15px;
+  flex: 50%;
+}
+.pass-voluntario {
+  display: flex;
+  margin: 0 0 15px 0;
+  flex: 50%;
+}
+.localidad-voluntario {
+  display: flex;
+  margin: 0px 0 15px 15px;
+  flex: 50%;
+}
+.name-voluntario {
+  display: flex;
+  margin: 0 0 15px 0;
+  flex: 40%;
+}
+.surname-voluntario {
+  display: flex;
+  margin: 0px 0 15px 15px;
+  flex: 60%;
+}
+.provincia-voluntario {
+  display: flex;
+  margin: 0px 0 15px 15px;
+  flex: 50%;
+}
+.mail-voluntario {
+  display: flex;
+  flex: 50%;
+}
+.date-voluntario {
+  flex: 55%;
+}
+.phone-voluntario {
+  margin-left: 15px;
+  flex: 45%;
+}
+.nombre-familiar {
+  display: flex;
+  margin-left: 15px;
+  flex: 50%;
+}
+
+.apellidos-familiar {
+  display: flex;
+  margin-left: 15px;
+  //margin: 0px 0 0px 0px;
+  flex: 50%;
+}
+
+/* Contenedor para agrupar más de un botón */
+ .button-container {
+  //padding: 0% 0% 0% 35%;
+  display: flex;
+ }
+
+ .button-modificar{
+  padding: 2.5%;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  background-color: $colorSec;
+  font-family: $fontFamily;
+  color: white;
+  font-size: $fontsize;
+  width: 20%;
+  flex:33%;
+ }
+
+ .button-eliminar{
+  padding: 2.5%;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  background-color: $colorSec;
+  font-family: $fontFamily;
+  color: white;
+  font-size: $fontsize;
+  width: 20%;
+  flex:33%;
+ }
+
+ .button-familiar{
+  padding: 2.5%;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: $colorSec;
+  font-family: $fontFamily;
+  color: white;
+  font-size: $fontsize;
+  width: 20%;
+  flex:33%;
+ }
+/*
+ .button-voluntarios-left{
+  padding: 2.5%;
+  margin-top: 2.5%;
+  margin-left: 15%;
+  background-color: $colorSec;
+  font-family: $fontFamily;
+  color: white;
+  font-size: $fontsize;
+  width: 20%;
+ }*/
+
+ .boton{
+  padding: 5%;
+  margin-top: 5%;
+  background-color: $colorSec;
+  font-family: $fontFamily;
+  color: white;
+  font-size: $fontsize;
+
+  /**&:hover{
+    opacity: 0.9;
+  }**/
+ }
+
+ input{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: 2px solid $colorSec;
+    background: $bgcolorSec;
+    opacity: 1;
+
+    &:focus{
+      opacity: 0.8;
+    }
+ }
