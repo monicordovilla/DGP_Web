@@ -4,8 +4,8 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { CrearGestorPage } from './creacion-gestor.page';
-import { HeaderPage } from '../../header/header.page';
+import { CrearPage } from './creacion.page';
+import { HeaderPage } from '../header/header.page';
 
 @NgModule({
   imports: [
@@ -15,10 +15,10 @@ import { HeaderPage } from '../../header/header.page';
     RouterModule.forChild([
       {
         path: '',
-        component: CrearGestorPage
+        component: CrearPage
       }
     ])
   ],
-  declarations: [CrearGestorPage, HeaderPage]
+  declarations: [CrearPage, HeaderPage]
 })
-export class CrearGestorPageModule {}
+export class CrearPageModule {}

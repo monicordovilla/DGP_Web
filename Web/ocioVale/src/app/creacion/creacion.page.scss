@@ -56,6 +56,10 @@
  .select{
     color: $textcolorSec;
     font-family: $fontFamily;
+    margin: 3px;
+    margin-left: 10px;
+    border: 2px solid $colorSec;
+    border-radius: 3px;
  }
 
  ion-button{
