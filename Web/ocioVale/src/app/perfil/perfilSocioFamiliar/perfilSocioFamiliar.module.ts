@@ -4,8 +4,8 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { perfilGestor } from './perfilGestor.page';
-import { HeaderPage } from '../header/header.page';
+import { perfilSocioFamiliar } from './perfilSocioFamiliar.page';
+import { HeaderPage } from '../../header/header.page';
 
 @NgModule({
   imports: [
@@ -15,10 +15,10 @@ import { HeaderPage } from '../header/header.page';
     RouterModule.forChild([
       {
         path: '',
-        component: perfilGestor
+        component: perfilSocioFamiliar
       }
     ])
   ],
-  declarations: [perfilGestor, HeaderPage]
+  declarations: [perfilSocioFamiliar, HeaderPage]
 })
-export class perfilGestorPageModule {}
+export class perfilSocioFamiliarPageModule {}

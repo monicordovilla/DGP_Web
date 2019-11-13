@@ -5,7 +5,7 @@
  $textcolor: #063940;
  $textcolorSec: #050505;
  $fontsize: 18px;
- $minfontsize : 18px;
+ $minfontsize : 12px;
  $minButtonSize: 48 dp;
  $fontFamily: Tahoma;
  $colorValeLight : #E8F6DA;
@@ -59,7 +59,7 @@
 .information-block {
   flex: 50%;
 }
-.username-voluntario {
+.nombre-actividad {
   display: flex;
   margin: 0 0 15px 0;
   flex: 50%;
@@ -69,7 +69,7 @@
   margin: 0px 0 15px 15px;
   flex: 50%;
 }
-.pass-voluntario {
+.lugar-actividad {
   display: flex;
   margin: 0 0 15px 0;
   flex: 50%;
@@ -79,12 +79,12 @@
   margin: 0px 0 15px 15px;
   flex: 50%;
 }
-.name-voluntario {
+.hora-actividad {
   display: flex;
   margin: 0 0 15px 0;
   flex: 40%;
 }
-.surname-voluntario {
+.fecha-actividad {
   display: flex;
   margin: 0px 0 15px 15px;
   flex: 60%;
@@ -98,35 +98,69 @@
   display: flex;
   flex: 60%;
 }
-.date-voluntario {
+.max-voluntarios {
   flex: 55%;
 }
-.phone-voluntario {
+.max-socios{
   margin-left: 15px;
   flex: 45%;
 }
 .descripcion-voluntario {
   display: flex;
-  margin-left: 15px;
+  margin: 0px 0 21.5px 15px;
+  flex: 50%;
+}
+
+.categoria-actividad {
+  display: flex;
+  margin: 0px 0 53px 15px;
   flex: 50%;
 }
 
 /* Contenedor para agrupar más de un botón */
  .button-container {
-  padding: 0% 0% 0% 35%;
+  //padding: 0% 0% 0% 35%;
+  display: flex;
  }
 
- .button-voluntarios-right{
+ .button-modificar{
   padding: 2.5%;
   margin-top: 2.5%;
-  margin-left: 30%;
+  margin-left: 20%;
   background-color: $colorSec;
   font-family: $fontFamily;
   color: white;
   font-size: $fontsize;
   width: 20%;
+  flex:33%;
  }
 
+ .button-eliminar{
+  padding: 2.5%;
+  margin-top: 2.5%;
+  margin-left: 10%;
+  margin-right: 20%;
+  background-color: $colorSec;
+  font-family: $fontFamily;
+  color: white;
+  font-size: $fontsize;
+  width: 20%;
+  flex:33%;
+ }
+
+ .button-familiar{
+  padding: 2.5%;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: $colorSec;
+  font-family: $fontFamily;
+  color: white;
+  font-size: $fontsize;
+  width: 20%;
+  flex:33%;
+ }
+/*
  .button-voluntarios-left{
   padding: 2.5%;
   margin-top: 2.5%;
@@ -136,7 +170,7 @@
   color: white;
   font-size: $fontsize;
   width: 20%;
- }
+ }*/
 
  .boton{
   padding: 5%;
