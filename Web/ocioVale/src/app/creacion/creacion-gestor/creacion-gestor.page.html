@@ -3,27 +3,27 @@
 <ion-content>
   <div class="container">
 
-    <p>Administrar gestores >> Crear
+    <ion-item>
+      <ion-label>Crear usuarios >> Crear </ion-label>
+      <ion-select placeholder="Escoja el tipo de usuario">
+        <ion-select-option value="gestor">Gestor</ion-select-option>
+        <ion-select-option value="socio">Socio</ion-select-option>
+        <ion-select-option value="socioFamiliar">Socio Familiar</ion-select-option>
+        <ion-select-option value="voluntario">Voluntario</ion-select-option>
+        <ion-select-option value="actividad">Actividad</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-      <select>
-        <option value="gestor">Gestor</option>
-        <option value="socio">Socio</option>
-        <option value="socioFamiliar">Socio Familiar</option>
-        <option value="voluntario">Voluntario</option>
-        <option value="actividad">Actividad</option>
-      </select>
-    </p>
-
-    <h2>Introduce los datosr</h2><br>
+    <h2>Introduce los datos</h2><br>
 
     <input class="inputNombre" type="text" placeholder="Nombre" name="nombreGestor" required>
-    <input class="inputApellido" type="text" placeholder="Apellidos" name="apellidosGestor" required><br><br>
+    <input class="inputApellido" type="text" placeholder="Apellidos" name="apellidosGestor" required><br>
 
-    <input type="text" placeholder="Nombre de usuario" name="nombreUsuarioGestor" required><br><br>
+    <input type="text" placeholder="Nombre de usuario" name="nombreUsuarioGestor" required><br>
 
-    <input type="password" placeholder="Contraseña" name="pswGestor" required><br><br>
+    <input type="password" placeholder="Contraseña" name="pswGestor" required><br>
 
-    <button type="submit" class="boton">IDENTIFICARSE</button>
+    <button type="submit" class="boton">Añadir</button>
 
   </div>
 </ion-content>

@@ -4,7 +4,7 @@
  $colorSec: #063940;
  $textcolor: #063940;
  $textcolorSec: #050505;
- $fontsize: 18px;
+ $fontsize: 20px;
  $minfontsize : 18px;
  $minButtonSize: 48 dp;
  $fontFamily: Tahoma;
@@ -25,8 +25,8 @@
  }
 
  .boton{
-  padding: 5%;
-  margin-top: 5%;
+  padding: 2%;
+  margin-top: 4%;
   background-color: $colorSec;
   font-family: $fontFamily;
   color: white;
@@ -64,4 +64,10 @@
   font-family: $fontFamily;
   color: $textcolorSec;
   font-size: $minfontsize;
+ }
+
+ ion-select{
+    color: $textcolorSec;
+    font-family: $fontFamily;
+    align-items: left;
  }
