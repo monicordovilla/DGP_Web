@@ -1,0 +1,115 @@
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #eaeaea;
+ $colorSec: #063940;
+ $textcolor: #063940;
+ $textcolorSec: #050505;
+ $fontsize: 20px;
+ $minfontsize : 18px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Tahoma;
+ $headerSize : 100px;
+ $tamHeader: 50px;
+
+ /* Clases */
+ .container{
+  background-color: $bgcolor;
+  padding-top: 5%;
+  padding-right: 10%;
+  padding-left: 10%;
+  width: 85%;
+  margin-left: 10%;
+  display: inline-block;
+  font-family: $fontFamily;
+ }
+
+ .menu-lateral{
+   width: 15%;
+   //display: inline-block;
+   display:flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   position: fixed;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   background-color: $bgcolorSec;
+ }
+
+ .boton-menu {
+   margin-bottom: 10%;
+ }
+
+ .horizontal-flex{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   justify-content: space-around;
+ }
+
+ .horizontal-flex-reverse{
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+
+ h2{
+   font-family: $fontFamily;
+   color: $textcolor;
+   font-size: $fontsize;
+ }
+
+.separate-top{
+  margin-top: 4%;
+}
+
+
+ ion-input{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: 2px solid $colorSec;
+    background: $bgcolorSec;
+    opacity: 1;
+
+    &:focus{
+      opacity: 0.8;
+    }
+ }
+
+ .inputNombre{
+  width: 43%;
+  margin: 5px 2% 22px 0;
+ }
+
+ .inputApellido{
+  width: 55%;
+ }
+
+ .search{
+   width:70%;
+   margin-right: 5%;
+   margin-left: 5%;
+ }
+
+
+ p{
+  font-family: $fontFamily;
+  color: $textcolorSec;
+  font-size: $minfontsize + 8px;
+ }
+
+ .select{
+    color: $textcolorSec;
+    font-family: $fontFamily;
+ }
+
+ ion-button{
+   --background: tranparent;
+   --padding-start: 10px;
+   --padding-end: 10px;
+ }

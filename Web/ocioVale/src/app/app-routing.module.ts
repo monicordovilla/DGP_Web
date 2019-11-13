@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'perfilGestor', loadChildren: () => import('./perfilGestor/perfilGestor.module').then( m=> m.perfilGestorPageModule)},
   { path: 'perfilVoluntario', loadChildren: () => import('./perfilVoluntario/perfilVoluntario.module').then( m=> m.perfilVoluntarioPageModule)},
   { path: 'creacion-gestor', loadChildren: () => import('./creacion/creacion-gestor/creacion-gestor.module').then( m=> m.CrearGestorPageModule)},
+  { path: 'usuarios', loadChildren: () => import('./usuarios/usuarios.module').then( m=> m.UsuariosModule)},
 ];
 
 @NgModule({
