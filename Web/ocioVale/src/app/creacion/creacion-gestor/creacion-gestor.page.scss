@@ -71,3 +71,9 @@
     font-family: $fontFamily;
     align-items: left;
  }
+
+ ion-button{
+   --background: tranparent;
+   --padding-start:0;
+   --padding-end:0;
+ }
