@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'gestion-gestor', loadChildren: () => import('./gestion-gestor/gestion-gestor.module').then( m => m.GestionGestorModule)},
-  { path: 'gestion-socio', loadChildren: () => import('./gestion-socio/gestion-socio.module').then( m => m.GestionSocioModule)},
+  //{ path: 'gestion-socio', loadChildren: () => import('./gestion-socio/gestion-socio.module').then( m => m.GestionSocioModule)},
 ];
 
 @NgModule({
