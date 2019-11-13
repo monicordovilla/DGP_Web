@@ -5,7 +5,7 @@
 
     <ion-item>
       <p>Crear usuarios >> Crear </p>
-      <ion-select class="select" placeholder="Escoja el tipo de usuario">
+      <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja el tipo de usuario">
         <ion-select-option class="select" value="gestor">Gestor</ion-select-option>
         <ion-select-option class="select" value="socio">Socio</ion-select-option>
         <ion-select-option class="select" value="socioFamiliar">Socio Familiar</ion-select-option>
@@ -16,12 +16,12 @@
 
     <h2>Introduce los datos</h2><br>
 
-    <input class="inputNombre" type="text" placeholder="Nombre" name="nombreGestor" required>
-    <input class="inputApellido" type="text" placeholder="Apellidos" name="apellidosGestor" required><br>
+    <ion-input class="inputNombre" type="text" placeholder="Nombre" name="nombreGestor" required></ion-input>
+    <ion-input class="inputApellido" type="text" placeholder="Apellidos" name="apellidosGestor" required></ion-input><br>
 
-    <input type="text" placeholder="Nombre de usuario" name="nombreUsuarioGestor" required><br>
+    <ion-input type="text" placeholder="Nombre de usuario" name="nombreUsuarioGestor" required></ion-input><br>
 
-    <input type="password" placeholder="Contraseña" name="pswGestor" required><br>
+    <ion-input type="password" placeholder="Contraseña" name="pswGestor" required></ion-input><br>
 
     <ion-button size="large" color="dark"> Añadir </ion-button>
 

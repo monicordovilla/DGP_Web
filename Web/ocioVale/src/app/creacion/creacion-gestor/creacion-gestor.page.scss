@@ -24,20 +24,7 @@
    font-size: $fontsize;
  }
 
- .boton{
-  --padding: 2%;
-  --margin-top: 4%;
-  --background-color: $colorSec;
-  --font-family: $fontFamily;
-  --color: white;
-  --font-size: $fontsize;
-
-  /**&:hover{
-    opacity: 0.9;
-  }**/
- }
-
- input{
+ ion-input{
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -69,11 +56,10 @@
  .select{
     color: $textcolorSec;
     font-family: $fontFamily;
-    align-items: left;
  }
 
  ion-button{
    --background: tranparent;
-   --padding-start:0;
-   --padding-end:0;
+   --padding-start: 10px;
+   --padding-end: 10px;
  }
