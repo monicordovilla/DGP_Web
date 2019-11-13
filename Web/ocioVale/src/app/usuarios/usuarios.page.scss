@@ -48,6 +48,22 @@
    justify-content: space-around;
  }
 
+ .flex-columna{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+ 
+ .horizontal-flex-left{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  //align-content: center;
+  justify-content: space-between;
+}
+
  .horizontal-flex-reverse{
   display: flex;
   flex-direction: row-reverse;
@@ -56,16 +72,39 @@
   justify-content: space-around;
 }
 
+.info-usuario{
+  display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   justify-content: space-around;
+   width: 9
+   0%;
+   background-color: $bgcolorSec;
+   height: 10%;
+   border: 2px solid $textcolorSec;
+   margin-top: 3%;
+}
+
+.info-usuario img{
+  background: transparent;
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  margin: 2% 0 2% 0;
+  border: 5px solid white;
+}
+
  h2{
    font-family: $fontFamily;
    color: $textcolor;
    font-size: $fontsize;
  }
 
-.separate-top{
-  margin-top: 4%;
-}
-
+ .linea-vertical{
+  border-left: 3px solid $textcolor;
+  height: 150px;
+ }
 
  ion-input{
     width: 100%;
@@ -106,6 +145,11 @@
  .select{
     color: $textcolorSec;
     font-family: $fontFamily;
+ }
+
+ .select-group{
+  border: 2px solid $colorSec;
+  border-radius: 3px;
  }
 
  ion-button{

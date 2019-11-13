@@ -10,23 +10,31 @@
   </div>
 
   <div class="container">
-    <ion-item>
+
+    <div class="horizontal-flex-left">
+
       <p>Administración de usuarios </p>
 
-    </ion-item>
+      <ion-button size="large" color="dark"> Crear usuario </ion-button>
+
+    </div>
+
+    <ion-item></ion-item>
 
     <h2> Búsqueda de usuario: </h2>
 
-    <div class="horizontal-flex separate-top">
+    <div class="horizontal-flex">
 
         <ion-input class="search horizontal-flex-reverse" type="text" placeholder="Buscar..." name="buscar_usuario" required><ion-button size="medium" color="dark"> Buscar </ion-button></ion-input>
 
-        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja el tipo de usuario a buscar">
-          <ion-select-option class="select" value="gestor">Gestor</ion-select-option>
-          <ion-select-option class="select" value="socio">Socio</ion-select-option>
-          <ion-select-option class="select" value="socioFamiliar">Socio Familiar</ion-select-option>
-          <ion-select-option class="select" value="voluntario">Voluntario</ion-select-option>
-        </ion-select>
+        <div>
+          <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" class="select-group" placeholder="Escoja el tipo de usuario a buscar">
+            <ion-select-option class="select" value="gestor"> Buscar Gestor</ion-select-option>
+            <ion-select-option class="select" value="socio">Buscar Socio</ion-select-option>
+            <ion-select-option class="select" value="socioFamiliar">Buscar Socio Familiar</ion-select-option>
+            <ion-select-option class="select" value="voluntario">Buscar Voluntario</ion-select-option>
+          </ion-select>
+      </div>
   
     </div>
 
@@ -49,17 +57,68 @@
           </ion-item>
       </ion-radio-group>
 
+      <ion-item></ion-item>
+      
+      <br>
 
-    <h2>Introduce los datos</h2><br>
+    <div class="horizontal-flex-left">
+        <h2>Resultados: </h2><br>
 
-    <ion-input class="inputNombre" type="text" placeholder="Nombre" name="nombreGestor" required></ion-input>
-    <ion-input class="inputApellido" type="text" placeholder="Apellidos" name="apellidosGestor" required></ion-input><br>
+        <div>
+          <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" class="select-group" placeholder="Ordenar resultados por:">
+              <ion-select-option class="select" value="ordenar-nombre" selected>Ordenar por nombre</ion-select-option>
+              <ion-select-option class="select" value="ordenar-apellido">Ordenar por apellido</ion-select-option>
+              <ion-select-option class="select" value="ordenar-usuario">Ordenar por usuario</ion-select-option>
+              <ion-select-option class="select" value="ordenar-usuario">Ordenar por valoración</ion-select-option>
+          </ion-select>
+      </div>
 
-    <ion-input type="text" placeholder="Nombre de usuario" name="nombreUsuarioGestor" required></ion-input><br>
+    </div>
 
-    <ion-input type="password" placeholder="Contraseña" name="pswGestor" required></ion-input><br>
+    <div class="flex-columna">
 
-    <ion-button size="large" color="dark"> Añadir </ion-button>
+      <div class = "info-usuario">
+          <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
 
+          <div class="flex-columna">
+            <h5> Nombre 1 </h5>
+            <h5> Apellidos 1 </h5>
+            <h5> Nombre de usuario 1 </h5>
+          </div>
+
+          <div class="linea-vertical"></div>
+
+          <div class="flex-columna">
+              <h5> Valoración media: 5.0</h5>
+          </div>
+
+          <div class="flex-columna">
+              <ion-button size="large" color="dark"> Administrar </ion-button>
+          </div>
+      </div>
+
+      <div class = "info-usuario">
+          <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+
+          <div class="flex-columna">
+            <h5> Nombre 2 </h5>
+            <h5> Apellidos 2 </h5>
+            <h5> Nombre de usuario 2 </h5>
+          </div>
+
+          <div class="linea-vertical"></div>
+
+          <div class="flex-columna">
+              <h5> Valoración media: 3.0</h5>
+          </div>
+
+          <div class="flex-columna">
+              <ion-button size="large" color="dark"> Administrar </ion-button>
+          </div>
+      </div>
+
+    </div>
+
+    <br>
   </div>
 </ion-content>
