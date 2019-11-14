@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'perfilSocio', loadChildren: () => import('./perfil/perfilSocio/perfilSocio.module').then( m=> m.perfilSocioPageModule)},
   { path: 'actividad', loadChildren: () => import('./perfil/actividad/actividad.module').then( m=> m.actividadPageModule)},
   { path: 'usuarios', loadChildren: () => import('./usuarios/usuarios.module').then( m=> m.UsuariosModule)},
+  { path: 'actividades', loadChildren: () => import('./actividades/actividades.module').then( m=> m.ActividadesModule)},
 ];
 
 @NgModule({

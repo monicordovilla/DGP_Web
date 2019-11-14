@@ -1,0 +1,120 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="menu-lateral">
+
+        <ion-button size="large" color="dark" class="boton-menu"> Usuarios </ion-button>
+        <ion-button size="large" color="dark" class="boton-menu"> Actividades </ion-button>
+        <ion-button size="large" color="dark" class="boton-menu"> Categorías </ion-button>
+
+  </div>
+
+  <div class="container">
+
+    <div class="horizontal-flex-left">
+
+      <p>Administración de actividades </p>
+
+      <ion-button size="large" color="dark"> Crear actividad </ion-button>
+
+    </div>
+
+    <ion-item></ion-item>
+
+    <h2> Búsqueda de actividad: </h2>
+
+    <div class="horizontal-flex">
+
+        <ion-input class="search horizontal-flex-reverse" type="text" placeholder="Buscar..." name="buscar_usuario" required><ion-button size="medium" color="dark"> Buscar </ion-button></ion-input>
+      
+    </div>
+
+      <ion-radio-group class="horizontal-flex">
+
+        <h5>Buscar por...</h5>
+          <ion-item>
+            <ion-radio value="busqueda-nombre" checked></ion-radio>  
+            <ion-label> Nombre</ion-label>
+          </ion-item>
+
+          <ion-item>
+              <ion-radio value="busqueda-apellido"></ion-radio>
+              <ion-label> Categoría</ion-label>
+          </ion-item>
+
+          <ion-item>
+              <ion-radio value="busqueda-usuario"></ion-radio>
+              <ion-label > Organizador</ion-label>
+          </ion-item>
+      </ion-radio-group>
+
+      <ion-item></ion-item>
+      
+      <br>
+
+    <div class="horizontal-flex-left">
+        <h2>Resultados: </h2><br>
+
+        <div>
+          <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" class="select-group" placeholder="Ordenar resultados por:">
+              <ion-select-option class="select" value="ordenar-nombre" selected>Ordenar por nombre</ion-select-option>
+              <ion-select-option class="select" value="ordenar-apellido">Ordenar por fecha</ion-select-option>
+              <ion-select-option class="select" value="ordenar-usuario">Ordenar por organizador</ion-select-option>
+          </ion-select>
+      </div>
+
+    </div>
+
+    <div class="flex-columna">
+
+      <div class = "info-usuario">
+          <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+
+          <div class="flex-columna">
+            <h5> Título de actividad </h5>
+            <h5> Fecha </h5>
+            <h5> Lugar </h5>
+          </div>
+
+          <div class="linea-vertical"></div>
+
+          <div class="flex-columna">
+              <h5> Participantes</h5>
+              <h5> @pepito (organizador)</h5>
+              <h5> @mariquilla </h5>
+          </div>
+
+          <div class="flex-columna">
+              <ion-button size="large" color="dark"> Ver actividad </ion-button>
+              <ion-button size="large" color="dark"> Cancelar actividad</ion-button>
+          </div>
+      </div>
+
+      <div class = "info-usuario">
+          <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+
+          <div class="flex-columna">
+            <h5> Título de actividad 2</h5>
+            <h5> Fecha 2</h5>
+            <h5> Lugar 2</h5>
+          </div>
+
+          <div class="linea-vertical"></div>
+
+          <div class="flex-columna">
+              <h5> Participantes</h5>
+              <h5> @mariquilla (organizador)</h5>
+              <h5> @pepito </h5>
+          </div>
+
+          <div class="flex-columna">
+              <ion-button size="large" color="dark"> Ver actividad </ion-button>
+              <ion-button size="large" color="dark"> Cancelar actividad</ion-button>
+          </div>
+      </div>
+
+    </div>
+
+    <br>
+  </div>
+</ion-content>
