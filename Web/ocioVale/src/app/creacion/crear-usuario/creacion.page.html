@@ -1,5 +1,4 @@
 <app-header></app-header>
-<script type="text/javascript" src="./creacion.js"></script>
 
 <ion-content>
   <div class="container">
@@ -14,19 +13,21 @@
       </ion-select>
     </ion-item>
 
-    <h2>Introduce los datos</h2><br>
+    <div *ngIf="mostrar">
+      <h2>Introduce los datos</h2><br>
 
-    <span class="inputNombre"><ion-label>Nombre</ion-label></span>
-    <span class="inputApellido"><ion-label>Apellido</ion-label></span><br>
+      <span class="inputNombre"><ion-label>Nombre</ion-label></span>
+      <span class="inputApellido"><ion-label>Apellido</ion-label></span><br>
 
-    <ion-input class="inputNombre" type="text" placeholder="Nombre" id="nombre" name="nombre" required></ion-input>
-    <ion-input class="inputApellido" type="text" placeholder="Apellidos" id="apellidos" name="apellidos" required></ion-input><br>
+      <ion-input class="inputNombre" type="text" placeholder="Nombre" id="nombre" name="nombre" required></ion-input>
+      <ion-input class="inputApellido" type="text" placeholder="Apellidos" id="apellidos" name="apellidos" required></ion-input><br>
 
-    <ion-label>Nombre de usuario</ion-label>
-    <ion-input type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" required></ion-input><br>
+      <ion-label>Nombre de usuario</ion-label>
+      <ion-input type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" required></ion-input><br>
 
-    <ion-label>Contraseña</ion-label>
-    <ion-input type="password" placeholder="Contraseña" name="psw" required></ion-input><br>
+      <ion-label>Contraseña</ion-label>
+      <ion-input type="password" placeholder="Contraseña" name="psw" required></ion-input><br>
+    </div>
 
     <div *ngIf="mostrar">
       <ion-label>Correo Electronico</ion-label>
@@ -58,7 +59,9 @@
       <ion-input *ngIf="mostrar" type="text" placeholder="Descripcion" name="descripcion" required></ion-input><br>
     </div>
     
-    <ion-button size="large" color="dark"> Añadir </ion-button>
+    <div *ngIf="mostrar">
+      <ion-button size="large" color="dark"> Añadir </ion-button>
+    </div>
 
   </div>
   

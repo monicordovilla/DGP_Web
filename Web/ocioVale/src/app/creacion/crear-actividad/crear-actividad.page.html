@@ -1,9 +1,41 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>crearActividad</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content>
+  <div class="container">
 
+    <ion-item>
+      <p>Crear actividad </p>
+    </ion-item>
+
+    <h2>Introduce los datos</h2><br>
+
+    <span><ion-label>Categoria</ion-label></span><br>
+    
+    <ion-select name="cat" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
+      <ion-select-option name="cat1" id="cat1" class="cat1" value="cat1">cat 1</ion-select-option>
+      <ion-select-option name="cat2" id="cat2" class="cat2" value="cat2">cat 2</ion-select-option>
+    </ion-select>
+
+    <span class="inputLeft"><ion-label>Nombre actividad</ion-label></span>
+    <span class="inputRight"><ion-label>Lugar</ion-label></span><br>
+
+    <ion-input class="inputLeft" type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
+    <ion-input class="inputRight" type="text" placeholder="Lugar" id="lugar" name="lugar" required></ion-input><br>
+    
+    <span class="inputLeft"><ion-label>Hora</ion-label></span>
+    <span class="inputRight"><ion-label>Fecha</ion-label></span><br>
+
+    <ion-input class="inputLeft" type="time" placeholder="Hora" id="hora" name="hora" required></ion-input>
+    <ion-input class="inputRight" type="date" placeholder="Fecha" id="fecha" name="fecha" required></ion-input><br>
+
+    <span class="inputLeft"><ion-label>Numero de voluntarios</ion-label></span>
+    <span class="inputRight"><ion-label>Descripcion</ion-label></span><br>
+    <ion-input class="inputLeft" type="number" placeholder="Numero maximo de voluntarios" id="numVoluntarios" name="numVoluntarios" required></ion-input>
+    <ion-input class="inputRight" type="text" placeholder="Descripcion de la actividad" id="descripcion" name="descripcion" required></ion-input><br>
+
+    <span class="inputLeft"><ion-label>Numero de socios</ion-label></span><br>
+    <ion-input class="inputLeft" type="number" placeholder="Numero maximo de socios" id="numSocios" name="numSocios" required></ion-input><br>
+  
+    <ion-button size="large" color="dark"> Añadir </ion-button>
+  </div>
 </ion-content>

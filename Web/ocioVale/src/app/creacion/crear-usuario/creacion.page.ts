@@ -9,10 +9,19 @@ export class CrearPage {
   mostrar=false;
 
   constructor() {}
+  
 
   f(){
-    var rol = document.getElementById("rol").id;
-     console.log('rol');
+    this.mostrar = true;
+
+    var e = (document.getElementById("rol")) as HTMLSelectElement;
+    var rol = (document.getElementById("rol")).value;
+    var sel = e.selectedIndex;
+    var opt = e.options[sel];
+    //var CurValue = (<HTMLSelectElement>opt).value;
+    //var CurText = (<HTMLSelectElement>opt).text;
+    console.log(rol);
+    console.log(opt);
   }
 
 }

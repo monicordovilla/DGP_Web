@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { CrearActividadPage } from './crear-actividad.page';
+import { HeaderPage } from '../../header/header.page';
 
 const routes: Routes = [
   {
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CrearActividadPage]
+  declarations: [CrearActividadPage, HeaderPage]
 })
 export class CrearActividadPageModule {}
