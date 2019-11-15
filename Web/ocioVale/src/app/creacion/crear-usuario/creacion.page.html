@@ -1,0 +1,70 @@
+<app-header></app-header>
+<script type="text/javascript" src="./creacion.js"></script>
+
+<ion-content>
+  <div class="container">
+
+    <ion-item>
+      <p>Crear usuarios >> Crear </p>
+      <ion-select name="rol" (ionChange)='f()' id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja el tipo de usuario" required>
+        <ion-select-option name="gestor" id="gestor" class="select" value="gestor">Gestor</ion-select-option>
+        <ion-select-option name="socio" id="socio" class="select" value="socio">Socio</ion-select-option>
+        <ion-select-option name="socioFamiliar" id="socioFamiliar" class="select" value="socioFamiliar">Socio Familiar</ion-select-option>
+        <ion-select-option name="voluntario" id="voluntario" class="select" value="voluntario">Voluntario</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <h2>Introduce los datos</h2><br>
+
+    <span class="inputNombre"><ion-label>Nombre</ion-label></span>
+    <span class="inputApellido"><ion-label>Apellido</ion-label></span><br>
+
+    <ion-input class="inputNombre" type="text" placeholder="Nombre" id="nombre" name="nombre" required></ion-input>
+    <ion-input class="inputApellido" type="text" placeholder="Apellidos" id="apellidos" name="apellidos" required></ion-input><br>
+
+    <ion-label>Nombre de usuario</ion-label>
+    <ion-input type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" required></ion-input><br>
+
+    <ion-label>Contraseña</ion-label>
+    <ion-input type="password" placeholder="Contraseña" name="psw" required></ion-input><br>
+
+    <div *ngIf="mostrar">
+      <ion-label>Correo Electronico</ion-label>
+      <ion-input *ngIf="mostrar" type="email" placeholder="Correo Electronico" name="email" required></ion-input><br>
+    </div>
+
+    <div *ngIf="mostrar">
+      <ion-label>Fecha Nacimiento</ion-label>
+      <ion-input *ngIf="mostrar" type="date" placeholder="Fecha Nacimiento" name="fec_nac" required></ion-input><br>
+    </div>
+
+    <div *ngIf="mostrar">
+      <ion-label>Telefono</ion-label>
+      <ion-input *ngIf="mostrar" type="tel" placeholder="Telefono" name="tel" required></ion-input><br>
+    </div>
+
+    <div *ngIf="mostrar">
+      <ion-label>Localidad</ion-label>
+      <ion-input *ngIf="mostrar" type="text" placeholder="Localidad" name="localidad" required></ion-input><br>
+    </div>
+
+    <div *ngIf="mostrar">
+      <ion-label>Provincia</ion-label>
+      <ion-input *ngIf="mostrar" type="text" placeholder="Provincia" name="provincia" required></ion-input><br>
+    </div>
+
+    <div *ngIf="mostrar">
+      <ion-label>Descripcion</ion-label>
+      <ion-input *ngIf="mostrar" type="text" placeholder="Descripcion" name="descripcion" required></ion-input><br>
+    </div>
+    
+    <ion-button size="large" color="dark"> Añadir </ion-button>
+
+  </div>
+  
+</ion-content>
+
+
+
+
+

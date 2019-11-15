@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { CrearPage } from './creacion.page';
-import { HeaderPage } from '../header/header.page';
+import { HeaderPage } from '../../header/header.page';
 
 @NgModule({
   imports: [

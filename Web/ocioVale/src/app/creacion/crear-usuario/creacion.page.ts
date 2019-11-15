@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['creacion.page.scss'],
 })
 export class CrearPage {
+  mostrar=false;
 
   constructor() {}
+
+  f(){
+    var rol = document.getElementById("rol").id;
+     console.log('rol');
+  }
 
 }
