@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'usuarios', loadChildren: () => import('./usuarios/usuarios.module').then( m=> m.UsuariosModule)},
   { path: 'actividades', loadChildren: () => import('./actividades/actividades.module').then( m=> m.ActividadesModule)},
   { path: 'crear-actividad', loadChildren: () => import('./creacion/crear-actividad/crear-actividad.module').then( m=> m.CrearActividadPageModule)},
-
+  { path: 'actividades', loadChildren: () => import('./actividades/actividades.module').then( m=> m.ActividadesModule)},
+  { path: 'categorias', loadChildren: () => import('./categorias/categorias.module').then( m=> m.CategoriasModule)},
 ];
 
 @NgModule({

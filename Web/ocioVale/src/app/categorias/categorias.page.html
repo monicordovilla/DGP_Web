@@ -1,0 +1,86 @@
+<app-header></app-header>
+
+<ion-content>
+
+  <div class="container">
+
+    <div class="horizontal-flex-left">
+
+      <p>Administración de categorías </p>
+
+      <ion-button size="large" color="dark"> Crear categoría </ion-button>
+
+    </div>
+
+    <ion-item></ion-item>
+
+    <h2> Búsqueda de categoría: </h2>
+
+    <div class="horizontal-flex">
+
+        <ion-input class="search horizontal-flex-reverse" type="text" placeholder="Buscar..." name="buscar_usuario" required><ion-button size="medium" color="dark"> Buscar </ion-button></ion-input>
+      
+    </div>
+
+      <ion-radio-group class="horizontal-flex">
+
+        <h5>Buscar por...</h5>
+          <ion-item>
+            <ion-radio value="busqueda-nombre" checked></ion-radio>  
+            <ion-label> Nombre de categoría</ion-label>
+          </ion-item>
+      </ion-radio-group>
+
+      <ion-item></ion-item>
+      
+      <br>
+
+    <div class="horizontal-flex-left">
+        <h2>Resultados: </h2><br>
+
+        <div>
+          <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" class="select-group" placeholder="Ordenar resultados por:">
+              <ion-select-option class="select" value="ordenar-nombre" selected>Ordenar por nombre</ion-select-option>
+              <ion-select-option class="select" value="ordenar-apellido">Ordenar por nº de usos</ion-select-option>
+          </ion-select>
+      </div>
+
+    </div>
+
+    <div class="flex-columna">
+
+      <div class = "info-categoria">
+          <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+
+          <div class="flex-columna">
+            <h5> Título de categoría </h5>
+            <h5> Usos: x </h5>
+          </div>
+
+          <div class="linea-vertical"></div>
+
+          <div class="flex-columna">
+              <ion-button size="large" color="danger"> Borrar categoría</ion-button>
+          </div>
+      </div>
+
+      <div class = "info-categoria">
+        <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+
+        <div class="flex-columna">
+          <h5> Título de categoría </h5>
+          <h5> Usos: x </h5>
+        </div>
+
+        <div class="linea-vertical"></div>
+
+        <div class="flex-columna">
+            <ion-button size="large" color="danger"> Borrar categoría</ion-button>
+        </div>
+    </div>
+
+    </div>
+
+    <br>
+  </div>
+</ion-content>
