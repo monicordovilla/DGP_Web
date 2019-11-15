@@ -10,7 +10,7 @@ export class CrearPage {
 
   constructor() {}
   
-
+/*
   f(){
     this.mostrar = true;
 
@@ -22,6 +22,6 @@ export class CrearPage {
     //var CurText = (<HTMLSelectElement>opt).text;
     console.log(rol);
     console.log(opt);
-  }
+  }*/
 
 }

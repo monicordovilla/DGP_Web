@@ -1,5 +1,7 @@
 {
   "name": "ocioVale",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
