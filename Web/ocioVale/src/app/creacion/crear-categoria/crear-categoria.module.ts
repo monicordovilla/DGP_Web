@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-import { ImagePicker } from '@ionic-native/image-picker/ngx';
-
 import { CrearCategoriaPage } from './crear-categoria.page';
 import { HeaderPage } from '../../header/header.page';
 
