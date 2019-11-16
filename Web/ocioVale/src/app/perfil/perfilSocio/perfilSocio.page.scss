@@ -4,14 +4,10 @@
  $colorSec: #063940;
  $textcolor: #063940;
  $textcolorSec: #050505;
- $fontsize: 18px;
- $minfontsize : 12px;
+ $fontsize: 20px;
+ $minfontsize : 18px;
  $minButtonSize: 48 dp;
  $fontFamily: Tahoma;
- $colorValeLight : #E8F6DA;
- $colorValeMain : #2C8B80;
- $colorValeDark : #356061;
- $colorNavegation : #88A3B5;
  $headerSize : 100px;
  $tamHeader: 50px;
 
@@ -21,17 +17,10 @@
   padding: 5%;
   font-family: $fontFamily;
  }
-
- h2{
-   font-family: $fontFamily;
-   color: $textcolor;
-   font-size: $fontsize;
- }
-
  .navegation{
   padding: 3% 0% 0% 3%;
   font-family: $fontFamily;
-  color: $colorNavegation;
+  color: $textcolor;
   font-size: $fontsize;
  }
 
@@ -40,18 +29,8 @@
     display: flex;
     margin: 0 0 20px 0;
 }
-.name {
-  display: flex;
-  margin: 0 0 15px 0;
-  flex: 40%;
-}
-.surname {
-  display: flex;
-  margin: 0px 0 15px 15px;
-  flex: 60%;
-}
 
-/* Datos personales en dos columnas de los Voluntarios */
+/* Datos personales en dos columnas de los socios */
 .subsection {
   display: flex;
   flex: 50%;
@@ -59,61 +38,55 @@
 .information-block {
   flex: 50%;
 }
-.username-voluntario {
+.username-socio {
   display: flex;
   margin: 0 0 15px 0;
   flex: 50%;
 }
-.dni-voluntario {
-  display: flex;
-  margin: 0px 0 15px 15px;
-  flex: 50%;
-}
-.pass-voluntario {
+.pass-socio {
   display: flex;
   margin: 0 0 15px 0;
   flex: 50%;
 }
-.localidad-voluntario {
+.localidad-socio {
   display: flex;
   margin: 0px 0 15px 15px;
   flex: 50%;
 }
-.name-voluntario {
+.name-socio {
   display: flex;
   margin: 0 0 15px 0;
   flex: 40%;
 }
-.surname-voluntario {
+.surname-socio {
   display: flex;
   margin: 0px 0 15px 15px;
   flex: 60%;
 }
-.provincia-voluntario {
+.provincia-socio {
   display: flex;
   margin: 0px 0 15px 15px;
   flex: 50%;
 }
-.mail-voluntario {
+.mail-socio {
   display: flex;
   flex: 60%;
 }
-.date-voluntario {
+.date-socio {
   flex: 55%;
 }
-.phone-voluntario {
+.phone-socio {
   margin-left: 15px;
   flex: 45%;
 }
-.descripcion-voluntario {
+.descripcion-socio {
   display: flex;
-  margin: 0px 0 21px 15px;
+  margin: 0px 0 22px 15px;
   flex: 50%;
 }
 
 /* Contenedor para agrupar más de un botón */
  .button-container {
-  //padding: 0% 0% 0% 35%;
   display: flex;
  }
 
@@ -152,30 +125,6 @@
   font-size: $fontsize;
   width: 20%;
   flex:33%;
- }
-/*
- .button-voluntarios-left{
-  padding: 2.5%;
-  margin-top: 2.5%;
-  margin-left: 15%;
-  background-color: $colorSec;
-  font-family: $fontFamily;
-  color: white;
-  font-size: $fontsize;
-  width: 20%;
- }*/
-
- .boton{
-  padding: 5%;
-  margin-top: 5%;
-  background-color: $colorSec;
-  font-family: $fontFamily;
-  color: white;
-  font-size: $fontsize;
-
-  /**&:hover{
-    opacity: 0.9;
-  }**/
  }
 
  input{

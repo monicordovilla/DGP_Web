@@ -4,14 +4,10 @@
  $colorSec: #063940;
  $textcolor: #063940;
  $textcolorSec: #050505;
- $fontsize: 18px;
+ $fontsize: 20px;
  $minfontsize : 18px;
  $minButtonSize: 48 dp;
  $fontFamily: Tahoma;
- $colorValeLight : #E8F6DA;
- $colorValeMain : #2C8B80;
- $colorValeDark : #356061;
- $colorNavegation : #88A3B5;
  $headerSize : 100px;
  $tamHeader: 50px;
 
@@ -21,17 +17,10 @@
   padding: 5%;
   font-family: $fontFamily;
  }
-
- h2{
-   font-family: $fontFamily;
-   color: $textcolor;
-   font-size: $fontsize;
- }
-
  .navegation{
   padding: 3% 0% 0% 3%;
   font-family: $fontFamily;
-  color: $colorNavegation;
+  color: $textcolor;
   font-size: $fontsize;
  }
 
@@ -39,16 +28,6 @@
 .information {
     display: flex;
     margin: 0 0 20px 0;
-}
-.name {
-  display: flex;
-  margin: 0 0 15px 0;
-  flex: 40%;
-}
-.surname {
-  display: flex;
-  margin: 0px 0 15px 15px;
-  flex: 60%;
 }
 
 /* Datos personales en dos columnas de los Voluntarios */
@@ -112,10 +91,6 @@
 }
 
 /* Contenedor para agrupar más de un botón */
- .button-container {
-  padding: 0% 0% 0% 35%;
- }
-
  .button-voluntarios-right{
   padding: 2.5%;
   margin-top: 2.5%;
@@ -136,15 +111,6 @@
   color: white;
   font-size: $fontsize;
   width: 20%;
- }
-
- .boton{
-  padding: 5%;
-  margin-top: 5%;
-  background-color: $colorSec;
-  font-family: $fontFamily;
-  color: white;
-  font-size: $fontsize;
  }
 
  input{
