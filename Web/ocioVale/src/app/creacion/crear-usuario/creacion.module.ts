@@ -20,5 +20,7 @@ import { HeaderPage } from '../../header/header.page';
     ])
   ],
   declarations: [CrearPage, HeaderPage]
+
+  
 })
 export class CrearPageModule {}
