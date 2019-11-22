@@ -1,0 +1,60 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <main>
+    <div id="busqueda">
+      <input type="text" name="barra de busqueda" placeholder="Introduce una actividad..." id="">
+      <a href="/search"><img src="../assets/icon/lupa.png" alt="lupa"></a>
+    </div>
+
+    <div id="lista">
+      <h2>MIS ACTIVIDADES</h2>
+
+      <div id="proximas">
+        <div id="ocultar_proximas">
+          <h2>Próxmas actividades</h2>
+          <a><img src="../assets/icon/mas.png" alt="mas"></a>
+        </div>
+        <div class="actividad">
+          <img src="../assets/img/imagen.jpg" alt="imagen"/>
+          <div id="contenido">
+          <h3><a href="/actividad">TITULO</a></h3>
+            <h4>Fecha y Hora</h4>
+            <h4>Lugar</h4>
+            <h4>Precio</h4>
+          </div>
+        </div>
+
+        <div class="actividad">
+          <img src="../assets/img/imagen.jpg" alt="imagen"/>
+          <div id="contenido">
+          <h3><a href="/actividad">TITULO</a></h3>
+            <h4>Fecha y Hora</h4>
+            <h4>Lugar</h4>
+            <h4>Precio</h4>
+          </div>
+        </div>
+      </div>
+
+      <div id="realizadas">
+        <div id="ocultar_realizadas">
+            <h2>Actividades ya realizadas</h2>
+            <a><img src="../assets/icon/mas.png" alt="mas"></a>
+        </div>
+        <div class="actividad">
+          <img src="../assets/img/imagen.jpg" alt="imagen"/>
+          <div id="contenido">
+           <h3><a href="/actividad">TITULO</a></h3>
+            <h4>Fecha y Hora</h4>
+            <h4>Lugar</h4>
+            <h4>Precio</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <a href="/profile">USER</a>
+</ion-content>

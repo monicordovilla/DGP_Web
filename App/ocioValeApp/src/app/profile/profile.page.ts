@@ -12,4 +12,7 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
   }
 
+  desplegar(tipo:string) {
+    document.getElementById(tipo).classList.toggle(tipo);
+  }
 }

@@ -1,0 +1,216 @@
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #EAEAEA;
+ $textcolor: #063940;
+ $textcolorSec: #050505;
+ $fontsize: 30px;
+ $minfontsize : 12px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Tahoma;
+ $headerSize : 20px;
+
+
+ /* Clases */
+
+ a {
+     color: inherit;
+     text-decoration: none;
+ }
+
+main{
+  background-color: $bgcolor;
+  padding: 7.5% 2.5%;
+  color: $textcolor;
+  font-size: $fontsize;
+  font-family: $fontFamily;
+}
+
+#busqueda{
+  background-color: $textcolor;
+  padding: 2.5%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+#busqueda > input{
+  width: 280px;
+  font-size: 12px;
+}
+
+#busqueda > a{
+  background: transparent;
+  width: 40px;
+  padding-left: 10px;
+}
+
+#lista{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10%;
+}
+
+
+#lista > h2{
+  font-family: $fontFamily;
+  color: $textcolor;
+  font-size: 18px;
+  font-weight: bold;
+}
+#lista > #proximas{
+  background-color: $bgcolorSec;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5%;
+
+  border-width: 7.5px;
+  border-color:  $textcolor ;
+  border-style: inset;
+}
+
+#lista > #proximas > #ocultar_proximas{
+  width: 100%;
+  background-color:   $textcolor;
+  color: white;
+  padding-left: 3%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#lista > #proximas > #ocultar_proximas > h2{
+  width: 50%;
+}
+
+#lista > #proximas > #ocultar_proximas > a{
+  background: transparent;
+  width: 60px;
+  padding-right: 10px;
+}
+
+#lista > #proximas > #ocultar_proximas > a > img{
+  background: transparent;
+  width: 60px;
+  padding-right: 10px;
+}
+
+#lista > #proximas > .actividad{
+  background-color: $bgcolor;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3%;
+  margin: 5%;
+
+  border-radius: 2px;
+  border-width: 7.5px;
+  border-color:  $textcolor ;
+  border-style: inset;
+}
+
+#lista > #proximas > .actividad > img{
+  width: 50%;
+}
+
+#lista > #proximas > .actividad > #contenido{
+  width: 50%;
+  padding-left: 10%;
+}
+
+#lista > #proximas > .actividad > #contenido > h3{
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+#lista > #proximas > .actividad > #contenido > h4{
+  font-size: 14px;
+  margin: 2.5%;
+}
+
+#lista > #realizadas{
+  background-color: $bgcolorSec;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5%;
+  
+  border-width: 7.5px;
+  border-color:  $textcolor ;
+  border-style: inset;
+}
+
+#lista > #realizadas > #ocultar_realizadas{
+  width: 100%;
+  background-color:   $textcolor;
+  color: white;
+  padding-left: 3%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#lista > #realizadas > #ocultar_realizadas > h2{
+  width: 50%;
+}
+
+#lista > #realizadas > #ocultar_realizadas > a{
+  background: transparent;
+  width: 60px;
+  padding-right: 10px;
+}
+
+#lista > #realizadas > #ocultar_realizadas > a > img{
+  background: transparent;
+  width: 60px;
+  padding-right: 10px;
+}
+
+#lista > #realizadas > .actividad{
+  background-color: $bgcolor;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3%;
+  margin: 5%;
+
+  border-radius: 2px;
+  border-width: 7.5px;
+  border-color:  $textcolor ;
+  border-style: inset;
+}
+
+#lista > #realizadas > .actividad > img{
+  width: 50%;
+}
+
+#lista > #realizadas > .actividad > #contenido{
+  width: 50%;
+  padding-left: 10%;
+}
+
+#lista > #realizadas > .actividad > #contenido > h3{
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+#lista > #realizadas > .actividad > #contenido > h4{
+  font-size: 14px;
+  margin: 2.5%;
+}

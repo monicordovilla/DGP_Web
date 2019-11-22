@@ -13,12 +13,12 @@
  $headerSize : 20px;
 
 
- 
+
  /* Clases */
 
 header{
   padding: $headerSize;
-  background-image: linear-gradient(to bottom right, $colorValeMain,   $textcolor);
+  background-color:   $textcolor;
   color: white;
 
   display: flex;
@@ -29,6 +29,8 @@ header{
 
 header > a{
   background-color: transparent;
+  text-decoration: none;
+  color: white;
 }
 
 header > a > img{

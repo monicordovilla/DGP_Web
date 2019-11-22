@@ -7,13 +7,10 @@
  $minfontsize : 12px;
  $minButtonSize: 48 dp;
  $fontFamily: Tahoma;
- $colorValeLight : #E8F6DA;
- $colorValeMain : #2C8B80;
- $colorValeDark : #356061;
  $headerSize : 20px;
 
  main{
-    background-color: $colorValeLight;
+    background-color: $bgcolor;
     padding: 7.5% 2.5%;
     color: $textcolor;
     font-size: $fontsize;
@@ -30,14 +27,14 @@
   }
 
   h3{
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 20px;
     margin-bottom: 0px;
     font-weight: bold;
   }
 
   h4{
-    font-size: 16px;
+    font-size: 18px;
     margin: 7px;
 
   }
@@ -48,15 +45,21 @@
     padding: 0;
   }
 
+  p{
+    font-size: 14px;
+    margin: 5px;
+    padding: 0;
+  }
+
   #datos{
     align-items: center;
     padding: 3%;
 
     border-top-width: 3px;
-    border-top-color:  $colorValeMain ;
+    border-top-color:  $textcolor ;
     border-top-style: solid;
     border-bottom-width: 3px;
-    border-bottom-color:  $colorValeMain ;
+    border-bottom-color:  $textcolor ;
     border-bottom-style: solid;
   }
 
@@ -65,11 +68,50 @@
     padding: 3%;
 
     border-bottom-width: 3px;
-    border-bottom-color:  $colorValeMain ;
+    border-bottom-color:  $textcolor ;
     border-bottom-style: solid;
   }
 
   ion-button{
     padding-top: 10px;
-    //--background: $red;
   }
+
+  .privado{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    overflow: auto;
+  
+  }
+
+  .mas_gustos{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    overflow: auto;
+  
+  }
+  
+  .filtro{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+
+.filtro > .opcion{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2.5%;
+}
+
+.filtro > .opcion > input[type=checkbox]{
+    transform: scale(1.6);
+    margin-bottom: 8px;
+    border: none;
+}

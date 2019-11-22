@@ -1,0 +1,94 @@
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #EAEAEA;
+ $textcolor: #063940;
+ $textcolorSec: #050505;
+ $fontsize: 30px;
+ $mediunfontsize : 21px;
+ $minfontsize : 12px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Tahoma;
+ $headerSize : 20px;
+
+
+
+
+.inicioSesion{
+    font-family: $fontFamily;
+    background-color: $bgcolor;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicioSesion > .titulo{
+    color: $textcolor;
+    border: $textcolor solid 0.2em;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-bottom: 3em;
+}
+
+.inicioSesion > .titulo > h1{
+    font-size: 40px;
+}
+
+.inicioSesion > form{
+    width: 75%;
+    /* flex */ 
+    display: flex;
+    flex-direction: column;
+}
+
+.inicioSesion > form > h3{
+    color: $textcolor;
+    text-align: left;
+    font-size: $mediunfontsize;
+}
+
+.inicioSesion > form > input{
+    padding: 0.2em;
+    font-size: $mediunfontsize;
+    border: $textcolor solid 0.2em;
+}
+
+.inicioSesion > form > ion-button{
+    color: $bgcolor;
+    padding: 0.5em;
+    margin-top: 2em;
+    font-size: $fontsize;
+    background-color: $textcolor;
+}
+
+.inicioSesion > .participar{
+    width: 100%;
+    margin-top: 3em;
+    border-top: $textcolor 0.2em solid;
+}
+
+.inicioSesion > .participar > form{
+    /* flex */
+    display: flex;
+    justify-content: center;
+}
+
+.inicioSesion > .participar > form > input{
+    border: $textcolor solid 0.2em;
+    width: 70%;
+}
+
+.inicioSesion > .participar > form > ion-button{
+    margin-left: 0.2em;
+    font-size: $minfontsize;
+    color: $textcolor;
+    width: 20%;
+}
+

@@ -1,0 +1,34 @@
+$bgcolor: #FEFEFE;
+$bgcolorSec: #EAEAEA;
+$textcolor: #063940;
+$textcolorSec: #050505;
+$fontsize: 30px;
+$minfontsize : 12px;
+$minButtonSize: 48 dp;
+$fontFamily: Tahoma;
+$colorValeLight : #E8F6DA;
+$colorValeMain : #2C8B80;
+$colorValeDark : #356061;
+$headerSize : 20px;
+
+main{
+  background-color: $bgcolor;
+  padding: 5% 2.5%;
+  color: $textcolor;
+  //font-size: $fontsize;
+  //font-family: $fontFamily;
+  height: calc(100vh - 110px); /*AJUSTAR, no esta bien definido la altura*/
+}
+
+h2 {
+  text-align: center;
+}
+
+hr {
+    background: black;
+}
+
+.blep {
+    color: $textcolor;
+    font-weight: bold;
+}

@@ -1,0 +1,40 @@
+<ion-header>
+    <app-header></app-header>
+</ion-header>
+
+<ion-content>
+    <main>
+        <div class="ion-text-center ion-padding-top">Titulo de Actividad > Valorar actividad</div>
+
+        <hr>
+
+        <h3 class="ion-text-center">¿Te ha gustado tu compañero?</h3>
+            <ion-grid fixed="true"><ion-row nowrap="true">
+                <ion-col>
+                    <img src="../assets/icon/cara.png" alt="1 punto de 5"/>
+                </ion-col>
+                <ion-col>
+                    <img src="../assets/icon/cara.png" alt="2 puntos de 5"/>
+                </ion-col>
+                <ion-col>
+                    <img src="../assets/icon/cara.png" alt="3 puntos de 5"/>
+                </ion-col>
+                <ion-col>
+                    <img src="../assets/icon/cara.png" alt="4 puntos de 5"/>
+                </ion-col>
+                <ion-col>
+                    <img src="../assets/icon/cara.png" alt="5 puntos de 5"/>
+                </ion-col>
+            </ion-row></ion-grid>
+        <div class="ion-text-center">Tu compañero era [Nombre de compañero]</div>
+
+        <div class="ion-margin-horizontal">
+            <ion-textarea placeholder="¿Algun comentario sobre tu compañero?"></ion-textarea>
+        </div>
+
+        <div class="ion-text-center">
+            <ion-button expand="block" color="dark">Confirmar valoración</ion-button>
+            <ion-button expand="block" color="danger">Valorar en otro momento</ion-button>
+        </div>
+    </main>
+</ion-content>

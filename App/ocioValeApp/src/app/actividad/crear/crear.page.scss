@@ -1,0 +1,20 @@
+$textcolor: #063940;
+$bgcolor: #FEFEFE;
+
+.container {
+    padding: 16px 5% 16px 5%;
+}
+
+ion-input{
+   width: 100%;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   box-sizing: border-box;
+   border: 2px solid $textcolor;
+   background: $bgcolor;
+   opacity: 1;
+
+   &:focus{
+     opacity: 0.8;
+   }
+}

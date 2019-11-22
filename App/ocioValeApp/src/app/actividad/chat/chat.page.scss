@@ -1,0 +1,56 @@
+$bg: #063940;
+$bgl: #FEFEFE;
+
+.content{
+    margin: 5%;
+    box-sizing:border-box;
+}
+
+.chatscroll{
+    height: auto;
+}
+
+.subheader{
+    height: auto;
+}
+
+.footer{
+}
+
+.msgchat{
+    min-width: 51%;
+    max-width: 70%;
+    min-height: 10%;
+    padding: 4px;
+    margin: 8px;
+}
+
+.msgdate{
+    float: right;
+    color: inherit;
+    font-size: 0.8em;
+    padding: none;
+}
+
+.msgcampo{
+    border-style:double;
+    border-width: thin;
+    border-color: $bg;
+    margin: 2.5%;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.michat {
+    float: right;
+    background-color: $bg;
+    color: $bgl;
+}
+
+.otrochat {
+    float: left;
+    background-color: $bgl;
+    border-style: solid;
+    border-width: medium;
+    border-color: $bg;
+}

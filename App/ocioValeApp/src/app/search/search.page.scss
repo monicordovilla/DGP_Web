@@ -7,17 +7,19 @@
  $minfontsize : 12px;
  $minButtonSize: 48 dp;
  $fontFamily: Tahoma;
- $colorValeLight : #E8F6DA;
- $colorValeMain : #2C8B80;
- $colorValeDark : #356061;
  $headerSize : 20px;
 
 
- 
+
  /* Clases */
 
+ a {
+     color: inherit;
+     text-decoration: none;
+ }
+
 main{
-  background-color: $colorValeLight;
+  background-color: $bgcolor;
   padding: 5% 2.5%;
   color: $textcolor;
   font-size: $fontsize;
@@ -25,7 +27,7 @@ main{
 }
 
 #busqueda{
-  background-color: $colorValeMain;
+  background-color: $textcolor;
   padding: 2%;
   margin-bottom: -2px;
   display: flex;
@@ -48,7 +50,7 @@ main{
 
 ion-button{
   --background: transparent;
-  --background-hover: $colorValeLight;
+  --background-hover: $textcolor;
   --padding-start:0;
   --padding-end:0;
   width: 60px;
@@ -72,7 +74,7 @@ ion-button{
   padding: 10px;
   border-radius: 2px;
   border-width: 7.5px;
-  border-color:  $colorValeMain ;
+  border-color:  $textcolor ;
   border-style: ridge;
 }
 
@@ -165,7 +167,7 @@ h2{
 
   border-radius: 2px;
   border-width: 7.5px;
-  border-color:  $colorValeMain ;
+  border-color:  $textcolor ;
   border-style: inset;
 }
 
@@ -188,4 +190,3 @@ h2{
   font-size: 14px;
   margin: 2.5%;
 }
-

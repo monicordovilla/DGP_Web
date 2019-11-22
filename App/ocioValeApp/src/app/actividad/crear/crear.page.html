@@ -1,0 +1,40 @@
+<ion-header>
+    <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+
+      <div class="ion-text-center">
+          <h1>Crear actividad</h1>
+      </div>
+      <hr>
+
+    <h2>Introduce los datos</h2><br>
+
+    <span><ion-label>Categoria</ion-label></span><br>
+
+    <ion-select name="cat" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
+      <ion-select-option name="cat1" id="cat1" class="cat1" value="cat1">cat 1</ion-select-option>
+      <ion-select-option name="cat2" id="cat2" class="cat2" value="cat2">cat 2</ion-select-option>
+    </ion-select>
+
+    <span ><ion-label>Nombre actividad</ion-label></span>
+    <ion-input type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
+
+
+    <span ><ion-label>Lugar</ion-label></span>
+    <ion-input type="text" placeholder="Lugar" id="lugar" name="lugar" required></ion-input><br>
+
+    <span><ion-label>Hora</ion-label></span>
+    <ion-input type="time" placeholder="Hora" id="hora" name="hora" required></ion-input>
+
+    <span><ion-label>Fecha</ion-label></span>
+    <ion-input type="date" placeholder="Fecha" id="fecha" name="fecha" required></ion-input><br>
+
+    <span><ion-label>Descripcion</ion-label></span><br>
+    <ion-input type="text" placeholder="Descripcion de la actividad" id="descripcion" name="descripcion" required></ion-input><br>
+
+    <ion-button expand="block" color="dark"> Añadir </ion-button>
+  </div>
+</ion-content>
