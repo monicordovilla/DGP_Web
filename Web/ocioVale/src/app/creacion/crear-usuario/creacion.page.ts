@@ -19,11 +19,11 @@ export class CrearPage {
     //var opt = e.options[sel];
     //var CurValue = (<HTMLSelectElement>opt).value;
     //var CurText = (<HTMLSelectElement>opt).text;
-    console.log(rol);
+    //console.log(rol);
     //console.log(opt);
 
 
-    console.log('valor del select'+this.rol);
+    //console.log('valor del select'+this.rol);
   }
 
 }

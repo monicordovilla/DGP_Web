@@ -30,6 +30,16 @@
    background-color: transparent;
  }
 
+ .div-content{
+    vertical-align: center;
+    position: static;
+ }
+
+ .union{
+   margin-left: 10px;
+   margin-right: 10px;
+ }
+
  .img-header{
     background: transparent;
     width: $tamHeader;
