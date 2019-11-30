@@ -71,3 +71,15 @@ ion-button{
 #descripcion{
     height: 130px;
 }
+
+small-input{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+input-width{
+  float: left;
+  width: 10%;
+}
