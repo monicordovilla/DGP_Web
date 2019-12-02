@@ -12,7 +12,9 @@ const routes: Routes = [
   { path: 'masinfo', loadChildren: './actividad/masinfo/masinfo.module#MasinfoPageModule' },
   { path: 'chat', loadChildren: './actividad/chat/chat.module#ChatPageModule' },
   { path: 'crear', loadChildren: './actividad/crear/crear.module#CrearPageModule' },
-  { path: 'inicio', loadChildren: './inicio/inicio.module#InicioPageModule' }
+  { path: 'inicio', loadChildren: './inicio/inicio.module#InicioPageModule' },
+  { path: 'notificaciones', loadChildren: './notificaciones/notificaciones.module#NotificacionesPageModule' },
+  { path: 'participantes', loadChildren: './actividad/participantes/participantes.module#ParticipantesPageModule' }
 
 ];
 @NgModule({

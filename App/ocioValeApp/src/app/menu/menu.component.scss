@@ -1,0 +1,56 @@
+ /* Variables estandar para la página*/
+ $bgcolor: #FEFEFE;
+ $bgcolorSec: #EAEAEA;
+ $textcolor: #174A45;
+ $textcolorSec: #050505;
+ $fontsize: 30px;
+ $minfontsize : 12px;
+ $minButtonSize: 48 dp;
+ $fontFamily: Tahoma;
+ $headerSize : 20px;
+
+ ion-list > ion-item > a{
+    text-decoration: none;
+    color: white;
+    padding: 0.5em;
+    width: 100%;
+    margin-bottom: 20%;
+    border-style: solid;
+    border-width: 5%;
+    text-align: center;
+}
+
+footer > ion-item > a{
+  text-decoration: none;
+  color: white;
+  padding: 10%;
+  width: 100%;
+  margin-bottom: 20%;
+  text-align: center;
+  background-color: #f04141;
+}
+
+header{
+    padding: $headerSize;
+    color: white;
+  
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+
+a:hover {
+    color: lightsalmon;
+  }
+
+
+header > ion-button > img{
+    width: 50px;
+  }
+
+
+ion-menu{
+  --width: 200px;
+}

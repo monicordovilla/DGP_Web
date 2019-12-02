@@ -1,5 +1,39 @@
-$textcolor: #063940;
 $bgcolor: #FEFEFE;
+$bgcolor: #FEFEFE;
+$bgcolorSec: #EAEAEA;
+$textcolor: #174A45;
+$textcolorSec: #050505;
+$fontsize: 30px;
+$minfontsize : 12px;
+$minButtonSize: 48 dp;
+$fontFamily: Tahoma;
+$headerSize : 20px;
+
+
+main{
+  background-color: $bgcolor;
+  padding: 5% 2.5%;
+  color: $textcolor;
+  font-size: 14px;
+  font-family: $fontFamily;
+  height: calc(100vh - 110px); /*AJUSTAR, no esta bien definido la altura*/
+}
+
+h2 {
+  width: 100%;
+  font-family: $fontFamily;
+  color: $textcolor;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h3{
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
 
 .container {
     padding: 16px 5% 16px 5%;

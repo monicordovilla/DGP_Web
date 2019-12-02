@@ -10,4 +10,8 @@ export class myActivitiesPage {
   constructor(){
     
   }
+  
+  desplegar(tipo:string) {
+    document.getElementById(tipo).classList.toggle(tipo);
+  }
 }

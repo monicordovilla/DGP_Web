@@ -1,0 +1,18 @@
+<ion-menu menuId="menu" contentId="principal">
+  <header>
+    <ion-button color="dark" fill="clear" (click)="toggleMenu()" slot="start"> <img src="../assets/icon/menu.png" alt="menu"/> </ion-button>
+  </header>
+  <ion-content color="dark">
+    <ion-list lines="none" inset="false" mode="ios">
+        <ion-item color="dark"><a href='/home'>Recomendados</a></ion-item>
+        <ion-item color="dark"><a href='/search'>Buscar</a></ion-item>
+        <ion-item color="dark"><a href='/profile'>Mi Perfil</a></ion-item>
+        <ion-item color="dark"><a href='/myActivities'>Mis Actividades</a></ion-item>
+        <ion-item color="dark"><a href='/crear'>Crear Actividad</a></ion-item>
+    </ion-list>
+  </ion-content>
+
+<footer>
+    <ion-item  color="dark"><a href='/inicio'>Cerrar Sesión</a></ion-item>
+</footer>
+</ion-menu>

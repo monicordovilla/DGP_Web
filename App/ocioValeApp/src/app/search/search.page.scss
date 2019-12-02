@@ -1,7 +1,7 @@
  /* Variables estandar para la página*/
  $bgcolor: #FEFEFE;
  $bgcolorSec: #EAEAEA;
- $textcolor: #063940;
+ $textcolor: #174A45;
  $textcolorSec: #050505;
  $fontsize: 30px;
  $minfontsize : 12px;
@@ -160,7 +160,7 @@ h2{
   width: 100%;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: row;
   justify-content: center;
   padding: 3%;
   margin: 5%;
@@ -171,7 +171,7 @@ h2{
   border-style: inset;
 }
 
-#lista > .actividad > img{
+#lista > .actividad > a{
   width: 50%;
 }
 

@@ -12,49 +12,64 @@
     <div id="lista">
       <h2>MIS ACTIVIDADES</h2>
 
-      <div id="proximas">
-        <div id="ocultar_proximas">
-          <h2>Próxmas actividades</h2>
-          <a><img src="../assets/icon/mas.png" alt="mas"></a>
+      <div class="bloque">
+        <div class="actividades">
+          <h2>Próximas actividades</h2>
+          <ion-button color="dark" fill="clear"  (click)='desplegar("proximas")'><img src="../assets/icon/mas.png" alt="mas"></ion-button>
         </div>
-        <div class="actividad">
-          <img src="../assets/img/imagen.jpg" alt="imagen"/>
-          <div id="contenido">
-          <h3><a href="/actividad">TITULO</a></h3>
-            <h4>Fecha y Hora</h4>
-            <h4>Lugar</h4>
-            <h4>Precio</h4>
+        <div id = "proximas" class = "proximas">
+          <div class="actividad">
+            <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
+            <div id="contenido">
+              <h3><a href="/actividad">TITULO</a></h3>
+              <h4>Fecha y Hora</h4>
+              <h4>Lugar</h4>
+              <h4>Precio</h4>
+            </div>
           </div>
-        </div>
 
-        <div class="actividad">
-          <img src="../assets/img/imagen.jpg" alt="imagen"/>
-          <div id="contenido">
-          <h3><a href="/actividad">TITULO</a></h3>
-            <h4>Fecha y Hora</h4>
-            <h4>Lugar</h4>
-            <h4>Precio</h4>
+          <div class="actividad">
+            <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
+            <div id="contenido">
+              <h3><a href="/actividad">TITULO</a></h3>
+              <h4>Fecha y Hora</h4>
+              <h4>Lugar</h4>
+              <h4>Precio</h4>
+            </div>
           </div>
         </div>
       </div>
 
-      <div id="realizadas">
-        <div id="ocultar_realizadas">
-            <h2>Actividades ya realizadas</h2>
-            <a><img src="../assets/icon/mas.png" alt="mas"></a>
+      <div class="bloque">
+        <div class="actividades">
+          <h2>Actividades realizadas</h2>
+          <ion-button color="dark" fill="clear"  (click)='desplegar("realizadas")'><img src="../assets/icon/mas.png" alt="mas"></ion-button>
         </div>
-        <div class="actividad">
-          <img src="../assets/img/imagen.jpg" alt="imagen"/>
-          <div id="contenido">
-           <h3><a href="/actividad">TITULO</a></h3>
-            <h4>Fecha y Hora</h4>
-            <h4>Lugar</h4>
-            <h4>Precio</h4>
+        <div id = "realizadas" class = "realizadas">
+          <div class="actividad">
+            <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
+            <div id="contenido">
+              <h3><a href="/actividad">TITULO</a></h3>
+              <h4>Fecha y Hora</h4>
+              <h4>Lugar</h4>
+              <h4>Precio</h4>
+            </div>
+          </div>
+
+          <div class="actividad">
+            <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
+            <div id="contenido">
+              <h3><a href="/actividad">TITULO</a></h3>
+              <h4>Fecha y Hora</h4>
+              <h4>Lugar</h4>
+              <h4>Precio</h4>
+            </div>
           </div>
         </div>
       </div>
+
+
     </div>
-  </main>
 
-  <a href="/profile">USER</a>
+  </main>
 </ion-content>

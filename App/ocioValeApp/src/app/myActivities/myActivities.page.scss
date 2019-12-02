@@ -1,7 +1,7 @@
  /* Variables estandar para la página*/
  $bgcolor: #FEFEFE;
  $bgcolorSec: #EAEAEA;
- $textcolor: #063940;
+ $textcolor: #174A45;
  $textcolorSec: #050505;
  $fontsize: 30px;
  $minfontsize : 12px;
@@ -61,7 +61,7 @@ main{
   font-size: 18px;
   font-weight: bold;
 }
-#lista > #proximas{
+#lista > .bloque{
   background-color: $bgcolorSec;
   width: 100%;
   display: flex;
@@ -75,39 +75,34 @@ main{
   border-style: inset;
 }
 
-#lista > #proximas > #ocultar_proximas{
+#lista >  .bloque > .actividades{
   width: 100%;
   background-color:   $textcolor;
   color: white;
-  padding-left: 3%;
+  padding-left: 5px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-#lista > #proximas > #ocultar_proximas > h2{
-  width: 50%;
+#lista > .bloque > .actividades > h2{
+  width: 75%;
+  font-size: 19px;
 }
 
-#lista > #proximas > #ocultar_proximas > a{
+#lista >  .bloque > .actividades > ion-button > img{
   background: transparent;
-  width: 60px;
-  padding-right: 10px;
+  width: 35px;
 }
 
-#lista > #proximas > #ocultar_proximas > a > img{
-  background: transparent;
-  width: 60px;
-  padding-right: 10px;
-}
-
-#lista > #proximas > .actividad{
+#lista > .bloque > #proximas > .actividad, 
+#lista > .bloque > #realizadas > .actividad{
   background-color: $bgcolor;
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: row;
   justify-content: center;
   padding: 3%;
   margin: 5%;
@@ -118,99 +113,34 @@ main{
   border-style: inset;
 }
 
-#lista > #proximas > .actividad > img{
+#lista > .bloque > #proximas > .actividad > a,
+#lista > .bloque > #realizadas > .actividad > a{
   width: 50%;
 }
 
-#lista > #proximas > .actividad > #contenido{
+#lista > .bloque > #proximas > .actividad > #contenido,
+#lista > .bloque > #realizadas > .actividad > #contenido{
   width: 50%;
   padding-left: 10%;
 }
 
-#lista > #proximas > .actividad > #contenido > h3{
+#lista > .bloque > #proximas >  .actividad > #contenido > h3,
+#lista > .bloque > #realizadas >  .actividad > #contenido > h3{
   font-size: 16px;
   margin-top: 0;
   font-weight: bold;
 }
 
-#lista > #proximas > .actividad > #contenido > h4{
+#lista > .bloque > #proximas > .actividad > #contenido > h4,
+#lista > .bloque > #realizadas > .actividad > #contenido > h4{
   font-size: 14px;
   margin: 2.5%;
 }
 
-#lista > #realizadas{
-  background-color: $bgcolorSec;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 5%;
-  
-  border-width: 7.5px;
-  border-color:  $textcolor ;
-  border-style: inset;
-}
+.proximas, .realizadas{
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  overflow: auto;
 
-#lista > #realizadas > #ocultar_realizadas{
-  width: 100%;
-  background-color:   $textcolor;
-  color: white;
-  padding-left: 3%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-#lista > #realizadas > #ocultar_realizadas > h2{
-  width: 50%;
-}
-
-#lista > #realizadas > #ocultar_realizadas > a{
-  background: transparent;
-  width: 60px;
-  padding-right: 10px;
-}
-
-#lista > #realizadas > #ocultar_realizadas > a > img{
-  background: transparent;
-  width: 60px;
-  padding-right: 10px;
-}
-
-#lista > #realizadas > .actividad{
-  background-color: $bgcolor;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 3%;
-  margin: 5%;
-
-  border-radius: 2px;
-  border-width: 7.5px;
-  border-color:  $textcolor ;
-  border-style: inset;
-}
-
-#lista > #realizadas > .actividad > img{
-  width: 50%;
-}
-
-#lista > #realizadas > .actividad > #contenido{
-  width: 50%;
-  padding-left: 10%;
-}
-
-#lista > #realizadas > .actividad > #contenido > h3{
-  font-size: 16px;
-  margin-top: 0;
-  font-weight: bold;
-}
-
-#lista > #realizadas > .actividad > #contenido > h4{
-  font-size: 14px;
-  margin: 2.5%;
 }

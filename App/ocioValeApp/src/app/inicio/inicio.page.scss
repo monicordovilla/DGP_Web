@@ -1,7 +1,7 @@
  /* Variables estandar para la página*/
  $bgcolor: #FEFEFE;
  $bgcolorSec: #EAEAEA;
- $textcolor: #063940;
+ $textcolor: #174A45;
  $textcolorSec: #050505;
  $fontsize: 30px;
  $mediunfontsize : 21px;
@@ -63,8 +63,10 @@
 .inicioSesion > form > ion-button{
     color: $bgcolor;
     padding: 0.5em;
-    margin-top: 2em;
-    font-size: $fontsize;
+    width: 100%;
+    height: 50%;
+    margin-top: 1.5em;
+    font-size: 25px;
     background-color: $textcolor;
 }
 
