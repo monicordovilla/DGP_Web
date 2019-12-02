@@ -9,15 +9,17 @@
 
     <h2>Introduce los datos</h2><br>
 
-    <span><ion-label>Nombre actividad</ion-label></span><br>
-    <ion-input type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
+    <form (ngSubmit)="crearActividad()"></form>
+      <span><ion-label>Nombre actividad</ion-label></span><br>
+      <ion-input [(ngModel)]="categoria.nombre" type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
 
-    <span><ion-label>Imagen</ion-label></span><br>
-    <ion-input type="image" placeholder="Imagen" id="imagen" name="imagen" required></ion-input>
-    <ion-button color="dark" size="large" (click)="cropUpload()">Subir imagen
-      <ion-icon slot="icon-only" name="camera"></ion-icon>
-    </ion-button><br>
+      <span><ion-label>Imagen</ion-label></span><br>
+      <ion-input [(ngModel)]="actividad.imagen" type="image" placeholder="Imagen" id="imagen" name="imagen" required></ion-input>
+      <ion-button color="dark" size="large" (click)="cropUpload()">Subir imagen
+        <ion-icon slot="icon-only" name="camera"></ion-icon>
+      </ion-button><br>
 
-    <ion-button size="large" color="dark"> Añadir </ion-button>
+      <ion-button size="large" color="dark"> Añadir </ion-button>
+    </form>
   </div>
 </ion-content>

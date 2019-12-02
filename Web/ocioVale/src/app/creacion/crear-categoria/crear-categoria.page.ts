@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearCategoriaPage implements OnInit {
 
+  categorias = 
+    {
+      "nombre": '',
+      "imagen": ''
+    }
+
   constructor() { }
 
   ngOnInit() {
