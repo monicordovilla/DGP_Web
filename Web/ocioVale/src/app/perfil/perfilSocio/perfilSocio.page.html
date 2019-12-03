@@ -2,45 +2,50 @@
 
 <ion-content>
 
-  <div class="navegation"> Admistrar socios >> Nombre socio </div>
-
   <div class="container">
-    <h2>Perfil de Socio</h2><br>
+    <ion-item>
+      <p>Perfil usuario1 </p>
+    </ion-item><br><br>
     
-    <section class="information">
-      <input class="username-socio" type="text" placeholder="Nombre de Usuario" name="nombreUsuario" required><br><br>
-      <input class="localidad-socio" type="text" placeholder="Localidad" name="localidad" required><br><br>
-    </section>
+    <form (ngSubmit)="consultarPerfil()">
+      
+      <span class="inputLeft"><ion-label>Nombre de usuario</ion-label></span>
+      <span class="inputRight"><ion-label>Localidad</ion-label></span><br>
 
-    <section class="information">
-        <input class="pass-socio" type="password" placeholder="Contraseña" name="pswUsuario" required><br><br>
-        <input class="provincia-socio" type="text" placeholder="Provincia" name="provincia" required><br><br>
-    </section>
+      <ion-input [(ngModel)]="perfil.nombre_usuario" class="inputLeft" type="text" placeholder="Nombre de Usuario" name="nombreUsuario" id="nombre" required></ion-input>
+      <ion-input [(ngModel)]="perfil.localidad" class="inputRight" type="text" placeholder="Localidad" name="localidad" id="localidad" required></ion-input><br>
+        
+      <span class="inputLeft"><ion-label>Contraseña</ion-label></span>
+      <span class="inputRight"><ion-label>Provincia</ion-label></span><br>
 
-    <section class="information">
-        <div class="information-block">
-          <section class="subsection">
-              <input class="name-socio" type="text" placeholder="Nombre" name="name" required><br><br>
-              <input class="surname-socio" type="text" placeholder="Apellido" name="surname" required><br><br>
-          </section>
+      <ion-input [(ngModel)]="perfil.password" class="inputLeft" type="password" placeholder="Contraseña" name="pswUsuario" id="pswUsuario" required></ion-input>
+      <ion-input [(ngModel)]="perfil.provincia" class="inputRight" type="text" placeholder="Provincia" name="provincia" id="provincia" required></ion-input><br>   
 
-          <input class="mail-socio" type="text" placeholder="Correo electrónico" name="mail" required><br><br>
+      <div class="inputLeft">
+        <span class="inputLeft"><ion-label>Nombre</ion-label></span>
+        <span class="inputRight"><ion-label>Apellidos</ion-label></span><br>
+            
+        <ion-input [(ngModel)]="perfil.nombre" class="inputLeft" type="text" placeholder="Nombre" name="nombre" id="nombre" required></ion-input>
+        <ion-input [(ngModel)]="perfil.apellidos" class="inputRight" type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required></ion-input><br>   
+                
+        <span><ion-label>Correo electrónico</ion-label></span><br>
+        <ion-input [(ngModel)]="perfil.mail" type="text" placeholder="Correo electrónico" name="mail" id=" mail" required></ion-input>
+          
+        <span class="inputLeft"><ion-label>Fecha de nacimineto</ion-label></span>
+        <span class="inputRight"><ion-label>Teléfono</ion-label></span><br>
 
-          <section class="subsection">
-            <input class="date-socio" type="text" placeholder="Fecha de nacimiento" name="fechaNacimiento" required><br><br>
-            <input class="phone-socio" type="text" placeholder="Teléfono" name="phone" required><br><br>
-          </section>
-        </div>
+        <ion-input [(ngModel)]="perfil.fecha_nac" class="inputLeft" type="text" placeholder="Fecha de nacimiento" name="fecha_nac" id="fecha_nac" required></ion-input>
+        <ion-input [(ngModel)]="perfil.telf" class="inputRight" type="text" placeholder="Teléfono" name="telf" id="telf" required></ion-input><br>   
+        
+      </div>
 
-        <input class="descripcion-socio" type="text" placeholder="Descripción" name="descripcion" required><br><br>
-    </section>
+      <span class="inputRight"><ion-label>Descripción</ion-label></span><br>
+      <ion-input [(ngModel)]="perfil.descripcion" class="inputRight" type="text" placeholder="Descripción" name="desc" id="desc" required></ion-input><br>   
+        
+      <ion-button type="submit" size="large" color="dark"> Modificar </ion-button>
+      <ion-button type="submit" size="large" color="danger"> Eliminar </ion-button>
+      <ion-button type="submit" size="large" color="dark"> Familiar </ion-button>
 
-
-    <div class="button-container">
-      <button type="submit" class="button-modificar">MODIFICAR</button>
-      <button type="submit" class="button-eliminar">ELIMINAR</button>
-      <button type="submit" class="button-familiar">FAMILIAR</button>
-    </div>
-
+    </form>
   </div>
 </ion-content>
