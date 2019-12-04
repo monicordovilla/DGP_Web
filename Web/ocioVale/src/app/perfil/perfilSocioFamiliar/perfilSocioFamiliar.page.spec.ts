@@ -1,5 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
 
 import { perfilSocioFamiliar } from './perfilSocioFamiliar.page';
 
@@ -10,13 +10,15 @@ describe('perfilSocioFamiliar', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ perfilSocioFamiliar ],
-      imports: [IonicModule.forRoot()]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
+  }));
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(perfilSocioFamiliar);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
