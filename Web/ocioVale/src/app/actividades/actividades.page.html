@@ -60,44 +60,29 @@
 
     <div class="flex-columna">
 
-      <div class = "info-usuario">
-          <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
-
-          <div class="flex-columna">
-            <h5> Título de actividad </h5>
-            <h5> Fecha </h5>
-            <h5> Lugar </h5>
-          </div>
-
-          <div class="flex-columna">
-              <h5> Participantes</h5>
-              <h5> @pepito (organizador)</h5>
-              <h5> @mariquilla </h5>
-          </div>
-
-          <div class="flex-columna">
-              <ion-button size="large" color="dark"> Ver actividad </ion-button>
-              <ion-button size="large" color="danger"> Cancelar actividad</ion-button>
-          </div>
-      </div>
-
       <div id="lista" ion-item *ngFor="let actividad of actividades; let indice=index">
-      
-        <div class="actividad">
-          <div id="contenido1">
-            <h3><a href="/actividad">{{actividad.nombre}}</a></h3>
-            <a href="/actividad"><img src={{actividad.imagen}} alt="imagen"/></a>
-          </div>
-          <div id="contenido2">
-            <h4>{{actividad.lugar}}</h4>
-            <h4>{{actividad.fecha}}</h4>
-            <div id="categorias" >
-              <div class="categorias" *ngFor="let categoria of categorias[indice]">  
-                  <img src={{categoria.imagen}} alt="imagen"/>
+
+          <div class = "info-usuario">
+              <a href="/actividad"><img src={{actividad.imagen}} alt="imagen"/></a>
+
+              <div class="flex-columna">
+                <h5> <a href="/actividad">{{actividad.nombre}}</a> </h5>
+                <h5>{{actividad.fecha}}</h5>
+                <h5>{{actividad.lugar}}</h5>
               </div>
-            </div>
+
+              <div class="flex-columna">
+                  <h5> Participantes</h5>
+                  <h5> @pepito (organizador)</h5>
+                  <h5> @mariquilla </h5>
+              </div>
+
+              <div class="flex-columna">
+                  <ion-button href="/actividad" size="large" color="dark"> Ver actividad </ion-button>
+                  <ion-button size="large" color="danger"> Cancelar actividad</ion-button>
+              </div>
           </div>
-        </div>
+
       </div>
 
     </div>
