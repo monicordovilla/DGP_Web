@@ -3,8 +3,19 @@
 <ion-content>
 
   <div class="container">
+      <div class="flex-columna">
+
+          <div id="lista" ion-item *ngFor="let socio of socios; let indice=index">
+    
+              <div class = "info-socio">
+                 <h1> {{perfil.nombre_usuario}} </h1>
+
+              </div>
+    
+          </div>
+        </div>
     <ion-item>
-      <p>Perfil usuario1 </p>
+      <p>Perfil usuario1</p>
     </ion-item><br><br>
     
     <form (ngSubmit)="consultarPerfil()">
@@ -31,7 +42,7 @@
         <span><ion-label>Correo electrónico</ion-label></span><br>
         <ion-input [(ngModel)]="perfil.mail" type="text" placeholder="Correo electrónico" name="mail" id=" mail" required></ion-input>
           
-        <span class="inputLeft"><ion-label>Fecha de nacimineto</ion-label></span>
+        <span class="inputLeft"><ion-label>Fecha de nacimiento</ion-label></span>
         <span class="inputRight"><ion-label>Teléfono</ion-label></span><br>
 
         <ion-input [(ngModel)]="perfil.fecha_nac" class="inputLeft" type="text" placeholder="Fecha de nacimiento" name="fecha_nac" id="fecha_nac" required></ion-input>
@@ -46,6 +57,7 @@
       <ion-button type="submit" size="large" color="danger"> Eliminar </ion-button>
       <ion-button href="/perfilSocioFamiliar" class="union" size="large" color="dark"> Familiar </ion-button>
 
+      
     </form>
   </div>
 </ion-content>
