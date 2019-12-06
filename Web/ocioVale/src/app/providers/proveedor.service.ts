@@ -19,4 +19,8 @@ export class ProveedorService {
   obtenerFamiliares(): Observable<any>{
     return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
   }
+
+  obtenerValoracion(): Observable<any>{
+    return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
+  }
 }
