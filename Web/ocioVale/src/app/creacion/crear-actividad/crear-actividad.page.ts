@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import {ProveedorService} from '../../providers/proveedor.service';
 
 @Component({
   selector: 'app-crear-actividad',
@@ -9,36 +10,32 @@ import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 export class CrearActividadPage implements OnInit {
   private creacionActividad : FormGroup;
 
-  categorias =[ 
-    {
-      "id": 2,
-      "nombre":"Deporte"
-    },
-    {
-      "id": 45,
-      "nombre":"Musica"
-    },
-    {
-      "id": 58,
-      "nombre":"VALE"
-    }
-  ]
+  categorias =[
+
+  ];
 
   actividad = {
-    "nombre" : '',
-    "categoría" : '',
-    "descripcion" : '',
-    "lugar" : '',
-    "fecha" : '',
-    "hora" : '',
-    "duracion" : '',
-    "max_socios" : 1,
-    "max_voluntarios" : 1
   };
 
-  constructor() { }
+  constructor(public proveedor:ProveedorService) {
+    //this.cargaCategorias();
+  }
+
+  cargaCategorias(){
+    let nombre;
+    this.proveedor.obtenerCategorias().subscribe(
+      (data) => {
+        this.categorias = data;
+
+        for(var i=0; i<this.categorias.length; i++){
+          nombre = this.categorias[i].nombre;
+        }
+      }
+    )
+  }
 
   crearActividad(){
+    this.proveedor.enviarActividad(this.actividad);
   }
 
   ngOnInit() {

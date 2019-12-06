@@ -11,9 +11,8 @@
 
     <form (ngSubmit)="crearActividad()">
       <span><ion-label>Categoria</ion-label></span><br>
-      <ion-select [(ngModel)]="actividad.categoria" name="categoria" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
-        <ion-select-option name="cat1" id="cat1" class="cat1" value="cat1">categoria 1</ion-select-option>
-        <ion-select-option name="cat2" id="cat2" class="cat2" value="cat2">categoria 2</ion-select-option>
+      <ion-select *ngFor="let categoria of categorias; let indice=index" [(ngModel)]="actividad.categoria" name="categoria" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
+        <ion-select-option name="cat1" id="cat1" class="cat1" value="cat1">{{categoria.nombre}}</ion-select-option>
       </ion-select>
 
       <span class="inputLeft"><ion-label>Nombre actividad</ion-label></span>
