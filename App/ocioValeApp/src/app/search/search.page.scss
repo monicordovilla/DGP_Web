@@ -20,10 +20,10 @@
 
 main{
   background-color: $bgcolor;
-  padding: 5% 2.5%;
+  padding: 4.5% 2.5%;
   color: $textcolor;
   font-size: $fontsize;
-  font-family: $fontFamily;
+ // font-family: $fontFamily;
 }
 
 #busqueda{
@@ -72,37 +72,39 @@ ion-button{
 
 #filtros{
   padding: 10px;
-  border-radius: 2px;
-  border-width: 7.5px;
+  border-radius: 3px;
+  border-width: 5px;
   border-color:  $textcolor ;
   border-style: ridge;
 }
 
-#filtros > .filtro{
+#filtros > .filtro, #filtro {
   width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: left;
 }
+
 
 h3{
     margin: 0;
     font-size: 16px;
     margin-bottom: 0;
     font-weight: bold;
+    padding-top: 15px;
 }
 
 h4{
-    font-size: 14px;
+    font-size: 15px;
     padding: 0;
     margin: 0;
     border: 0;
     padding-left: 10px;
 }
 
-#filtros > .filtro > .opcion{
+#filtros > .filtro > .opcion, #filtro > .filtro >.opcion{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -111,10 +113,14 @@ h4{
     margin: 2.5%;
 }
 
-#filtros > .filtro > .opcion > input[type=checkbox]{
+#filtros > #filtro > .filtro > .opcion > input[type=checkbox]{
     transform: scale(1.6);
     margin-bottom: 8px;
     border: none;
+}
+
+#filtros > #filtro > .filtro > .opcion > img{
+  width: 75px;
 }
 
 #filtros > .filtro > input[type=date]{
@@ -124,12 +130,14 @@ h4{
 }
 
 #filtros > .filtro > select{
+
+  margin-top: 15px;
   margin-left: 15px;
+  padding: 2px;
   font-size: 12px;
 }
 
 h2{
-  font-family: $fontFamily;
   color: $textcolor;
   font-size: 18px;
   font-weight: bold;
@@ -138,55 +146,70 @@ h2{
 
 
 //Actividades
-
-
-#lista{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 10%;
-}
-
-
-#lista > h2{
-  font-family: $fontFamily;
-  color: $textcolor;
-  font-size: 18px;
-  font-weight: bold;
+#lista {
+  padding-top: 5%;
 }
 
 #lista > .actividad{
+  width: 100%;
+  border-radius: 20px;
+  border-width: 0.1em;
+  border-color:  $textcolor ;
+  border-style: inset;
+  padding: 0;
+  margin: 0;
+
+}
+
+#lista >.actividad > #contenido{
   width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: row;
   justify-content: center;
-  padding: 3%;
-  margin: 5%;
-
-  border-radius: 2px;
-  border-width: 7.5px;
-  border-color:  $textcolor ;
-  border-style: inset;
 }
 
-#lista > .actividad > a{
+#lista > .actividad >#contenido > #datos{
+  width: 100%;
+  align-items: center;
+  flex-wrap: row;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  padding-left: 2%;
+  
+}
+
+#lista > .actividad > #contenido > a{
   width: 50%;
 }
 
-#lista > .actividad > #contenido{
-  width: 50%;
-  padding-left: 10%;
-}
-
-#lista > .actividad > #contenido > h3{
+#lista > .actividad > h5{
   font-size: 16px;
+  text-align: center;
   margin-top: 0;
   font-weight: bold;
+  margin: 2%;
 }
 
-#lista > .actividad > #contenido > h4{
-  font-size: 14px;
+#lista > .actividad > #contenido > #datos{
+  width: 55%;
+  padding-left: 5%;
+  text-align: center;
+}
+
+#lista > .actividad > #contenido > #datos > h6{
+  font-size: 16px;
   margin: 2.5%;
+}
+
+#lista > .actividad > #contenido > #datos > #categorias{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#lista > .actividad > #contenido > #datos > #categorias > .categorias{
+  width: 30%;
 }

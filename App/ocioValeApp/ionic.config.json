@@ -1,5 +1,7 @@
 {
   "name": "DGP_App",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

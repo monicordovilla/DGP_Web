@@ -7,40 +7,25 @@
       <input type="text" name="barra de busqueda" placeholder="Introduce una actividad..." id="">
       <a href="/search"><img src="../assets/icon/lupa.png" alt="lupa"></a>
     </div>
-
-    <div id="lista">
-      <h2>ACTIVIDADES RECOMENDADAS</h2>
-
+    <h2>ACTIVIDADES RECOMENDADAS</h2>
+    <div id="lista" ion-item *ngFor="let actividad of actividades; let indice=index">
+      
       <div class="actividad">
-        <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
+        <h3><a [routerLink]="['/actividad', indice]">{{actividad.nombre}}</a></h3>
         <div id="contenido">
-         <h3><a href="/actividad">TITULO</a></h3>
-          <h4>Fecha y Hora</h4>
-          <h4>Lugar</h4>
-          <h4>Precio</h4>
+            <a [routerLink]="['/actividad', indice]" ><img src={{actividad.imagen}} alt="imagen"/></a>
+          <div id="datos">
+            <h4>{{actividad.lugar}}</h4>
+            <h4>{{actividad.fecha}}</h4>
+            <div id="categorias" >
+              <div class="categorias" *ngFor="let categoria of categorias[indice]">  
+                  <img src={{categoria.imagen}} alt="imagen"/>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="actividad">
-          <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
-          <div id="contenido">
-           <h3><a href="/actividad">TITULO</a></h3>
-            <h4>Fecha y Hora</h4>
-            <h4>Lugar</h4>
-            <h4>Precio</h4>
-          </div>
-        </div>
-
-
-      <div class="actividad">
-          <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
-          <div id="contenido">
-           <h3><a href="/actividad">TITULO</a></h3>
-            <h4>Fecha y Hora</h4>
-            <h4>Lugar</h4>
-            <h4>Precio</h4>
-          </div>
-        </div>
     </div>
   </main>
 

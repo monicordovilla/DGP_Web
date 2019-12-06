@@ -25,7 +25,7 @@ main{
   padding: 7.5% 2.5%;
   color: $textcolor;
   font-size: $fontsize;
-  font-family: $fontFamily;
+ // font-family: $fontFamily;
 }
 
 #busqueda{
@@ -54,48 +54,77 @@ main{
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 10%;
 }
 
 
-#lista > h2{
-  font-family: $fontFamily;
+h2{
+  padding-top: 5%;
   color: $textcolor;
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
 }
 
 #lista > .actividad{
+  width: 100%;
+  
+
+  border-radius: 20px;
+  border-width: 0.1em;
+  border-color:  $textcolor ;
+  border-style: inset;
+  margin-bottom: 5%;
+  padding-top: 2%;
+}
+
+#lista >.actividad > #contenido{
   width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: row;
   justify-content: center;
-  padding: 3%;
-  margin: 5%;
-
-  border-radius: 2px;
-  border-width: 0.2em;
-  border-color:  $textcolor ;
-  border-style: inset;
 }
 
-#lista > .actividad > a{
+#lista > .actividad >#contenido > #datos{
+  width: 50%;
+  align-items: center;
+  flex-wrap: row;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  padding-left: 2%;
+  
+}
+
+#lista > .actividad > #contenido > a{
   width: 50%;
 }
 
-#lista > .actividad > #contenido{
-  width: 50%;
-  padding-left: 10%;
-}
-
-#lista > .actividad > #contenido > h3{
+#lista > .actividad > h3{
   font-size: 16px;
+  text-align: center;
   margin-top: 0;
   font-weight: bold;
 }
 
-#lista > .actividad > #contenido > h4{
-  font-size: 14px;
+#lista > .actividad > #contenido > #datos{
+  width: 55%;
+  padding-left: 5%;
+  text-align: center;
+}
+
+#lista > .actividad > #contenido > #datos > h4{
+  font-size: 16px;
   margin: 2.5%;
+}
+
+#lista > .actividad > #contenido > #datos > #categorias{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#lista > .actividad > #contenido > #datos > #categorias > .categorias{
+  width: 30%;
 }

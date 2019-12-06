@@ -39,8 +39,6 @@ export class CrearActividadPage implements OnInit {
   constructor() { }
 
   crearActividad(){
-    //Introducir en BD
-    //this.creacionActividad.value;
   }
 
   ngOnInit() {

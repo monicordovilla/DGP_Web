@@ -16,17 +16,19 @@
         <div id="filtros" class="filtros">
 
             <h3>Categoría</h3>
-            <div class="filtro">
-                <div class="opcion"><input type="checkbox" name="cat1" value="Todas" checked> <h4>Todas</h4></div>
-                <div class="opcion"><input type="checkbox" name="cat2" value="Deportes"> <h4>Deportes</h4></div>
-                <div class="opcion"><input type="checkbox" name="cat3" value="Arte"> <h4>Arte</h4></div>
-                <div class="opcion"><input type="checkbox" name="cat3" value="Cocina"> <h4>Cocina</h4></div>
+            <div id="filtro">
+            <div class="filtro" *ngFor="let categoria of todas_categorias">
+                <div class="opcion"><input type="checkbox" name={{categoria.nombre}} value={{categoria.nombre}} checked> 
+                    <h4>{{categoria.nombre}}</h4> 
+                    <img src={{categoria.imagen}}/>
+                </div>
+            </div>
             </div>
 
             <h3>Fecha</h3>
             <div class="filtro">
-                <h4>Desde</h4><input type="date" name="inicio" value="Inicio">
-                <h4>Hasta</h4><input type="date" name="fin" value="Fin" >
+                <h4>Desde <input type="date" name="inicio" value="Inicio"></h4>
+                <h4>Hasta <input type="date" name="fin" value="Fin"></h4>
             </div>
 
 
@@ -48,15 +50,20 @@
 
         </div>
 
-        <div id="lista">
-
+        <div id="lista" ion-item *ngFor="let actividad of actividades; let indice=index">
             <div class="actividad">
-                <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
+                <h5><a [routerLink]="['/actividad', indice]">{{actividad.nombre}}</a></h5>
                 <div id="contenido">
-                <h3><a href="/actividad">TITULO</a></h3>
-                <h4>Fecha y Hora</h4>
-                <h4>Lugar</h4>
-                <h4>Precio</h4>
+                    <a [routerLink]="['/actividad', indice]" ><img src={{actividad.imagen}} alt="imagen"/></a>
+                    <div id="datos">
+                        <h6>{{actividad.lugar}}</h6>
+                        <h6>{{actividad.fecha}}</h6>
+                        <div id="categorias" >
+                            <div class="categorias" *ngFor="let categoria of categorias[indice]">  
+                                <img src={{categoria.imagen}} alt="imagen"/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

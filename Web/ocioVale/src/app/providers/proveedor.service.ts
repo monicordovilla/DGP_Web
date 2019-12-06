@@ -9,6 +9,6 @@ export class ProveedorService {
   constructor(public http:HttpClient) { }
 
   obtenerActividades(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/actividades');
+    return this.http.get('http://192.168.56.200:3000/actividades');
   }
 }
