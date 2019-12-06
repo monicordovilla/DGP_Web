@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-//import {ProveedorService} from '../providers/proveedor.service';
+import {ProveedorService} from '../providers/proveedor.service';
 
 @Component({
   selector: 'actividades',
@@ -9,26 +9,7 @@ import { Component } from '@angular/core';
 export class Actividades {
 
   actividades=[
-    {
-      "id":1,
-      "nombre":"Fiesta de disfraces",
-      "descripcion":"Primera fiesta de disfraces de la organizacion VALE! Ven disfrazado y disfruta de un dia expectacular lleno de sorpresas y diversion!",
-      "lugar":"Organizacion VALE",
-      "fecha":"2020-04-11T22:00:00.000Z",
-      "duracion":9999,
-      "imagen": ""
-      
-      },
-      {
-      "id":2,
-      "nombre":"Fiesta de VALE",
-      "descripcion":"Primera fiesta de disfraces de la organizacion VALE! Ven disfrazado y disfruta de un dia expectacular lleno de sorpresas y diversion!",
-      "lugar":"Organizacion VALE",
-      "fecha":"2020-04-11T22:00:00.000Z",
-      "duracion":9999,
-      "imagen": ""
-      },
-      
+
   ];
 
   categorias=[
@@ -44,7 +25,7 @@ export class Actividades {
     ]
   ];
 
-  constructor() {
+  constructor(public proveedor:ProveedorService) {
     this.cargaActividades();
   }
 
@@ -52,7 +33,7 @@ export class Actividades {
     let dateTime;
     let parts;
 
-    /*this.proveedor.obtenerActividades().subscribe(
+    this.proveedor.obtenerActividades().subscribe(
       (data) => {
         this.actividades = data;
 
@@ -71,7 +52,7 @@ export class Actividades {
       error => {
           console.log(<any>error);
       }
-    ) */
+    ) 
   }
 
 }
