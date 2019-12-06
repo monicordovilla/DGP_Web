@@ -35,4 +35,8 @@ export class ProveedorService {
 
     return this.http.post("http://192.168.56.200:3000/customers", JSON.stringify(postData), httpOptions);
   }
+
+  obtenerValoracion(): Observable<any>{
+    return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
+  }
 }

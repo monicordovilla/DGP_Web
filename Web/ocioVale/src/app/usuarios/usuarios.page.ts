@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import {ProveedorService} from '../providers/proveedor.service';
 
 @Component({
   selector: 'usuarios',
@@ -9,27 +10,31 @@ import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 export class Usuarios implements OnInit {
   private usuarios : FormGroup;
 
-  //Modificar
-  /*usuario = {
-    "nombre_usuario" : '',
-    "contraseña" : '',
-    "nombre" : '',
-    "apellidos" : '',
-    "mail" : '',
-    "fecha_nac" : '',
-    "telf" : '',
-    "localidad" : '',
-    "provincia" : '',
-    "descripcion" : ''
-  };*/
+  datos = [ ];
 
-  constructor() {}
+  perfil = {
+    "valoracion" : ''
+  };
 
-  //Modificar
-  /*consultarPerfil(){
-    //Obtener de BD
-    //this.creacionActividad.value;
-  }*/
+  constructor(public proveedor:ProveedorService) {
+    this.cargaValoracion();
+  }
+
+  cargaValoracion(){
+
+    this.proveedor.obtenerValoracion().subscribe(
+      (data) => {
+        this.datos = data;
+
+        for(var i=0; i<this.datos.length; i++){          
+          this.perfil.valoracion = this.datos[i].puntuacion;
+        }
+      },
+      error => {
+          console.log(<any>error);
+      }
+    ) 
+  }
 
   ngOnInit() {
   }
