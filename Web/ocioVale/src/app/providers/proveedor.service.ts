@@ -9,11 +9,11 @@ export class ProveedorService {
   constructor(public http:HttpClient) { }
 
   obtenerActividades(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/actividades');
+    return this.http.get('http://192.168.56.200:3000/actividades');
   }
 
   obtenerSocios(): Observable<any>{
-    return this.http.get('http://192.168.1.141:3000/usuarios/socios');
+    return this.http.get('http://192.168.56.200:3000/usuarios/socios');
   }
 
   obtenerCategorias(): Observable<any>{
@@ -21,11 +21,11 @@ export class ProveedorService {
   }
 
   obtenerFamiliar(): Observable<any>{
-    return this.http.get('http://192.168.1.141:3000/usuarios/familiaresDelSocio?id=5');
+    return this.http.get('http://192.168.56.200:3000/usuarios/familiaresDelSocio?id=5');
   }
 
   obtenerFamiliares(): Observable<any>{
-    return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
+    return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
   }
 
   enviarActividad(postData): Observable<any>{
@@ -36,11 +36,23 @@ export class ProveedorService {
         'Content-Type': 'application/json'
       })
     }
+    console.log(JSON.stringify(postData));
+    return this.http.post("http://192.168.56.200:3000/addActividadGrupal", JSON.stringify(postData), httpOptions);
+  }
 
-    return this.http.post("http://192.168.56.200:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
+  enviarCategoria(postData): Observable<any>{
+
+    // Http Options
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    console.log(JSON.stringify(postData));
+    return this.http.post("http://192.168.56.200:3000/addCategoria", JSON.stringify(postData), httpOptions);
   }
 
   obtenerValoracion(): Observable<any>{
-    return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
+    return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
   }
 }
