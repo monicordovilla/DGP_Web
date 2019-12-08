@@ -8,7 +8,6 @@ import {ProveedorService} from '../providers/proveedor.service';
   styleUrls: ['usuarios.page.scss'],
 })
 export class Usuarios implements OnInit {
-  private usuarios : FormGroup;
 
   datos = [ ];
 
@@ -17,6 +16,24 @@ export class Usuarios implements OnInit {
   perfil = {
     "valoracion" : ''
   };
+
+  
+  // 0 pagina usuarios, 1 gestor, 2 socio, 3 socio familiar y 4 voluntario
+  mostrado = 0;
+
+  filtroTipo(){
+    this.mostrado = 0;
+
+    var e = (document.getElementById("rol")) as HTMLSelectElement;
+    var rol = (document.getElementById("rol")).innerHTML;
+    //var sel = e.selectedIndex;
+    //var opt = e.options[sel];
+    //var CurValue = (<HTMLSelectElement>opt).value;
+    //var CurText = (<HTMLSelectElement>opt).text;
+    //console.log(rol);
+    //console.log(opt);
+    console.log('valor del select'+ rol);
+  }
 
   constructor(public proveedor:ProveedorService) {
     this.cargaValoracion();

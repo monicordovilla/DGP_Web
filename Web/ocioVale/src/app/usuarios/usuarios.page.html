@@ -21,11 +21,11 @@
         <ion-input class="search horizontal-flex-reverse" type="text" placeholder="Buscar..." name="buscar_usuario" required><ion-button size="medium" color="dark"> Buscar </ion-button></ion-input>
 
         <div>
-          <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" class="select-group" placeholder="Escoja el tipo de usuario a buscar">
-            <ion-select-option class="select" value="gestor"> Buscar Gestor</ion-select-option>
-            <ion-select-option class="select" value="socio">Buscar Socio</ion-select-option>
-            <ion-select-option class="select" value="socioFamiliar">Buscar Socio Familiar</ion-select-option>
-            <ion-select-option class="select" value="voluntario">Buscar Voluntario</ion-select-option>
+          <ion-select ng-model="rol" id="rol" [interfaceOptions]="customPopoverOptions" (ionChange)='filtroTipo()' interface="popover" class="select-group" placeholder="Escoja el tipo de usuario a buscar">
+            <ion-select-option  id="gestor" class="select" value="gestor"> Buscar Gestor</ion-select-option>
+            <ion-select-option  id="socio" class="select" value="socio">Buscar Socio</ion-select-option>
+            <ion-select-option  id="familiar" class="select" value="socioFamiliar">Buscar Socio Familiar</ion-select-option>
+            <ion-select-option  id="voluntario" class="select" value="voluntario">Buscar Voluntario</ion-select-option>
           </ion-select>
       </div>
   
@@ -79,7 +79,7 @@
                 <div class="flex-columna">
                   <h5> <a href="/perfilSocio">{{user.nombre}}</a> </h5>
                   <h5>{{user.apellidos}}</h5>
-                  <h5>{{user.nombreUsuario}}</h5>
+                  <h5>@{{user.username}}</h5>
                 </div>
   
                 <div class="flex-columna">

@@ -73,8 +73,9 @@
 
               <div class="flex-columna">
                   <h5> Participantes</h5>
-                  <h5> @pepito (organizador)</h5>
-                  <h5> @mariquilla </h5>
+                  <div ion-item *ngFor="let participante of participantes; let indice=index">
+                    <h5>{{participante.username}}</h5>
+                  </div>
               </div>
 
               <div class="flex-columna">
