@@ -25,6 +25,10 @@ export class Actividades {
     ]
   ];
 
+  participantes=[
+
+  ];
+
   constructor(public proveedor:ProveedorService) {
     this.cargaActividades();
   }
@@ -47,6 +51,13 @@ export class Actividades {
               "imagen": "http://www.arasaac.org/repositorio/thumbs/10/200/3/30387.png"
             }
           ]);
+
+          // para cada actividad, cojo los participantes segun su id
+          this.proveedor.obtenerParticipantes(this.actividades[i].id).subscribe(
+            (query_part) => {
+              this.participantes = query_part; 
+            }
+          )
         }
       },
       error => {

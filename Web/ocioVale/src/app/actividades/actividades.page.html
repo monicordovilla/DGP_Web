@@ -63,7 +63,7 @@
       <div id="lista" ion-item *ngFor="let actividad of actividades; let indice=index">
 
           <div class = "info-usuario">
-              <a href="/actividad"><img src={{actividad.imagen}} alt="imagen"/></a>
+              <a class="imagen-actividades" href="/actividad"><img src={{actividad.imagen}} alt="imagen"/></a>
 
               <div class="flex-columna">
                 <h5> <a href="/actividad">{{actividad.nombre}}</a> </h5>
@@ -73,8 +73,9 @@
 
               <div class="flex-columna">
                   <h5> Participantes</h5>
-                  <h5> @pepito (organizador)</h5>
-                  <h5> @mariquilla </h5>
+                  <div ion-item *ngFor="let participante of participantes; let indice=index">
+                    <h5>{{participante.username}}</h5>
+                  </div>
               </div>
 
               <div class="flex-columna">
