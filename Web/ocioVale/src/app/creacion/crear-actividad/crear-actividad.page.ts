@@ -11,14 +11,13 @@ export class CrearActividadPage implements OnInit {
   private creacionActividad : FormGroup;
 
   categorias =[
-
   ];
 
   actividad = {
   };
 
   constructor(public proveedor:ProveedorService) {
-    //this.cargaCategorias();
+    this.cargaCategorias();
   }
 
   cargaCategorias(){
@@ -35,6 +34,7 @@ export class CrearActividadPage implements OnInit {
   }
 
   crearActividad(){
+    console.log("crear actividad");
     this.proveedor.enviarActividad(this.actividad);
   }
 

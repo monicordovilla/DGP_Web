@@ -13,7 +13,7 @@ export class ProveedorService {
   }
 
   obtenerCategorias(): Observable<any>{
-    return this.http.get('http://192.168.56.200:3000/categorias');
+    return this.http.get('http://192.168.56.200:3000/actividades/categorias');
   }
 
   obtenerSocios(): Observable<any>{
@@ -33,7 +33,7 @@ export class ProveedorService {
       })
     }
 
-    return this.http.post("http://192.168.56.200:3000/customers", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
   }
 
   obtenerValoracion(): Observable<any>{

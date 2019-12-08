@@ -9,10 +9,10 @@
 
     <h2>Introduce los datos</h2><br>
 
-    <form (ngSubmit)="crearActividad()">
+    <form>
       <span><ion-label>Categoria</ion-label></span><br>
-      <ion-select *ngFor="let categoria of categorias; let indice=index" [(ngModel)]="actividad.categoria" name="categoria" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
-        <ion-select-option name="cat1" id="cat1" class="cat1" value="cat1">{{categoria.nombre}}</ion-select-option>
+      <ion-select [(ngModel)]="actividad.categoria" name="categoria" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
+        <ion-select-option *ngFor="let categoria of categorias; let indice=index" id="{{categoria.nombre}}" value="{{categoria.nombre}}">{{categoria.nombre}}</ion-select-option>
       </ion-select>
 
       <span class="inputLeft"><ion-label>Nombre actividad</ion-label></span>
@@ -35,7 +35,7 @@
       <span class="inputLeft"><ion-label>Numero de socios</ion-label></span><br>
       <ion-input [(ngModel)]="actividad.max_socios" class="inputLeft" type="number" placeholder="Numero maximo de socios" id="numSocios" name="numSocios" required></ion-input><br>
   
-      <ion-button type="submit" size="large" color="dark"> Añadir </ion-button>
+    <ion-button (ngSubmit)="crearActividad()" (click)='crearActividad()' type="submit" size="large" color="dark"> Añadir </ion-button>
     </form>
   </div>
 </ion-content>
