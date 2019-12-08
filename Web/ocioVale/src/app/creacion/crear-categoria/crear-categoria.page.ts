@@ -16,7 +16,14 @@ export class CrearCategoriaPage implements OnInit {
 
   crearCategoria(){
     console.log("crear categoria");
-    this.proveedor.enviarCategoria(this.categoria);
+    this.proveedor.enviarCategoria(this.categoria).subscribe(
+      (res) => { 
+        this.categoria = res['results'];
+      },
+      error =>{
+        console.error(error);
+      }
+    );
   }
 
 

@@ -3,13 +3,14 @@
 <ion-content>
   <div class="container">
 
+  <form>
     <ion-item>
       <p>Crear usuarios >> Crear </p>
-      <ion-select ng-model="rol" name="rol" (ionChange)='f()' id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja el tipo de usuario" required>
-        <ion-select-option name="gestor" id="gestor" class="select" [value]="gestor">Gestor</ion-select-option>
-        <ion-select-option name="socio" id="socio" class="select" [value]="socio">Socio</ion-select-option>
-        <ion-select-option name="socioFamiliar" id="socioFamiliar" class="select" [value]="socioFamiliar">Socio Familiar</ion-select-option>
-        <ion-select-option name="voluntario" id="voluntario" class="select" [value]="voluntario">Voluntario</ion-select-option>
+      <ion-select [(ngModel)]="rol" ng-model="rol" name="rol" (ionChange)='f()' id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja el tipo de usuario" required>
+        <ion-select-option name="gestor" id="gestor" class="select" value="gestor">Gestor</ion-select-option>
+        <ion-select-option name="socio" id="socio" class="select" value="socio">Socio</ion-select-option>
+        <ion-select-option name="socioFamiliar" id="socioFamiliar" class="select" value="socioFamiliar">Socio Familiar</ion-select-option>
+        <ion-select-option name="voluntario" id="voluntario" class="select" value="voluntario">Voluntario</ion-select-option>
       </ion-select>
     </ion-item>
 
@@ -62,6 +63,7 @@
     <div *ngIf="mostrar">
       <ion-button size="large" color="dark"> Añadir </ion-button>
     </div>
+  </form>
 
   </div>
   

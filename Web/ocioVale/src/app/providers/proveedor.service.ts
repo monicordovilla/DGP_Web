@@ -37,19 +37,12 @@ export class ProveedorService {
       })
     }
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.56.200:3000/actividad/addActividadGrupal", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
   }
 
   enviarCategoria(postData): Observable<any>{
-
-    // Http Options
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    }
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.56.200:3000/addCategoria", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/actividades/addCategoria", JSON.stringify(postData));
   }
 
   obtenerValoracion(): Observable<any>{

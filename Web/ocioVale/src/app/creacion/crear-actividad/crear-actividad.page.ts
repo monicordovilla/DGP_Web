@@ -39,13 +39,22 @@ export class CrearActividadPage implements OnInit {
   crearActividad(){
     console.log("crear actividad");
 
+    parseInt(localStorage.getItem("categoria.id"));
+
     let postData =[
       this.actividad,
       this.maxsocios,
       this.maxvoluntarios
     ];
 
-    this.proveedor.enviarActividad(postData);
+    this.proveedor.enviarActividad(postData).subscribe(
+      (res) => { 
+        postData = res['results'];
+      },
+      error =>{
+        console.error(error);
+      }
+    )
   }
 
   ngOnInit() {
