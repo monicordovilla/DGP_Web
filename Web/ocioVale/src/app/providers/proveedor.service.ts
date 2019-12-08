@@ -12,6 +12,14 @@ export class ProveedorService {
     return this.http.get('http://192.168.1.45:3000/actividades');
   }
 
+  obtenerUsuarios(): Observable<any>{
+    return this.http.get('http://192.168.1.45:3000/usuarios');
+  }
+
+  obtenerParticipantes(): Observable<any>{
+    return this.http.get('http://192.168.1.45:3000/usuarios/participantes');
+  }
+
   obtenerSocios(): Observable<any>{
     return this.http.get('http://192.168.1.141:3000/usuarios/socios');
   }

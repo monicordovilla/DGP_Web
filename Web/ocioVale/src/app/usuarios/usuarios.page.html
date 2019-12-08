@@ -70,45 +70,28 @@
 
     <div class="flex-columna">
 
-      <div class = "info-usuario">
-          <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+        <div id="lista" ion-item *ngFor="let user of users; let indice=index">
 
-          <div class="flex-columna">
-            <h5> Nombre 1 </h5>
-            <h5> Apellidos 1 </h5>
-            <h5> Nombre de usuario 1 </h5>
-          </div>
-
-          <div class="linea-vertical"></div>
-
-          <div class="flex-columna">
-              <h5> Valoración media: {{perfil.valoracion}}</h5>
-          </div>
-
-          <div class="flex-columna">
-              <a href="/perfilSocio"><ion-button href="/perfilSocio" size="large" color="dark"> Administrar </ion-button></a>
-          </div>
-      </div>
-
-      <div class = "info-usuario">
-          <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
-
-          <div class="flex-columna">
-            <h5> Nombre 2 </h5>
-            <h5> Apellidos 2 </h5>
-            <h5> Nombre de usuario 2 </h5>
-          </div>
-
-          <div class="linea-vertical"></div>
-
-          <div class="flex-columna">
-              <h5> Valoración media: {{perfil.valoracion}}</h5>
-          </div>
-
-          <div class="flex-columna">
-              <ion-button size="large" color="dark"> Administrar </ion-button>
-          </div>
-      </div>
+            <div class = "info-usuario">
+                <a class="imagen-actividades" href="/perfilSocio"><img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png"
+                   alt="imagen usuario"/></a>
+  
+                <div class="flex-columna">
+                  <h5> <a href="/perfilSocio">{{user.nombre}}</a> </h5>
+                  <h5>{{user.apellidos}}</h5>
+                  <h5>{{user.nombreUsuario}}</h5>
+                </div>
+  
+                <div class="flex-columna">
+                    <h5> Valoración media: </h5>
+                </div>
+      
+                <div class="flex-columna">
+                    <a href="/perfilSocio"><ion-button href="/perfilSocio" size="large" color="dark"> Administrar </ion-button></a>
+                </div>
+            </div>
+  
+        </div>
 
     </div>
 
