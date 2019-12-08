@@ -37,7 +37,7 @@ export class ProveedorService {
       })
     }
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.56.200:3000/addActividadGrupal", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/actividad/addActividadGrupal", JSON.stringify(postData), httpOptions);
   }
 
   enviarCategoria(postData): Observable<any>{
