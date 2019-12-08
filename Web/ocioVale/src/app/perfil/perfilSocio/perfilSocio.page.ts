@@ -13,6 +13,7 @@ export class perfilSocio implements OnInit {
   datos = [ ];
   
   perfil = {
+    "id" : '',
     "nombre_usuario" : '',
     "contraseña" : '',
     "nombre" : '',
@@ -25,8 +26,13 @@ export class perfilSocio implements OnInit {
     "descripcion" : ''
   };
 
+  familiar = {
+    "id" : ''
+  };
+
   constructor(public proveedor:ProveedorService) { 
     this.cargaSocios();
+    this.cargaFamiliar();
   }
 
   cargaSocios(){
@@ -35,7 +41,8 @@ export class perfilSocio implements OnInit {
       (data) => {
         this.datos = data;
 
-        for(var i=0; i<this.datos.length; i++){          
+        for(var i=0; i<this.datos.length; i++){    
+          this.perfil.id = this.datos[i].id;
           this.perfil.nombre_usuario = this.datos[i].username;
           //this.perfil.pass = this.datos[i].password;
           this.perfil.nombre = this.datos[i].nombre;
@@ -45,8 +52,23 @@ export class perfilSocio implements OnInit {
           this.perfil.telf = this.datos[i].telefono;
           this.perfil.localidad = this.datos[i].localidad;
           this.perfil.provincia = this.datos[i].provincia;
-          this.perfil.descripcion = this.datos[i].descripcion;
+          this.perfil.descripcion = this.datos[1].descripcion;
         }
+      },
+      error => {
+          console.log(<any>error);
+      }
+    ) 
+  }
+
+  cargaFamiliar(){
+
+    this.proveedor.obtenerFamiliar().subscribe(
+      (data) => {
+        this.datos = data;
+
+        for(var i=0; i<this.datos.length; i++)    
+          this.familiar.id = this.datos[i].idFamiliar;
       },
       error => {
           console.log(<any>error);

@@ -9,19 +9,23 @@ export class ProveedorService {
   constructor(public http:HttpClient) { }
 
   obtenerActividades(): Observable<any>{
-    return this.http.get('http://192.168.56.200:3000/actividades');
+    return this.http.get('http://192.168.1.45:3000/actividades');
+  }
+
+  obtenerSocios(): Observable<any>{
+    return this.http.get('http://192.168.1.141:3000/usuarios/socios');
   }
 
   obtenerCategorias(): Observable<any>{
     return this.http.get('http://192.168.56.200:3000/actividades/categorias');
   }
 
-  obtenerSocios(): Observable<any>{
-    return this.http.get('http://192168.56.200:3000/usuarios/socios');
+  obtenerFamiliar(): Observable<any>{
+    return this.http.get('http://192.168.1.141:3000/usuarios/familiaresDelSocio?id=5');
   }
 
   obtenerFamiliares(): Observable<any>{
-    return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
+    return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
   }
 
   enviarActividad(postData): Observable<any>{
