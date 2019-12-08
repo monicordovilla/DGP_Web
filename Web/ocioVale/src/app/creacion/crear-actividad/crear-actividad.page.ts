@@ -13,6 +13,9 @@ export class CrearActividadPage implements OnInit {
   categorias =[
   ];
 
+  maxsocios = 1;
+  maxvoluntarios = 1;
+
   actividad = {
   };
 
@@ -35,7 +38,14 @@ export class CrearActividadPage implements OnInit {
 
   crearActividad(){
     console.log("crear actividad");
-    this.proveedor.enviarActividad(this.actividad);
+
+    let postData =[
+      this.actividad,
+      this.maxsocios,
+      this.maxvoluntarios
+    ];
+
+    this.proveedor.enviarActividad(postData);
   }
 
   ngOnInit() {

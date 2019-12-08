@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProveedorService} from '../../providers/proveedor.service';
 
 @Component({
   selector: 'app-crear-categoria',
@@ -7,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearCategoriaPage implements OnInit {
 
-  categorias = 
+  categoria = 
     {
-      "nombre": '',
-      "imagen": ''
-    }
+    };
 
-  constructor() { }
+  constructor(public proveedor:ProveedorService) { }
+
+  crearCategoria(){
+    console.log("crear categoria");
+    this.proveedor.enviarCategoria(this.categoria);
+  }
+
 
   ngOnInit() {
   }

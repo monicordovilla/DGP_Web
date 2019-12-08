@@ -9,33 +9,36 @@
 
     <h2>Introduce los datos</h2><br>
 
-    <form>
+    <form (ngSubmit)="crearActividad()">
       <span><ion-label>Categoria</ion-label></span><br>
-      <ion-select [(ngModel)]="actividad.categoria" name="categoria" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
-        <ion-select-option *ngFor="let categoria of categorias; let indice=index" id="{{categoria.nombre}}" value="{{categoria.nombre}}">{{categoria.nombre}}</ion-select-option>
+      <ion-select multiple="true" [(ngModel)]="actividad.categorias" name="categoria" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
+        <ion-select-option *ngFor="let categoria of categorias; let indice=index" id="{{categoria.id}}" value="{{categoria.id}}">{{categoria.nombre}}</ion-select-option>
       </ion-select>
 
       <span class="inputLeft"><ion-label>Nombre actividad</ion-label></span>
       <span class="inputRight"><ion-label>Lugar</ion-label></span><br>
 
-      <ion-input [(ngModel)]="actividad.nombre" class="inputLeft" type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
+      <ion-input [(ngModel)]="actividad.nombreActividad" class="inputLeft" type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
       <ion-input [(ngModel)]="actividad.lugar" class="inputRight" type="text" placeholder="Lugar" id="lugar" name="lugar" required></ion-input><br>
       
-      <span class="inputLeft"><ion-label>Hora</ion-label></span>
-      <span class="inputRight"><ion-label>Fecha</ion-label></span><br>
+      <span class="inputLeft"><ion-label>Fecha</ion-label></span>
+      <span class="inputRight"><ion-label>Duración</ion-label></span><br>
 
-      <ion-input [(ngModel)]="actividad.hora" class="inputLeft" type="time" placeholder="Hora" id="hora" name="hora" required></ion-input>
-      <ion-input [(ngModel)]="actividad.fecha" class="inputRight" type="date" placeholder="Fecha" id="fecha" name="fecha" required></ion-input><br>
+      <ion-datetime [(ngModel)]="actividad.fecha" class="inputLeft" placeholder="Dia Mes Año Hora Minutos" displayFormat="D MMM YYYY H:mm" name="fecha" required></ion-datetime>
+      <ion-input [(ngModel)]="actividad.duracion" class="inputRight" type="number" placeholder="ducarion de la actividad" id="duracion" name="duracion" required></ion-input><br>
 
       <span class="inputLeft"><ion-label>Numero de voluntarios</ion-label></span>
       <span class="inputRight"><ion-label>Descripcion</ion-label></span><br>
-      <ion-input [(ngModel)]="actividad.max_voluntarios" class="inputLeft" type="number" placeholder="Numero maximo de voluntarios" id="numVoluntarios" name="numVoluntarios" required></ion-input>
+      <ion-input [(ngModel)]="maxvoluntarios" class="inputLeft" type="number" placeholder="Numero maximo de voluntarios" id="numVoluntarios" name="numVoluntarios" required></ion-input>
       <ion-input [(ngModel)]="actividad.descripcion" class="inputRight" type="text" placeholder="Descripcion de la actividad" id="descripcion" name="descripcion" required></ion-input><br>
 
       <span class="inputLeft"><ion-label>Numero de socios</ion-label></span><br>
-      <ion-input [(ngModel)]="actividad.max_socios" class="inputLeft" type="number" placeholder="Numero maximo de socios" id="numSocios" name="numSocios" required></ion-input><br>
+      <ion-input [(ngModel)]="maxsocios" class="inputLeft" type="number" placeholder="Numero maximo de socios" id="numSocios" name="numSocios" required></ion-input><br>
   
-    <ion-button (ngSubmit)="crearActividad()" (click)='crearActividad()' type="submit" size="large" color="dark"> Añadir </ion-button>
+      <span><ion-label>Imagen</ion-label></span><br>
+      <ion-input [(ngModel)]="actividad.imagen" type="url" placeholder="url de la imagen" id="imagen" name="imagen" required></ion-input><br>
+
+      <ion-button (ngSubmit)="crearActividad()" (click)='crearActividad()' type="submit" size="large" color="dark"> Añadir </ion-button>
     </form>
   </div>
 </ion-content>
