@@ -9,7 +9,7 @@ export class CrearPage {
   mostrar=false;
 
   constructor() {}
-  rol;
+  rol : any;
 
   f(){
     this.mostrar = true;
@@ -17,7 +17,7 @@ export class CrearPage {
     var e = (document.getElementById("rol")) as HTMLSelectElement;
     var f = document.getElementById("rol");
     var r = this.rol;
-    console.log(rol);
+    console.log(this.rol);
     //.classList.toggle("nombre")
     var rol = (document.getElementById("rol")).innerHTML;
     //var sel = e.selectedIndex;
