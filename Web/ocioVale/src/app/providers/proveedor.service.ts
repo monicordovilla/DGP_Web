@@ -9,19 +9,19 @@ export class ProveedorService {
   constructor(public http:HttpClient) { }
 
   obtenerActividades(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/actividades');
+    return this.http.get('http://192.168.56.200:3000/actividades');
   }
 
   obtenerUsuarios(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios');
+    return this.http.get('http://192.168.56.200:3000/usuarios');
   }
 
   obtenerParticipantes(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.45:3000/usuarios/participantes');
+      return this.http.get('http://192.168.56.200:3000/usuarios/participantes');
     }
     else
-      return this.http.get('http://192.168.1.45:3000/usuarios/participantes?id='+id);
+      return this.http.get('http://192.168.56.200:3000/usuarios/participantes?id='+id);
   }
 
   obtenerSocios(): Observable<any>{
@@ -60,4 +60,21 @@ export class ProveedorService {
   obtenerValoracion(): Observable<any>{
     return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
   }
+
+  esSocio(username): Observable<any>{
+    return this.http.get('http://192.168.56.200:3000/usuarios/esSocio?username=' + username);
+  }
+
+  esGestor(username): Observable<any>{
+    return this.http.get('http://192.168.56.200:3000/usuarios/esGestor?username=' + username);
+  }
+
+  esVoluntario(username): Observable<any>{
+    return this.http.get('http://192.168.56.200:3000/usuarios/esVoluntario?username=' + username);
+  }
+
+  esFamiliar(username): Observable<any>{
+    return this.http.get('http://192.168.56.200:3000/usuarios/esFamiliar?username=' + username);
+  }
+    
 }

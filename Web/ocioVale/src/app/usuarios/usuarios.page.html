@@ -73,11 +73,11 @@
         <div id="lista" ion-item *ngFor="let user of users; let indice=index">
 
             <div class = "info-usuario">
-                <a class="imagen-actividades" href="/perfilSocio"><img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png"
+                <a class="imagen-actividades"><img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png"
                    alt="imagen usuario"/></a>
   
                 <div class="flex-columna">
-                  <h5> <a href="/perfilSocio">{{user.nombre}}</a> </h5>
+                  <h5>{{user.nombre}}</h5>
                   <h5>{{user.apellidos}}</h5>
                   <h5>@{{user.username}}</h5>
                 </div>
@@ -87,7 +87,7 @@
                 </div>
       
                 <div class="flex-columna">
-                    <a href="/perfilSocio"><ion-button href="/perfilSocio" size="large" color="dark"> Administrar </ion-button></a>
+                    <ion-button (click)="irPerfilUsuario(eugenio)" size="large" color="dark"> Administrar </ion-button>
                 </div>
             </div>
   
