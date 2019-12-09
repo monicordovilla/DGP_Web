@@ -55,10 +55,23 @@ export class Actividades {
           // para cada actividad, cojo los participantes segun su id
           this.proveedor.obtenerParticipantes(this.actividades[i].id).subscribe(
             (query_part) => {
-              this.participantes = query_part; 
+              console.log(query_part);
             }
           )
         }
+
+        
+          /*/dado el id, cojo la info de los usuarios y los meto en un array
+          this.proveedor.obtenerUsuario(this.actividades[i].id).subscribe(
+            (query_usuario) => {
+              console.log(query_usuario);
+
+              
+              this.participantes = query_usuario; 
+            }
+          )*/
+
+          
       },
       error => {
           console.log(<any>error);

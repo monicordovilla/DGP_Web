@@ -28,14 +28,14 @@
             <ion-select-option  id="voluntario" class="select" value="voluntario">Buscar Voluntario</ion-select-option>
           </ion-select>
       </div>
-  
+
     </div>
 
       <ion-radio-group class="horizontal-flex">
 
         <h5>Buscar por...</h5>
           <ion-item>
-            <ion-radio value="busqueda-nombre" checked></ion-radio>  
+            <ion-radio value="busqueda-nombre" checked></ion-radio>
             <ion-label> Nombre</ion-label>
           </ion-item>
 
@@ -51,7 +51,7 @@
       </ion-radio-group>
 
       <ion-item></ion-item>
-      
+
       <br>
 
     <div class="horizontal-flex-left">
@@ -75,22 +75,22 @@
             <div class = "info-usuario">
                 <a class="imagen-actividades"><img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png"
                    alt="imagen usuario"/></a>
-  
+
                 <div class="flex-columna">
                   <h5>{{user.nombre}}</h5>
                   <h5>{{user.apellidos}}</h5>
                   <h5>@{{user.username}}</h5>
                 </div>
-  
+
                 <div class="flex-columna">
                     <h5> Valoración media: </h5>
                 </div>
-      
+
                 <div class="flex-columna">
                     <ion-button (click)="irPerfilUsuario(eugenio)" size="large" color="dark"> Administrar </ion-button>
                 </div>
             </div>
-  
+
         </div>
 
     </div>
