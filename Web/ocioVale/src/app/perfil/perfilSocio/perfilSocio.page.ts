@@ -11,6 +11,10 @@ export class perfilSocio implements OnInit {
   private perfilSocio : FormGroup;
 
   datos = [ ];
+
+  familiar=[
+
+  ];
   
   perfil = {
     "id" : '',
@@ -26,13 +30,13 @@ export class perfilSocio implements OnInit {
     "descripcion" : ''
   };
 
-  familiar = {
+  /*familiar = {
     "id" : ''
-  };
+  };*/
 
   constructor(public proveedor:ProveedorService) { 
     this.cargaSocios();
-    this.cargaFamiliar();
+    //this.cargaFamiliar();
   }
 
   cargaSocios(){
@@ -52,7 +56,15 @@ export class perfilSocio implements OnInit {
           this.perfil.telf = this.datos[i].telefono;
           this.perfil.localidad = this.datos[i].localidad;
           this.perfil.provincia = this.datos[i].provincia;
-          this.perfil.descripcion = this.datos[1].descripcion;
+          this.perfil.descripcion = this.datos[i].descripcion;
+
+
+          // para cada socio, cojo el familiar segun su id
+          this.proveedor.obtenerFamiliar(this.perfil[i].id).subscribe(
+            (query_part) => {
+              this.familiar = query_part; 
+            }
+          )
         }
       },
       error => {
@@ -61,7 +73,7 @@ export class perfilSocio implements OnInit {
     ) 
   }
 
-  cargaFamiliar(){
+  /*cargaFamiliar(){
 
     this.proveedor.obtenerFamiliar().subscribe(
       (data) => {
@@ -74,7 +86,7 @@ export class perfilSocio implements OnInit {
           console.log(<any>error);
       }
     ) 
-  }
+  }*/
 
   ngOnInit() {
   }

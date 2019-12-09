@@ -13,6 +13,8 @@ export class Usuarios implements OnInit {
 
   users = [ ];
 
+  usuario = [ ];
+
   perfil = {
     "valoracion" : ''
   };
@@ -72,6 +74,13 @@ export class Usuarios implements OnInit {
           nombre = this.users[i].nombre;
           apellidos = this.users[i].apellidos;
           nombreUsuario = "@" + this.users[i].username;
+
+          // para cada socio, cojo el familiar segun su id
+          this.proveedor.obtenerUsuario(this.users[i].id).subscribe(
+            (query_part) => {
+              this.usuario = query_part; 
+            }
+          )
         }
       },
       error => {

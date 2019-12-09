@@ -9,19 +9,19 @@ export class ProveedorService {
   constructor(public http:HttpClient) { }
 
   obtenerActividades(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/actividades');
+    return this.http.get('http://192.168.1.141:3000/actividades');
   }
 
   obtenerUsuarios(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios');
+    return this.http.get('http://192.168.1.141:3000/usuarios');
   }
 
   obtenerParticipantes(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.45:3000/usuarios/participantes');
+      return this.http.get('http://192.168.1.141:3000/usuarios/participantes');
     }
     else
-      return this.http.get('http://192.168.1.45:3000/usuarios/participantes?id='+id);
+      return this.http.get('http://192.168.1.141:3000/usuarios/participantes?id='+id);
   }
 
   obtenerSocios(): Observable<any>{
@@ -32,12 +32,25 @@ export class ProveedorService {
     return this.http.get('http://192.168.56.200:3000/actividades/categorias');
   }
 
-  obtenerFamiliar(): Observable<any>{
-    return this.http.get('http://192.168.56.200:3000/usuarios/familiaresDelSocio?id=5');
-  }
-
   obtenerFamiliares(): Observable<any>{
     return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
+  }
+
+  obtenerFamiliar(id:string): Observable<any>{
+    if (id == null){
+      return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
+    }
+    else
+      return this.http.get('http://192.168.1.141:3000/usuarios/familiares?id='+id);
+    //return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
+  }
+
+  obtenerUsuario(id:string): Observable<any>{
+    if (id == null){
+      return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
+    }
+    else
+      return this.http.get('http://192.168.1.141:3000/usuarios/familiares?id='+id);
   }
 
   enviarActividad(postData): Observable<any>{
