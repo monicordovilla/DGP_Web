@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ProveedorService} from '../providers/proveedor.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'actividades',
@@ -29,8 +30,12 @@ export class Actividades {
 
   ];
 
-  constructor(public proveedor:ProveedorService) {
+  constructor(public proveedor:ProveedorService, private router: Router) {
     this.cargaActividades();
+  }
+
+  irActividad(id){
+      this.router.navigate(["/actividad/"+id]);
   }
 
   cargaActividades(){
