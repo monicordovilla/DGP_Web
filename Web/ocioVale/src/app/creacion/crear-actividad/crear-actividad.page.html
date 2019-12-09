@@ -11,7 +11,7 @@
 
     <form (ngSubmit)="crearActividad()">
       <span><ion-label>Categoria</ion-label></span><br>
-      <ion-select multiple="true" [(ngModel)]="actividad.categorias" name="categoria" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
+      <ion-select multiple="true"  okText="Aceptar" cancelText="Cancelar" [(ngModel)]="actividad.categorias" name="categoria" id="rol" class="select" placeholder="Escoja la categoria de la actividad" required>
         <ion-select-option *ngFor="let categoria of categorias; let indice=index" id={{categoria.id}} value={{categoria.id}}>{{categoria.nombre}}</ion-select-option>
       </ion-select>
 

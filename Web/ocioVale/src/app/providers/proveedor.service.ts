@@ -29,7 +29,7 @@ export class ProveedorService {
   }
 
   obtenerCategorias(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/actividades/categorias');
+    return this.http.get('http://192.168.56.200:3000/actividades/categorias');
   }
 
   obtenerFamiliares(): Observable<any>{
@@ -38,19 +38,19 @@ export class ProveedorService {
 
   obtenerFamiliar(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
     }
     else
-      return this.http.get('http://192.168.1.141:3000/usuarios/familiares?id='+id);
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares?id='+id);
     //return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
   }
 
   obtenerUsuario(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
     }
     else
-      return this.http.get('http://192.168.1.141:3000/usuarios/familiares?id='+id);
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares?id='+id);
   }
 
   enviarActividad(postData): Observable<any>{
