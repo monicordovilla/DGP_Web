@@ -46,6 +46,22 @@ width: 45%;
 width: 45%;
 }
 
+.inputLeft3{
+  display: flex;
+  flex: 33%;
+  
+  }
+  
+  .inputRight3{
+    display: flex;
+    flex: 33%;
+  }
+
+.inputCentre{
+  display: flex;
+  flex: 33%;
+ }
+
  .navegation{
   padding: 3% 0% 0% 3%;
   font-family: $fontFamily;

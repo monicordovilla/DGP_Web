@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-actividad',
@@ -6,7 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['actividad.page.scss'],
 })
 export class actividad {
+  id = null;
 
-  constructor() {}
+  constructor(private activeRoute: ActivatedRoute) {}
+
+  ngOnInit(){
+    this.id = this.activeRoute.snapshot.paramMap.get("id");
+  }
 
 }

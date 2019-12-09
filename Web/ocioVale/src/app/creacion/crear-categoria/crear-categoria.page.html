@@ -9,9 +9,9 @@
 
     <h2>Introduce los datos</h2><br>
 
-    <form (ngSubmit)="crearcategoria()">
+    <form (ngSubmit)="crearCategoria()">
       <span><ion-label>Nombre categoria</ion-label></span><br>
-      <ion-input [(ngModel)]="categoria.nombreCategoria" type="text" placeholder="Nombre categoria" id="nombre" name="nombre" required></ion-input>
+      <ion-input [(ngModel)]="categoria.nombre" type="text" placeholder="Nombre categoria" id="nombre" name="nombre" required></ion-input>
 
       <span><ion-label>Imagen</ion-label></span><br>
       <ion-input [(ngModel)]="categoria.imagen" type="text" placeholder="URL imagen" id="imagen" name="imagen" required></ion-input>

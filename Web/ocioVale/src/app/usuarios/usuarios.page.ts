@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {ProveedorService} from '../providers/proveedor.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'usuarios',
@@ -13,9 +14,16 @@ export class Usuarios implements OnInit {
 
   users = [ ];
 
+  usuario = [ ];
+
   perfil = {
     "valoracion" : ''
   };
+
+  usuarioSeleccionado = {
+
+  };
+  idUsuarioSeleccionado;
 
   
   // 0 pagina usuarios, 1 gestor, 2 socio, 3 socio familiar y 4 voluntario
@@ -35,9 +43,25 @@ export class Usuarios implements OnInit {
     console.log('valor del select'+ rol);
   }
 
-  constructor(public proveedor:ProveedorService) {
+  constructor(public proveedor:ProveedorService, private router: Router) {
     this.cargaValoracion();
     this.cargaUsuarios();
+  }
+
+  irPerfilUsuario(username){
+
+    if(this.proveedor.esSocio(username) != null){
+      this.router.navigate(['/perfilSocio', username]);
+    }
+    if(this.proveedor.esFamiliar(username) != null){
+      this.router.navigate(['/perfilSocioFamiliar', username]);
+    }
+    if(this.proveedor.esVoluntario(username) != null){
+      this.router.navigate(['/perfilVoluntario', username]);
+    }
+    if(this.proveedor.esGestor(username) != null){
+      this.router.navigate(['/perfilGestor', username]);
+    }
   }
 
   cargaValoracion(){
@@ -72,6 +96,13 @@ export class Usuarios implements OnInit {
           nombre = this.users[i].nombre;
           apellidos = this.users[i].apellidos;
           nombreUsuario = "@" + this.users[i].username;
+
+          // para cada socio, cojo el familiar segun su id
+          this.proveedor.obtenerUsuario(this.users[i].id).subscribe(
+            (query_part) => {
+              this.usuario = query_part; 
+            }
+          )
         }
       },
       error => {

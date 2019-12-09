@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ProveedorService} from '../providers/proveedor.service';
+
 
 @Component({
   selector: 'categorias',
@@ -7,6 +9,25 @@ import { Component } from '@angular/core';
 })
 export class Categorias {
 
-  constructor() {}
+  categorias = [];
+
+  constructor(public proveedor:ProveedorService) {
+    this.cargaCategorias();
+  }
+
+  cargaCategorias(){
+    
+
+    this.proveedor.obtenerCategorias().subscribe(
+      (data) => {
+        console.log(data);
+        this.categorias = data;
+      },
+      error => {
+          console.log(<any>error);
+      }
+    ) 
+
+  }
 
 }

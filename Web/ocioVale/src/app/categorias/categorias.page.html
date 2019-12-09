@@ -49,35 +49,21 @@
 
     <div class="flex-columna">
 
-      <div class = "info-categoria">
-          <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+      <div id="lista" ion-item *ngFor="let categoria of categorias">
 
-          <div class="flex-columna">
-            <h5> Título de categoría </h5>
-            <h5> Usos: x </h5>
-          </div>
+        <div class = "info-categoria">
+            <img class="img-header" src={{categoria.imagen}}>
 
-          <div class="linea-vertical"></div>
+            <div class="flex-columna">
+              <h5> {{categoria.nombre}} </h5>
+            </div>
 
-          <div class="flex-columna">
-              <ion-button size="large" color="danger"> Borrar categoría</ion-button>
-          </div>
-      </div>
-
-      <div class = "info-categoria">
-        <img class="img-header" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
-
-        <div class="flex-columna">
-          <h5> Título de categoría </h5>
-          <h5> Usos: x </h5>
+            <div class="flex-columna">
+                <ion-button size="large" color="danger"> Borrar categoría</ion-button>
+            </div>
         </div>
 
-        <div class="linea-vertical"></div>
-
-        <div class="flex-columna">
-            <ion-button size="large" color="danger"> Borrar categoría</ion-button>
-        </div>
-    </div>
+     </div>
 
     </div>
 
