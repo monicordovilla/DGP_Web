@@ -4,7 +4,7 @@
   <div class="container">
     <h2>Identifícate como gestor</h2><br>
 
-    <form (ngSubmit)="IniciarSesion()">
+    <form (ngSubmit)="login()">
       <ion-input [(ngModel)]="sesion.usuario" type="text" placeholder="Nombre de usuario" name="usuario" required></ion-input><br>
 
       <ion-input [(ngModel)]="sesion.password" type="password" placeholder="Contraseña" name="pswUsuario" required></ion-input><br>
