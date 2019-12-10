@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {ProveedorService} from '../providers/proveedor.service';
 
@@ -21,19 +21,18 @@ export class HomePage implements OnInit{
   login(){
     console.log("login");
 
-//    parseInt(localStorage.getItem("categoria.id"));
-
-    let postData =[
+  //no hace falta, es un ion.input, se escribe automaticamente, asi que en cuanto le das a enviar se rellena
+    /*let postData =[
       this.sesion.usuario,
       this.sesion.password
-    ];
+    ];*/
 
-    console.log(postData);
+    console.log(this.sesion);
 
-    this.proveedor.enviarLogin(postData).subscribe(
+    this.proveedor.enviarLogin(this.sesion).subscribe(
       (res) => {
-        //postData = res['results'],
-        //console.log(res['results']);
+        this.sesion = res['results'],
+        console.log(res['results']);
       },
       error =>{
         console.error(error);

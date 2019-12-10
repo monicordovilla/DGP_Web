@@ -50,8 +50,11 @@ export class Usuarios implements OnInit {
 
   irPerfilUsuario(username){
 
-    if(this.proveedor.esSocio(username) != null){
-      this.router.navigate(['/perfilSocio', username]);
+
+    this.router.navigate(['/perfilGestor/', 'eugenio']);
+
+    /*if(this.proveedor.esSocio(username) != null){
+      this.router.navigate(['/perfilSocio', 'eugenio']);
     }
     if(this.proveedor.esFamiliar(username) != null){
       this.router.navigate(['/perfilSocioFamiliar', username]);
@@ -61,7 +64,7 @@ export class Usuarios implements OnInit {
     }
     if(this.proveedor.esGestor(username) != null){
       this.router.navigate(['/perfilGestor', username]);
-    }
+    }*/
   }
 
   cargaValoracion(){
