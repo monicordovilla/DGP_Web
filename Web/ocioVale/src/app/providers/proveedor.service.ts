@@ -8,6 +8,7 @@ export class ProveedorService {
 
   constructor(public http:HttpClient) { }
 
+  //METODO PARA LA EXTRACCION DE DATOS DE LA BD
   obtenerActividades(): Observable<any>{
     return this.http.get('http://192.168.56.200:3000/actividades');
   }
@@ -56,7 +57,24 @@ export class ProveedorService {
     else
       return this.http.get('http://192.168.56.200:3000/usuarios/familiares?id='+id);
   }
+  
+  obtenerValoracion(): Observable<any>{
+    return this.http.get('http://192.168.1.148:3000/usuarios/familiares');
+  }
 
+  //METODO PARA INICIAR SESION
+  enviarLogin(postData): Observable<any>{// Http Options
+      let httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin' : '*'
+        })
+      }
+      console.log(JSON.stringify(postData));
+      return this.http.post("http://192.168.1.148:3000/loginGestor", JSON.stringify(postData));
+  }
+
+  //METODOS PARA AÑADIR
   enviarActividad(postData): Observable<any>{
 
     // Http Options
@@ -69,26 +87,73 @@ export class ProveedorService {
     return this.http.post("http://192.168.1.148:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
   }
 
-  enviarLogin(postData): Observable<any>{// Http Options
-      let httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : '*'
-        })
-      }
-      console.log(JSON.stringify(postData));
-      return this.http.post("http://192.168.1.148:3000/loginGestor", JSON.stringify(postData));
-  }
-
   enviarCategoria(postData): Observable<any>{
+
+    // Http Options
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.1.148:3000/actividades/addCategoria", JSON.stringify(postData));
+    return this.http.post("http://192.168.56.200:3000/actividades/addCategoria", JSON.stringify(postData), httpOptions);
   }
 
-  obtenerValoracion(): Observable<any>{
-    return this.http.get('http://192.168.1.148:3000/usuarios/familiares');
+  //añadir usuarios
+  enviarGestor(postData): Observable<any>{
+
+    // Http Options
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+
+    console.log(JSON.stringify(postData));
+    return this.http.post("http://192.168.56.200:3000/usuarios/addGestor", JSON.stringify(postData), httpOptions);
   }
 
+  enviarSocio(postData): Observable<any>{
+
+    // Http Options
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+
+    console.log(JSON.stringify(postData));
+    return this.http.post("http://192.168.56.200:3000/usuarios/addSocio", JSON.stringify(postData), httpOptions);
+  }
+
+  enviarVoluntario(postData): Observable<any>{
+
+    // Http Options
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+
+    console.log(JSON.stringify(postData));
+    return this.http.post("http://192.168.56.200:3000/usuarios/addVoluntario", JSON.stringify(postData), httpOptions);
+  }
+
+  enviarFamiliar(postData): Observable<any>{
+
+    // Http Options
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+
+    console.log(JSON.stringify(postData));
+    return this.http.post("http://192.168.56.200:3000/usuarios/addFamiliar", JSON.stringify(postData), httpOptions);
+  }
+
+  //METODOS PARA COMPROBAR EL ROL DE UN USUARIO
   esSocio(username): Observable<any>{
     return this.http.get('http://192.168.56.200:3000/usuarios/esSocio?username=' + username);
   }

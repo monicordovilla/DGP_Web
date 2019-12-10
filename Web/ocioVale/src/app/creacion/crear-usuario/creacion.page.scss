@@ -47,6 +47,16 @@
   width: 55%;
  }
 
+ .inputLeft{
+  float: left;
+  width: 49%;
+ }
+
+ .inputRight{
+  float: right;
+  width: 49%;
+ }
+
  p{
   font-family: $fontFamily;
   color: $textcolorSec;

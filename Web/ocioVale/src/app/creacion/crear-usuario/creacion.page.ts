@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ProveedorService} from '../../providers/proveedor.service';
 
 @Component({
   selector: 'app-creacion',
@@ -7,29 +8,69 @@ import { Component } from '@angular/core';
 })
 export class CrearPage {
   mostrar=false;
+  mostrarDescPrivada=false;
 
-  constructor() {}
+  usuario = {
+  };
+  descripcionPrivada = '';
+
+  constructor(public proveedor:ProveedorService) {}
   rol : any;
 
   f(){
     this.mostrar = true;
+    if(this.rol == 'socio'){
+      this.mostrarDescPrivada=true;
+    }
+  }
 
-    var e = (document.getElementById("rol")) as HTMLSelectElement;
-    var f = document.getElementById("rol");
-    var r = this.rol;
-    console.log(this.rol);
-    //.classList.toggle("nombre")
-    var rol = (document.getElementById("rol")).innerHTML;
-    //var sel = e.selectedIndex;
-    //var opt = e.options[sel];
-    //var CurValue = (<HTMLSelectElement>opt).value;
-    //var CurText = (<HTMLSelectElement>opt).text;
-    //console.log(rol);
-    console.log(f);
-    //console.log(opt);
+  crearUsuario(){
+    if(this.rol == 'gestor'){
+      this.proveedor.enviarGestor(this.usuario).subscribe(
+        (res) => { 
+          this.usuario = res['results'];
+        },
+        error =>{
+          console.error(error);
+        }
+      );
+    }
+    if(this.rol == 'voluntario'){
+      this.proveedor.enviarVoluntario(this.usuario).subscribe(
+        (res) => { 
+          this.usuario = res['results'];
+        },
+        error =>{
+          console.error(error);
+        }
+      );
+    }
+    if(this.rol == 'socioFamiliar'){
+      this.proveedor.enviarFamiliar(this.usuario).subscribe(
+        (res) => { 
+          this.usuario = res['results'];
+        },
+        error =>{
+          console.error(error);
+        }
+      );
+    }
+    if(this.rol == 'socio'){
 
+      let postData =[
+        this.usuario,
+        this.descripcionPrivada,
+      ];
 
-    //console.log('valor del select'+this.rol);
+      this.proveedor.enviarSocio(postData).subscribe(
+        (res) => { 
+          postData = res['results'];
+        },
+        error =>{
+          console.error(error);
+        }
+      );
+    }
   }
 
 }

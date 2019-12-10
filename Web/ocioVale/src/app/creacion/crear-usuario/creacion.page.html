@@ -3,7 +3,7 @@
 <ion-content>
   <div class="container">
 
-  <form>
+  <form (ngSubmit)="crearUsuario()">
     <ion-item>
       <p>Crear usuarios >> Crear </p>
       <ion-select [(ngModel)]="rol" ng-model="rol" name="rol" (ionChange)='f()' id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja el tipo de usuario" required>
@@ -20,48 +20,45 @@
       <span class="inputNombre"><ion-label>Nombre</ion-label></span>
       <span class="inputApellido"><ion-label>Apellido</ion-label></span><br>
 
-      <ion-input class="inputNombre" type="text" placeholder="Nombre" id="nombre" name="nombre" required></ion-input>
-      <ion-input class="inputApellido" type="text" placeholder="Apellidos" id="apellidos" name="apellidos" required></ion-input><br>
+      <ion-input [(ngModel)]="usuario.nombre" class="inputNombre" type="text" placeholder="Nombre" id="nombre" name="nombre" required></ion-input>
+      <ion-input [(ngModel)]="usuario.apellidos" class="inputApellido" type="text" placeholder="Apellidos" id="apellidos" name="apellidos" required></ion-input><br>
 
-      <ion-label>Nombre de usuario</ion-label>
-      <ion-input type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" required></ion-input><br>
+      <ion-label class="inputRight">Nombre de usuario</ion-label>
+      <ion-label class="inputLeft">Contraseña</ion-label>
 
-      <ion-label>Contraseña</ion-label>
-      <ion-input type="password" placeholder="Contraseña" name="psw" required></ion-input><br>
-    </div>
+      <ion-input [(ngModel)]="usuario.username" class="inputRight" type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" required></ion-input><br>    
+      <ion-input [(ngModel)]="usuario.password" class="inputLeft" type="password" placeholder="Contraseña" name="psw" required></ion-input><br>
 
-    <div *ngIf="mostrar">
-      <ion-label>Correo Electronico</ion-label>
-      <ion-input *ngIf="mostrar" type="email" placeholder="Correo Electronico" name="email" required></ion-input><br>
-    </div>
+      <ion-label class="inputRight">Correo Electronico</ion-label>
+      <ion-label class="inputLeft">Fecha Nacimiento</ion-label>
 
-    <div *ngIf="mostrar">
-      <ion-label>Fecha Nacimiento</ion-label>
-      <ion-input *ngIf="mostrar" type="date" placeholder="Fecha Nacimiento" name="fec_nac" required></ion-input><br>
-    </div>
+      <ion-input [(ngModel)]="usuario.email" class="inputRight" type="email" placeholder="Correo Electronico" name="email" required></ion-input><br>
+      <ion-input [(ngModel)]="usuario.fecha_nacimiento" class="inputLeft"  type="date" placeholder="Fecha Nacimiento" name="fec_nac" required></ion-input><br>
+      
+      <ion-label class="inputRight">Telefono</ion-label>
+      <ion-label class="inputLeft">DNI</ion-label>
 
-    <div *ngIf="mostrar">
-      <ion-label>Telefono</ion-label>
-      <ion-input *ngIf="mostrar" type="tel" placeholder="Telefono" name="tel" required></ion-input><br>
-    </div>
+      <ion-input [(ngModel)]="usuario.telefono" class="inputRight" type="tel" placeholder="Telefono" name="tel" required></ion-input><br>
+      <ion-input [(ngModel)]="usuario.dni" class="inputLeft" type="text" placeholder="DNI" name="DNI" required></ion-input><br>
+        
+      <ion-label class="inputRight">Localidad</ion-label>
+      <ion-label class="inputLeft">Provincia</ion-label>
 
-    <div *ngIf="mostrar">
-      <ion-label>Localidad</ion-label>
-      <ion-input *ngIf="mostrar" type="text" placeholder="Localidad" name="localidad" required></ion-input><br>
-    </div>
+      <ion-input [(ngModel)]="usuario.localidad" class="inputRight" type="text" placeholder="Localidad" name="localidad" required></ion-input><br>      
+      <ion-input [(ngModel)]="usuario.provincia" class="inputLeft" type="text" placeholder="Provincia" name="provincia" required></ion-input><br>
+      
+      <ion-label class="inputLeft" >Domicilio</ion-label>
+      <ion-input [(ngModel)]="usuario.domicilio" type="text" placeholder="Domicilio" name="domicilio" required></ion-input><br>
 
-    <div *ngIf="mostrar">
-      <ion-label>Provincia</ion-label>
-      <ion-input *ngIf="mostrar" type="text" placeholder="Provincia" name="provincia" required></ion-input><br>
-    </div>
+      <ion-label class="inputLeft" >Descripcion</ion-label>
+      <ion-input [(ngModel)]="usuario.descripcion" type="text" placeholder="Descripcion" name="descripcion" required></ion-input><br>
 
-    <div *ngIf="mostrar">
-      <ion-label>Descripcion</ion-label>
-      <ion-input *ngIf="mostrar" type="text" placeholder="Descripcion" name="descripcion" required></ion-input><br>
-    </div>
-    
-    <div *ngIf="mostrar">
-      <ion-button size="large" color="dark"> Añadir </ion-button>
+      <div *ngIf="mostrarDescPrivada">
+        <ion-label class="inputLeft" >Descripcion privada (oculta a la aplicacion)</ion-label>
+        <ion-input [(ngModel)]="descripcionPrivada" type="text" placeholder="Descripcion privada del usuario" name="descripcionPrivada"></ion-input><br>
+      </div>
+
+      <ion-button (click)="crearUsuario()" size="large" color="dark"> Añadir </ion-button>
     </div>
   </form>
 
