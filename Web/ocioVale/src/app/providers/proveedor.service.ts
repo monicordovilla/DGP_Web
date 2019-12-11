@@ -26,19 +26,19 @@ export class ProveedorService {
   }
 
   obtenerSocios(): Observable<any>{
-    return this.http.get('http://192.168.1.148:3000/usuarios/socios');
+    return this.http.get('http://192.168.56.200:3000/usuarios/socios');
   }
 
   obtenerCategorias(): Observable<any>{
     return this.http.get('http://192.168.56.200:3000/actividades/categorias');
   }
 
-  obtenerFamiliar(): Observable<any>{
+  /*obtenerFamiliar(): Observable<any>{
     return this.http.get('http://192.168.1.148:3000/usuarios/familiaresDelSocio?id=5');
-  }
+  }*/
 
   obtenerFamiliares(): Observable<any>{
-    return this.http.get('http://192.168.1.148:3000/usuarios/familiares');
+    return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
   }
 
   obtenerFamiliar(id:string): Observable<any>{
@@ -71,7 +71,7 @@ export class ProveedorService {
         })
       }
       console.log(JSON.stringify(postData));
-      return this.http.post("http://192.168.1.148:3000/loginGestor", JSON.stringify(postData));
+      return this.http.post("http://192.168.56.200:3000/loginGestor", JSON.stringify(postData));
   }
 
   //METODOS PARA AÑADIR
@@ -84,7 +84,7 @@ export class ProveedorService {
       })
     }
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.1.148:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
   }
 
   enviarCategoria(postData): Observable<any>{

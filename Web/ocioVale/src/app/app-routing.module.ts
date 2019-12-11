@@ -14,7 +14,9 @@ const routes: Routes = [
   { path: 'categorias', loadChildren: () => import('./categorias/categorias.module').then( m=> m.CategoriasModule)},
   { path: 'crear-usuario', loadChildren: () => import('./creacion/crear-usuario/creacion.module').then( m=> m.CrearPageModule)},
   { path: 'crear-actividad', loadChildren: () => import('./creacion/crear-actividad/crear-actividad.module').then( m=> m.CrearActividadPageModule)},
-  { path: 'crear-categoria', loadChildren: () => import('./creacion/crear-categoria/crear-categoria.module').then( m=> m.CrearCategoriaPageModule)}
+  { path: 'crear-categoria', loadChildren: () => import('./creacion/crear-categoria/crear-categoria.module').then( m=> m.CrearCategoriaPageModule)},
+  { path: 'perfil-usuario/:id', loadChildren: './perfil/perfil-usuario/perfil-usuario.module#PerfilUsuarioPageModule' }
+
 
 ];
 

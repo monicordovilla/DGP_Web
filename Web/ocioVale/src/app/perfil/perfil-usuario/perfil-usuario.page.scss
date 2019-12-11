@@ -1,0 +1,80 @@
+/* Variables estandar para la página*/
+$bgcolor: #FEFEFE;
+$bgcolorSec: #eaeaea;
+$colorSec: #174A45;
+$textcolor: #174A45;
+$textcolorSec: #050505;
+$fontsize: 20px;
+$minfontsize : 18px;
+$minButtonSize: 48 dp;
+$fontFamily: Tahoma;
+$headerSize : 100px;
+$tamHeader: 50px;
+
+/* Clases */
+.container{
+ background-color: $bgcolor;
+ padding: 5%;
+ font-family: $fontFamily;
+}
+
+h2{
+  font-family: $fontFamily;
+  color: $textcolor;
+  font-size: $fontsize;
+}
+
+ion-input{
+   width: 100%;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: 2px solid $colorSec;
+   background: $bgcolorSec;
+   opacity: 1;
+
+   &:focus{
+     opacity: 0.8;
+   }
+}
+
+.inputNombre{
+ width: 43%;
+}
+
+.inputApellido{
+    float: right;
+   width: 55%;
+  }
+ 
+  .inputLeft{
+   float: left;
+   width: 49%;
+  }
+ 
+  .inputRight{
+   float: right;
+   width: 49%;
+  }
+ 
+  p{
+   font-family: $fontFamily;
+   color: $textcolorSec;
+   font-size: $minfontsize;
+  }
+ 
+  .select{
+     color: $textcolorSec;
+     font-family: $fontFamily;
+     margin: 3px;
+     margin-left: 10px;
+     border: 2px solid $colorSec;
+     border-radius: 3px;
+  }
+ 
+  ion-button{
+    --background: tranparent;
+    --padding-start: 10px;
+    --padding-end: 10px;
+  }
+ 

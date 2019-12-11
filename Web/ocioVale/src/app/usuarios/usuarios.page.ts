@@ -50,9 +50,6 @@ export class Usuarios implements OnInit {
 
   irPerfilUsuario(username){
 
-
-    this.router.navigate(['/perfilGestor/', 'eugenio']);
-
     /*if(this.proveedor.esSocio(username) != null){
       this.router.navigate(['/perfilSocio', 'eugenio']);
     }
