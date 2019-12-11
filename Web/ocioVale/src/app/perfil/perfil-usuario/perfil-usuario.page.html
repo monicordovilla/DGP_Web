@@ -8,53 +8,55 @@
   <form>
     <h2>Perfil de un {{rol}}</h2><br>
     
-    <span class="inputNombre"><ion-label>Nombre</ion-label></span>
-    <span class="inputApellido"><ion-label>Apellido</ion-label></span><br>
-
-    <ion-input [(ngModel)]="usuario.nombre" class="inputNombre" type="text" placeholder="Nombre" id="nombre" name="nombre" required></ion-input>
-    <ion-input [(ngModel)]="usuario.apellidos" class="inputApellido" type="text" placeholder="Apellidos" id="apellidos" name="apellidos" required></ion-input><br>
-
-    <ion-label class="inputRight">Nombre de usuario</ion-label>
-    <ion-label class="inputLeft">Contraseña</ion-label>
-
-    <ion-input [(ngModel)]="usuario.username" class="inputRight" type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" required></ion-input><br>    
-    <ion-input [(ngModel)]="usuario.password" class="inputLeft" type="password" placeholder="Contraseña" name="psw" required></ion-input><br>
-
+    <span class="inputLeft"><ion-label>Nombre</ion-label></span>
     <ion-label class="inputRight">Correo Electronico</ion-label>
-    <ion-label class="inputLeft">Fecha Nacimiento</ion-label>
 
+    <ion-input [(ngModel)]="usuario.nombre" class="inputLeft" type="text" placeholder="Nombre" id="nombre" name="nombre" required></ion-input>
     <ion-input [(ngModel)]="usuario.email" class="inputRight" type="email" placeholder="Correo Electronico" name="email" required></ion-input><br>
-    <ion-input [(ngModel)]="usuario.fecha_nacimiento" class="inputLeft"  type="date" placeholder="Fecha Nacimiento" name="fec_nac" required></ion-input><br>
-    
+
+    <span class="inputLeft"><ion-label>Apellidos</ion-label></span><br>
+    <ion-label class="inputRight">Fecha Nacimiento</ion-label>
+
+    <ion-input [(ngModel)]="usuario.apellidos" class="inputLeft" type="text" placeholder="Apellidos" id="apellidos" name="apellidos" required></ion-input><br>
+    <ion-input [(ngModel)]="usuario.fecha_nacimiento" class="inputRight"  type="date" placeholder="Fecha Nacimiento" name="fec_nac" required></ion-input><br>
+
+
+    <ion-label class="inputLeft">Nombre de usuario</ion-label>
     <ion-label class="inputRight">Telefono</ion-label>
-    <ion-label class="inputLeft">DNI</ion-label>
 
+    <ion-input [(ngModel)]="usuario.username" class="inputLeft" type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" required></ion-input><br>    
     <ion-input [(ngModel)]="usuario.telefono" class="inputRight" type="tel" placeholder="Telefono" name="tel" required></ion-input><br>
-    <ion-input [(ngModel)]="usuario.dni" class="inputLeft" type="text" placeholder="DNI" name="DNI" required></ion-input><br>
-      
-    <ion-label class="inputRight">Localidad</ion-label>
-    <ion-label class="inputLeft">Provincia</ion-label>
 
-    <ion-input [(ngModel)]="usuario.localidad" class="inputRight" type="text" placeholder="Localidad" name="localidad" required></ion-input><br>      
-    <ion-input [(ngModel)]="usuario.provincia" class="inputLeft" type="text" placeholder="Provincia" name="provincia" required></ion-input><br>
+
+    <ion-label class="inputLeft">Contraseña</ion-label>
+    <ion-label class="inputRight">DNI</ion-label>
+
+    <ion-input [(ngModel)]="usuario.password" class="inputLeft" type="password" placeholder="Contraseña" name="psw" required></ion-input><br>
+    <ion-input [(ngModel)]="usuario.dni" class="inputRight" type="text" placeholder="DNI" name="DNI" required></ion-input><br>
     
-    <ion-label class="inputLeft" >Domicilio</ion-label>
-    <ion-input [(ngModel)]="usuario.domicilio" type="text" placeholder="Domicilio" name="domicilio" required></ion-input><br>
+    <ion-label class="inputLeft">Provincia</ion-label>
+    <ion-label class="inputRight">Localidad</ion-label>
 
-    <ion-label class="inputLeft" >Descripcion</ion-label>
-    <ion-input [(ngModel)]="usuario.descripcion" type="text" placeholder="Descripcion" name="descripcion" required></ion-input><br>
+    <ion-input [(ngModel)]="usuario.provincia" class="inputLeft" type="text" placeholder="Provincia" name="provincia" required></ion-input><br>
+    <ion-input [(ngModel)]="usuario.localidad" class="inputRight" type="text" placeholder="Localidad" name="localidad" required></ion-input><br>      
+    
+    <ion-label class="inputCenter" >Domicilio</ion-label>
+    <ion-input [(ngModel)]="usuario.domicilio" class="inputCenter" type="text" placeholder="Domicilio" name="domicilio" required></ion-input><br>
+
+    <ion-label class="inputCenter" >Descripcion</ion-label>
+    <ion-textarea [(ngModel)]="usuario.descripcion" class = "inputCenter" type="text" placeholder="Descripcion" name="descripcion" required></ion-textarea><br>
 
     <div *ngIf="mostrarSocio">
-      <ion-label class="inputLeft" >Descripcion privada (oculta a la aplicacion)</ion-label>
-      <ion-input [(ngModel)]="descripcionPrivada" type="text" placeholder="Descripcion privada del usuario" name="descripcionPrivada"></ion-input><br>
+      <ion-label class="inputCenter" >Descripcion privada (oculta a la aplicacion)</ion-label>
+      <ion-textarea [(ngModel)]="descripcionPrivada" class="inputCenter" type="text" placeholder="Descripcion privada del usuario" name="descripcionPrivada"></ion-textarea><br>
     </div>
 
     
-    <div>
+    <div class="botonesUsuario">
       <ion-button  size="large" color="dark" type="submit">MODIFICAR</ion-button>
-      <ion-button  size="large" color="dark" type="submit">ELIMINAR</ion-button>
+      <ion-button  size="large" color="danger" type="submit">ELIMINAR</ion-button>
 
-      <ion-button *ngIf="mostrarVoluntario"  size="large" color="dark" type="submit">CENSURAR</ion-button>
+      <ion-button *ngIf="mostrarVoluntario"  size="large" color="danger" type="submit">CENSURAR</ion-button>
       <ion-button *ngIf="mostrarVoluntario"  size="large" color="dark" type="submit">CONSULTAR INFORMACIÓN</ion-button>
       <ion-button *ngIf="mostrarSocio" href="/perfilSocioFamiliar" class="union" size="large" color="dark"> Familiar </ion-button>
   

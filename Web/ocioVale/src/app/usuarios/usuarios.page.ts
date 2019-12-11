@@ -97,10 +97,12 @@ export class Usuarios implements OnInit {
           apellidos = this.users[i].apellidos;
           nombreUsuario = "@" + this.users[i].username;
 
+          //console.log(this.users[i].id);
+
           // para cada socio, cojo el familiar segun su id
           this.proveedor.obtenerUsuario(this.users[i].id).subscribe(
             (query_part) => {
-              this.usuario = query_part; 
+              //this.usuario = query_part; 
             }
           )
         }

@@ -13,35 +13,51 @@ export class PerfilUsuarioPage implements OnInit {
   mostrarFamiliar = false;
 
   rol = '';
-  id = "1";
+  id = "";
 
   constructor(private activeRoute: ActivatedRoute, public proveedor:ProveedorService) {
-    this.cargaUsuario();
+  
   }
   
   usuario = {
     "nombre" : '',
     "apellidos" : '',
-    "username" : 'eugenio',
+    "username" : '',
+    "id" : '',
+    "idPersona" : '',
+  };
+
+  familiar = {
+    "nombre" : '',
+    "apellidos" : '',
+    "username" : '',
+    "id" : '',
+    "idPersona" : '',
   };
 
   ngOnInit() {
     this.id = this.activeRoute.snapshot.paramMap.get("id");
 
+    //console.log(this.id);
+
     if(this.proveedor.esSocio(this.usuario.username) != null){
       this.mostrarSocio=true;
       this.rol = 'socio';
+      this.cargaSocio();
     }
-    if(this.proveedor.esFamiliar(this.usuario.username) != null){
+    else if(this.proveedor.esFamiliar(this.usuario.username) != null){
       this.rol = 'familiar de un socio';
       this.mostrarFamiliar = true;
+      this.cargaUsuario();
     }
-    if(this.proveedor.esVoluntario(this.usuario.username) != null){
+    else if(this.proveedor.esVoluntario(this.usuario.username) != null){
       this.rol = 'voluntario';
       this.mostrarVoluntario = true;
+      this.cargaVoluntario();
     }
-    if(this.proveedor.esGestor(this.usuario.username) != null){
+    else if(this.proveedor.esGestor(this.usuario.username) != null){
       this.rol = 'gestor';
+      this.cargaGestor();
     }
   }
 
@@ -55,16 +71,121 @@ export class PerfilUsuarioPage implements OnInit {
 
     this.proveedor.obtenerUsuario(this.id).subscribe(
       (data) => {
-        this.usuario = data;
+        console.log(data);
+        this.usuario = data[0];
+        console.log(this.usuario);
         
         nombre = this.usuario.nombre;
         apellidos = this.usuario.apellidos;
         nombreUsuario = "@" + this.usuario.username;
 
         // para cada socio, cojo el familiar segun su id
-        this.proveedor.obtenerUsuario(this.usuario[1].id).subscribe(
+        this.proveedor.obtenerFamiliar(this.usuario.id).subscribe(
         (query_part) => {
-          this.usuario = query_part; 
+          this.familiar = query_part;
+          console.log(this.familiar);
+          }
+        )
+      },
+      (error) => {
+          console.log(<any>error);
+      }
+    ) 
+
+
+  }
+
+  cargaVoluntario(){
+    
+    let nombre;
+    let apellidos;
+    let nombreUsuario;
+    let valoracionMedia;
+
+
+    this.proveedor.obtenerVoluntario(this.id).subscribe(
+      (data) => {
+        console.log(data);
+        this.usuario = data[0];
+        console.log(this.usuario);
+        
+        nombre = this.usuario.nombre;
+        apellidos = this.usuario.apellidos;
+        nombreUsuario = "@" + this.usuario.username;
+
+        /*/ para cada socio, cojo el familiar segun su id
+        this.proveedor.obtenerFamiliar(this.usuario.id).subscribe(
+        (query_part) => {
+          this.familiar = query_part;
+          console.log(this.familiar);
+          }
+        )*/
+      },
+      (error) => {
+          console.log(<any>error);
+      }
+    ) 
+
+
+  }
+
+  cargaSocio(){
+    
+    let nombre;
+    let apellidos;
+    let nombreUsuario;
+    let valoracionMedia;
+
+
+    this.proveedor.obtenerSocio(this.id).subscribe(
+      (data) => {
+        console.log(data);
+        this.usuario = data[0];
+        console.log(this.usuario);
+        
+        nombre = this.usuario.nombre;
+        apellidos = this.usuario.apellidos;
+        nombreUsuario = "@" + this.usuario.username;
+
+        /*/ para cada socio, cojo el familiar segun su id
+        this.proveedor.obtenerFamiliar(this.usuario.id).subscribe(
+        (query_part) => {
+          this.familiar = query_part;
+          console.log(this.familiar);
+          }
+        )*/
+      },
+      (error) => {
+          console.log(<any>error);
+      }
+    ) 
+
+
+  }
+
+  cargaGestor(){
+    
+    let nombre;
+    let apellidos;
+    let nombreUsuario;
+    let valoracionMedia;
+
+
+    this.proveedor.obtenerUsuario(this.id).subscribe(
+      (data) => {
+        console.log(data);
+        this.usuario = data[0];
+        console.log(this.usuario);
+        
+        nombre = this.usuario.nombre;
+        apellidos = this.usuario.apellidos;
+        nombreUsuario = "@" + this.usuario.username;
+
+        // para cada socio, cojo el familiar segun su id
+        this.proveedor.obtenerFamiliar(this.usuario.id).subscribe(
+        (query_part) => {
+          this.familiar = query_part;
+          console.log(this.familiar);
           }
         )
       },
