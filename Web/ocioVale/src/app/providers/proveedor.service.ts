@@ -13,6 +13,14 @@ export class ProveedorService {
     return this.http.get('http://192.168.56.200:3000/actividades');
   }
 
+  obtenerActividad(id:string): Observable<any>{
+    if (id == null){
+      return this.http.get('http://192.168.56.200:3000/actividades');
+    }
+    else
+      return this.http.get('http://192.168.56.200:3000/actividades?id='+id);
+  }
+
   obtenerUsuarios(): Observable<any>{
     return this.http.get('http://192.168.56.200:3000/usuarios');
   }

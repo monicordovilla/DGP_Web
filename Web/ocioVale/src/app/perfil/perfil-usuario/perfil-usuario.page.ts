@@ -40,22 +40,22 @@ export class PerfilUsuarioPage implements OnInit {
 
     //console.log(this.id);
 
-    if(this.proveedor.esSocio(this.usuario.username) != null){
+    if(this.proveedor.esSocio(this.usuario.username) == undefined ){
       this.mostrarSocio=true;
       this.rol = 'socio';
       //this.cargaSocio();
     }
-    else if(this.proveedor.esFamiliar(this.usuario.username) != null){
+    else if(this.proveedor.esFamiliar(this.usuario.username) == undefined ){
       this.rol = 'familiar de un socio';
       this.mostrarFamiliar = true;
       //this.cargaUsuario();
     }
-    else if(this.proveedor.esVoluntario(this.usuario.username) != null){
+    else if(this.proveedor.esVoluntario(this.usuario.username) == undefined ){
       this.rol = 'voluntario';
       this.mostrarVoluntario = true;
       //this.cargaVoluntario();
     }
-    else if(this.proveedor.esGestor(this.usuario.username) != null){
+    else if(this.proveedor.esGestor(this.usuario.username) == undefined ){
       this.rol = 'gestor';
       //this.cargaGestor();
     }
