@@ -16,6 +16,7 @@ export class PerfilUsuarioPage implements OnInit {
   id = "";
 
   constructor(private activeRoute: ActivatedRoute, public proveedor:ProveedorService) {
+    this.id = this.activeRoute.snapshot.paramMap.get("id");
     this.cargaUsuario();
   }
   
@@ -35,30 +36,69 @@ export class PerfilUsuarioPage implements OnInit {
     "idPersona" : '',
   };
 
-  ngOnInit() {
-    this.id = this.activeRoute.snapshot.paramMap.get("id");
+  ngOnInit() {}
+  verRol(username) {
 
-    //console.log(this.id);
+    console.log("ver rol");
+    console.log(username);
+    this.proveedor.esSocio(username).subscribe(
+      (data) => {
+        console.log(data);
+        console.log("ver si es socio " + data.length);
+        if(data.length > 0){
+          this.rol = 'socio';
+          console.log(this.rol);
+          this.mostrarSocio = true;
+        }
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
 
-    if(this.proveedor.esSocio(this.usuario.username) == undefined ){
-      this.mostrarSocio=true;
-      this.rol = 'socio';
-      //this.cargaSocio();
-    }
-    else if(this.proveedor.esFamiliar(this.usuario.username) == undefined ){
-      this.rol = 'familiar de un socio';
-      this.mostrarFamiliar = true;
-      //this.cargaUsuario();
-    }
-    else if(this.proveedor.esVoluntario(this.usuario.username) == undefined ){
-      this.rol = 'voluntario';
-      this.mostrarVoluntario = true;
-      //this.cargaVoluntario();
-    }
-    else if(this.proveedor.esGestor(this.usuario.username) == undefined ){
-      this.rol = 'gestor';
-      //this.cargaGestor();
-    }
+    this.proveedor.esFamiliar(username).subscribe(
+      (data) => {
+        console.log(data);
+        console.log("ver si es familiar " + data.length);
+        if(data.length > 0){          
+          this.rol = 'familiar de un socio';
+          this.mostrarFamiliar = true;
+          console.log(this.rol);
+        }
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
+
+    this.proveedor.esVoluntario(username).subscribe(
+      (data) => {
+        console.log(data);
+        console.log("ver si es voluntario " + data.length);
+        if(data.length > 0){
+          this.rol = 'voluntario';
+          this.mostrarVoluntario = true;
+          console.log(this.rol);
+        }
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
+
+    this.proveedor.esGestor(username).subscribe(
+      (data) => {
+        console.log(data);
+        console.log("ver si es gestor " + data.length);
+        if(data.length > 0){
+          this.rol = 'gestor';
+          console.log(this.rol);
+        }
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
   }
 
   cargaUsuario(){
@@ -71,19 +111,20 @@ export class PerfilUsuarioPage implements OnInit {
 
     this.proveedor.obtenerUsuario(this.id).subscribe(
       (data) => {
-        console.log(data);
+        //console.log(data);
         this.usuario = data[0];
-        console.log(this.usuario);
+        //console.log(this.usuario);
         
         nombre = this.usuario.nombre;
         apellidos = this.usuario.apellidos;
         nombreUsuario = "@" + this.usuario.username;
+        this.verRol(this.usuario.username);
 
         // para cada socio, cojo el familiar segun su id
         this.proveedor.obtenerFamiliar(this.usuario.id).subscribe(
         (query_part) => {
           this.familiar = query_part;
-          console.log(this.familiar);
+          //console.log(this.familiar);
           }
         )
       },
@@ -91,7 +132,6 @@ export class PerfilUsuarioPage implements OnInit {
           console.log(<any>error);
       }
     ) 
-
 
   }
 
