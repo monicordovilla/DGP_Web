@@ -16,7 +16,7 @@ export class PerfilUsuarioPage implements OnInit {
   id = "";
 
   constructor(private activeRoute: ActivatedRoute, public proveedor:ProveedorService) {
-  
+    this.cargaUsuario();
   }
   
   usuario = {
@@ -43,21 +43,21 @@ export class PerfilUsuarioPage implements OnInit {
     if(this.proveedor.esSocio(this.usuario.username) != null){
       this.mostrarSocio=true;
       this.rol = 'socio';
-      this.cargaSocio();
+      //this.cargaSocio();
     }
     else if(this.proveedor.esFamiliar(this.usuario.username) != null){
       this.rol = 'familiar de un socio';
       this.mostrarFamiliar = true;
-      this.cargaUsuario();
+      //this.cargaUsuario();
     }
     else if(this.proveedor.esVoluntario(this.usuario.username) != null){
       this.rol = 'voluntario';
       this.mostrarVoluntario = true;
-      this.cargaVoluntario();
+      //this.cargaVoluntario();
     }
     else if(this.proveedor.esGestor(this.usuario.username) != null){
       this.rol = 'gestor';
-      this.cargaGestor();
+      //this.cargaGestor();
     }
   }
 

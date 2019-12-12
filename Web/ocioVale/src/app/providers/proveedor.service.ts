@@ -10,27 +10,27 @@ export class ProveedorService {
 
   //METODO PARA LA EXTRACCION DE DATOS DE LA BD
   obtenerActividades(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/actividades');
+    return this.http.get('http://192.168.56.200:3000/actividades');
   }
 
   obtenerUsuarios(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios');
+    return this.http.get('http://192.168.56.200:3000/usuarios');
   }
 
   obtenerParticipantes(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.45:3000/usuarios/participantes');
+      return this.http.get('http://192.168.56.200:3000/usuarios/participantes');
     }
     else
-      return this.http.get('http://192.168.1.45:3000/usuarios/participantes?id='+id);
+      return this.http.get('http://192.168.56.200:3000/usuarios/participantes?id='+id);
   }
 
   obtenerSocios(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios/socios');
+    return this.http.get('http://192.168.56.200:3000/usuarios/socios');
   }
 
   obtenerCategorias(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/actividades/categorias');
+    return this.http.get('http://192.168.56.200:3000/actividades/categorias');
   }
 
   /*obtenerFamiliar(): Observable<any>{
@@ -38,52 +38,52 @@ export class ProveedorService {
   }*/
 
   obtenerFamiliares(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios/familiares');
+    return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
   }
 
   obtenerFamiliar(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.45:3000/usuarios/familiares');
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
     }
     else
-      return this.http.get('http://192.168.1.45:3000/usuarios/familiares?id='+id);
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares?id='+id);
     //return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
   }
 
   obtenerUsuario(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.45:3000/usuarios/familiares');
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
     }
     else
-      return this.http.get('http://192.168.1.45:3000/usuarios/familiares?id='+id);
+      return this.http.get('http://192.168.56.200:3000/usuarios?id='+id);
   }
 
   obtenerGestor(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.45:3000/usuarios/familiares');
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
     }
     else
-      return this.http.get('http://192.168.1.45:3000/usuarios/familiares?id='+id);
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares?id='+id);
   }
 
   obtenerVoluntario(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.45:3000/usuarios/voluntarios');
+      return this.http.get('http://192.168.56.200:3000/usuarios/voluntarios');
     }
     else
-      return this.http.get('http://192.168.1.45:3000/usuarios/voluntarios?id='+id);
+      return this.http.get('http://192.168.56.200:3000/usuarios/voluntarios?id='+id);
   }
 
   obtenerSocio(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.1.45:3000/usuarios/socios');
+      return this.http.get('http://192.168.56.200:3000/usuarios/socios');
     }
     else
-      return this.http.get('http://192.168.1.45:3000/usuarios/socios?id='+id);
+      return this.http.get('http://192.168.56.200:3000/usuarios/socios?id='+id);
   }
   
   obtenerValoracion(): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios/familiares');
+    return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
   }
 
   //METODO PARA INICIAR SESION
@@ -95,7 +95,7 @@ export class ProveedorService {
         })
       }
       console.log(JSON.stringify(postData));
-      return this.http.post("http://192.168.1.45:3000/loginGestor", JSON.stringify(postData));
+      return this.http.post("http://192.168.56.200:3000/loginGestor", JSON.stringify(postData));
   }
 
   //METODOS PARA AÑADIR
@@ -108,7 +108,7 @@ export class ProveedorService {
       })
     }
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.1.45:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
   }
 
   enviarCategoria(postData): Observable<any>{
@@ -121,7 +121,7 @@ export class ProveedorService {
     }
 
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.1.45:3000/actividades/addCategoria", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/actividades/addCategoria", JSON.stringify(postData), httpOptions);
   }
 
   //añadir usuarios
@@ -135,7 +135,7 @@ export class ProveedorService {
     }
 
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.1.45:3000/usuarios/addGestor", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/usuarios/addGestor", JSON.stringify(postData), httpOptions);
   }
 
   enviarSocio(postData): Observable<any>{
@@ -148,7 +148,7 @@ export class ProveedorService {
     }
 
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.1.45:3000/usuarios/addSocio", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/usuarios/addSocio", JSON.stringify(postData), httpOptions);
   }
 
   enviarVoluntario(postData): Observable<any>{
@@ -161,7 +161,7 @@ export class ProveedorService {
     }
 
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.1.45:3000/usuarios/addVoluntario", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/usuarios/addVoluntario", JSON.stringify(postData), httpOptions);
   }
 
   enviarFamiliar(postData): Observable<any>{
@@ -174,24 +174,24 @@ export class ProveedorService {
     }
 
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.1.45:3000/usuarios/addFamiliar", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/usuarios/addFamiliar", JSON.stringify(postData), httpOptions);
   }
 
   //METODOS PARA COMPROBAR EL ROL DE UN USUARIO
   esSocio(username): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios/esSocio?username=' + username);
+    return this.http.get('http://192.168.56.200:3000/usuarios/esSocio?username=' + username);
   }
 
   esGestor(username): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios/esGestor?username=' + username);
+    return this.http.get('http://192.168.56.200:3000/usuarios/esGestor?username=' + username);
   }
 
   esVoluntario(username): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios/esVoluntario?username=' + username);
+    return this.http.get('http://192.168.56.200:3000/usuarios/esVoluntario?username=' + username);
   }
 
   esFamiliar(username): Observable<any>{
-    return this.http.get('http://192.168.1.45:3000/usuarios/esFamiliar?username=' + username);
+    return this.http.get('http://192.168.56.200:3000/usuarios/esFamiliar?username=' + username);
   }
     
 }

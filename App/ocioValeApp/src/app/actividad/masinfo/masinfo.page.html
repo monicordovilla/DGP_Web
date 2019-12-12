@@ -5,23 +5,24 @@
 <ion-content>
 <main>
     <div class="ion-text-center">
-        <h1>Titulo</h1>
-        Más información
+        <h1>{{actividad.nombre}}</h1>
     </div>
 
     <hr class="ion-margin-horizontal">
 
     <div class="ion-text-center">
-        <span class="blep">Fecha:</span> lorem <br>
-        <span class="blep">Lugar:</span> lorem <br>
-        <span class="blep">Organizador:</span> lorem <br>
-        <br>
-        <div class="blep">Descripción:</div>
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in nulla suscipit, finibus leo vitae, mollis lorem. Nulla mi eros, placerat et erat vel, placerat pellentesque purus. Vivamus eu diam quis turpis fermentum convallis a euismod dui. Aliquam sit amet mauris dapibus, interdum justo non, faucibus quam. Praesent viverra purus id nunc bibendum, vel egestas ipsum placerat. Mauris quam est, elementum vitae consequat sed, blandit eget nulla. Nullam sed varius dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam in risus lacus.
-    </div>
+        <p><span class="blep">Fecha:</span> {{actividad.fecha}}</p>
+        <p><span class="blep">Lugar:</span> {{actividad.lugar}}</p>
+        <p><span class="blep">Duracion:</span> {{actividad.duracion}}</p>
 
-    <div class="ion-text-center">
-        <ion-button expand="block" color="danger" href="/actividad">Volver</ion-button>
+        <div class="blep">Descripción:</div>
+        <p>{{actividad.descripcion}}</p>
     </div>
 </main>
 </ion-content>
+
+<footer>
+    <div class="ion-text-center">
+        <ion-button expand="block" color="danger" [routerLink]="['/actividad', id]" size="large">Volver</ion-button>
+    </div>
+</footer>

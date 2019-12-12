@@ -4,38 +4,40 @@
 
 <ion-content>
 <main>
-    <h1 class="ion-text-center">{{actividad.nombreActividad}}</h1>
+    <h1 class="ion-text-center">{{actividad.nombre}}</h1>
 
     <hr>
 
     <ion-grid>
         <ion-row>
             <ion-col>
-                <img src="../assets/img/imagen.jpg" alt="imagen actividad">
+                <img src="{{actividad.imagen}}" alt="imagen actividad">
             </ion-col>
             <ion-col size="60%">
                 <p><span class="blep">Fecha:</span></p><p>{{actividad.fecha}}</p>
                 <p><span class="blep">Lugar:</span></p><p>{{actividad.lugar}}</p>
-                <p><span class="blep">Duración:</span></p><p>{{duracion}}</p>
+                <p><span class="blep">Duración:</span></p><p>{{actividad.duracion}}</p>
             </ion-col>
         </ion-row>
         <p><span class="blep">Categorias:</span></p>
+        
         <ion-row>
-            <div id="categoria">
-            <ion-col ion-item *ngFor="let categoria of categorias">
-                <img src={{categoria.imagen}} alt={{categoria.imagen}}/>
-            </ion-col>
+            <div class="categoria" *ngFor="let categoria of categorias">
+                <ion-col>
+                    <img src={{categoria.imagen}} alt={{categoria.imagen}}/>
+                    <p>{{categoria.nombre}}</p>
+                </ion-col>
             </div>
         </ion-row>
     </ion-grid>
 
     <div id="botones" class="ion-text-center" >
-        <ion-button color="dark" href="/valoracion">Cancelar/Apuntarse/Valorar</ion-button>
+        <ion-button color="dark" (click)="realizarAccion()">{{accion}}</ion-button>
 
         <hr>
 
         <ion-button expand="block" color="dark" href="/chat"><ion-icon name="md-chatboxes" size="large"></ion-icon>Chat de actividad</ion-button>
-        <ion-button expand="block" color="dark" href="/masinfo"><ion-icon name="md-list" size="large"></ion-icon>Más información de la actividad</ion-button>
+        <ion-button expand="block" color="dark" [routerLink]="['/masinfo', id]"><ion-icon name="md-list" size="large"></ion-icon>Más información</ion-button>
         <ion-button expand="block" color="dark" href="/participantes"><ion-icon name="md-people" size="large"></ion-icon>Ver participantes</ion-button>
 
     </div>

@@ -11,6 +11,7 @@ $headerSize : 20px;
 main{
   background-color: $bgcolor;
   padding: 2.5% 2.5%;
+  padding-top: 1.5%;
   color: $textcolor;
   //font-family: $fontFamily;
   height: calc(100vh - 110px); /*AJUSTAR, no esta bien definido la altura*/
@@ -23,6 +24,7 @@ p{
 
 h1{
   font-weight: bold;
+  font-size: 20px;
 }
 
 h2 {
@@ -43,11 +45,18 @@ hr {
   margin-top: 10px;
 }
 
-ion-row{
-  padding-bottom: 2%;
+.categoria{
+  display: flex;
+  align-items: center;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
-#categoria > ion-col > img{
-  width: 18%;
+.categoria >ion-col > img{
+  width: 80px;
+}
 
+.categoria >ion-col  > p{
+  text-align: center;
+  width: 90px;
 }

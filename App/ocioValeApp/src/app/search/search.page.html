@@ -50,11 +50,11 @@
 
         </div>
 
-        <div id="lista" ion-item *ngFor="let actividad of actividades; let indice=index">
+        <div id="lista" ion-item *ngFor="let actividad of actividades">
             <div class="actividad">
-                <h5><a [routerLink]="['/actividad', indice]">{{actividad.nombre}}</a></h5>
+                <h5><a [routerLink]="['/actividad', actividad.id]">{{actividad.nombre}}</a></h5>
                 <div id="contenido">
-                    <a [routerLink]="['/actividad', indice]" ><img src={{actividad.imagen}} alt="imagen"/></a>
+                    <a [routerLink]="['/actividad', actividad.id]" ><img src={{actividad.imagen}} alt="imagen"/></a>
                     <div id="datos">
                         <h6>{{actividad.lugar}}</h6>
                         <h6>{{actividad.fecha}}</h6>

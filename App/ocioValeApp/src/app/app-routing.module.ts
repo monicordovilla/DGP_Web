@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'actividad/:id', loadChildren: './actividad/actividad.module#ActividadPageModule'},
   { path: 'myActivities', loadChildren: './myActivities/myActivities.module#myActivitiesPageModule' },
   { path: 'valoracion', loadChildren: './valoracion/valoracion.module#ValoracionPageModule' },
-  { path: 'masinfo', loadChildren: './actividad/masinfo/masinfo.module#MasinfoPageModule' },
+  { path: 'masinfo/:id', loadChildren: './actividad/masinfo/masinfo.module#MasinfoPageModule' },
   { path: 'chat', loadChildren: './actividad/chat/chat.module#ChatPageModule' },
   { path: 'crear', loadChildren: './actividad/crear/crear.module#CrearPageModule' },
   { path: 'inicio', loadChildren: './inicio/inicio.module#InicioPageModule' },
