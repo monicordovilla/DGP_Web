@@ -103,3 +103,30 @@ input-width{
   float: left;
   width: 10%;
 }
+
+.alert {
+  display:none;
+  opacity: 0.8;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 17px;
+  width: 45%;
+  background-color: #FF7C93;
+  color: white;
+  text-align:center;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

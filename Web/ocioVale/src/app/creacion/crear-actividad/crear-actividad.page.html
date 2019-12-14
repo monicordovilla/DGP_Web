@@ -45,7 +45,16 @@
       </div>
       <br>
       <br>
+
       <ion-button (ngSubmit)="crearActividad()" (click)='crearActividad()' type="submit" size="large" color="dark"> Añadir </ion-button>
+          
+      <div id="loginPopUp" class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          <div id="messageBox"></div>
+      </div>
+      
     </form>
   </div>
 </ion-content>
+
+
