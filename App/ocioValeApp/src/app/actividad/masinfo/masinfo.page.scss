@@ -1,4 +1,42 @@
+$bgcolor: #FEFEFE;
+$bgcolorSec: #EAEAEA;
+$textcolor: #174A45;
+$textcolorSec: #050505;
+$fontsize: 30px;
+$minfontsize : 12px;
+$minButtonSize: 48 dp;
+$fontFamily: Tahoma;
+$headerSize : 20px;
+
+main{
+  background-color: $bgcolor;
+  padding: 2.5% 5%;
+  padding-top: 1.5%;
+  color: $textcolor;
+  //font-family: $fontFamily;
+}
+
+
 .blep {
     color: --ion-color-primary-rgb;
     font-weight: bold;
 }
+
+h1{
+    font-weight: bold;
+    font-size: 22px;
+    padding-top: 2.5%;
+}
+
+p{
+    text-align: justify;
+}
+
+footer {
+    text-decoration: none;
+    color: white;
+    padding: 10%;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+  }

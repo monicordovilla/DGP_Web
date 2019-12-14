@@ -18,7 +18,7 @@
     <ion-label class="inputRight">Fecha Nacimiento</ion-label>
 
     <ion-input [(ngModel)]="usuario.apellidos" class="inputLeft" type="text" placeholder="Apellidos" id="apellidos" name="apellidos" required></ion-input><br>
-    <ion-input [(ngModel)]="usuario.fecha_nacimiento" class="inputRight"  type="date" placeholder="Fecha Nacimiento" name="fec_nac" required></ion-input><br>
+    <ion-input [(ngModel)]="usuario.fecha_nacimiento" class="inputRight"  type="text" placeholder="Fecha Nacimiento" name="fec_nac" required></ion-input><br>
 
 
     <ion-label class="inputLeft">Nombre de usuario</ion-label>
@@ -54,7 +54,7 @@
     
     <div class="botonesUsuario">
       <ion-button  size="large" color="dark" type="submit">MODIFICAR</ion-button>
-      <ion-button  size="large" color="danger" type="submit">ELIMINAR</ion-button>
+      <ion-button (click)="eliminarUsuario()" size="large" color="danger" type="submit">ELIMINAR</ion-button>
 
       <ion-button *ngIf="mostrarVoluntario"  size="large" color="danger" type="submit">CENSURAR</ion-button>
       <ion-button *ngIf="mostrarVoluntario"  size="large" color="dark" type="submit">CONSULTAR INFORMACIÓN</ion-button>

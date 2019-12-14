@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProveedorService } from 'src/app/providers/proveedor.service';
 
 @Component({
   selector: 'app-actividad',
@@ -9,10 +10,25 @@ import { ActivatedRoute } from '@angular/router';
 export class actividad {
   id = null;
 
-  constructor(private activeRoute: ActivatedRoute) {}
+  actividad = {};
+
+  constructor(private activeRoute: ActivatedRoute, public proveedor:ProveedorService) {
+    this.id = this.activeRoute.snapshot.paramMap.get("id");
+  }
 
   ngOnInit(){
-    this.id = this.activeRoute.snapshot.paramMap.get("id");
+    
+  }
+
+  eliminarActividad(){
+    this.proveedor.eliminarActividad(this.id).subscribe(
+      (res) =>{
+        console.log(res);
+      },
+      error =>{
+        console.error(error);
+      }
+    );
   }
 
 }

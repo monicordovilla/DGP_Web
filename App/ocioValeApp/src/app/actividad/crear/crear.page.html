@@ -13,9 +13,17 @@
 
       <h3>Introduce los datos</h3><br>
 
+
+        <!--<form name="formulario" method="post" enctype="multipart/form-data">
+            <ion-input type="file" placeholder="Imagen" id="imagen" name="imagen" accept=".jpg">
+        </form> -->
+
+      <span ><ion-label>Nombre actividad</ion-label></span>
+      <ion-input type="file" placeholder="Imagen" id="imagen" name="imagen" accept=".jpg" accept="*.jpg" required></ion-input><br>
+
       <span><ion-label>Categoria</ion-label></span><br>
 
-      <ion-select name="cat" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required>
+      <ion-select name="cat" id="rol" [interfaceOptions]="customPopoverOptions" interface="popover" class="select" placeholder="Escoja la categoria de la actividad" required multiple>
         <ion-select-option name="cat1" id="cat1" class="cat1" value="cat1">cat 1</ion-select-option>
         <ion-select-option name="cat2" id="cat2" class="cat2" value="cat2">cat 2</ion-select-option>
       </ion-select>
@@ -32,6 +40,9 @@
 
       <span><ion-label>Fecha</ion-label></span>
       <ion-input type="date" placeholder="Fecha" id="fecha" name="fecha" required></ion-input><br>
+
+      <span><ion-label>Duración</ion-label></span>
+      <ion-input type="time" placeholder="Duración" id="duracion" name="duracion" required></ion-input><br>
 
       <span><ion-label>Descripcion</ion-label></span><br>
       <ion-input type="text" placeholder="Descripcion de la actividad" id="descripcion" name="descripcion" required></ion-input><br>

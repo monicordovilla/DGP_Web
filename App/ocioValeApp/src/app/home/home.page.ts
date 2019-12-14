@@ -26,12 +26,11 @@ export class HomePage {
           dateTime = this.actividades[i].fecha;
           parts= dateTime.split(/[- :TZ]/);
           this.actividades[i].fecha = parts[2] + "-" + parts[1] + "-" + parts[0] + " | " + parts[3] + ":" + parts[4];
-          this.categorias.push([
-            {
-              "id": 1,
-              "imagen": "http://www.arasaac.org/repositorio/thumbs/10/200/3/30387.png"
-            }
-          ]);
+
+          this.proveedor.obtenerCategoriasActividad(this.actividades[i].id).subscribe(
+            (data) => {
+              this.categorias.push(data);
+            })
         }
       },
       error => {

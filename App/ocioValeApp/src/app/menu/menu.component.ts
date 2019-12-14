@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() {}
 
   toggleMenu(){
-      document.getElementById("menu").style.display ='block';
+      //document.getElementById("menu").style.display ='block';
       this.menuCtrls.toggle();
   }
 }
