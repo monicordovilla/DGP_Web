@@ -31,7 +31,7 @@ export class Categorias {
   }
 
   eliminarCategoria(ident: String){
-    this.proveedor.eliminarActividad(ident).subscribe(
+    this.proveedor.eliminarCategoria(ident).subscribe(
       (res) =>{
         console.log(res);
       },

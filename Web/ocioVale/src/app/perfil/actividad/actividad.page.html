@@ -2,36 +2,36 @@
 
 <ion-content>
 
-  <div class="navegation"> Admistrar actividades >> Añadir actividad </div>
+  <div class="navegation"> Admistrar actividades</div>
  
   <div class="container">
-    <h2>Añade una actividad</h2><br>
+    <h2>Informacion de una actividad</h2><br>
 
     <section class="information">
       <div class="information-block">
-        <input class="nombre-actividad" type="text" placeholder="Nombre de actividad" name="nombreActividad" required><br><br>    
-        <input class="lugar-actividad" type="text" placeholder="Lugar" name="lugarActividad" required><br><br>
+        <input [(ngModel)]="actividad.nombre" class="nombre-actividad" type="text" placeholder="Nombre de actividad" name="nombreActividad" required><br><br>    
+        <input [(ngModel)]="actividad.lugar" class="lugar-actividad" type="text" placeholder="Lugar" name="lugarActividad" required><br><br>
       </div>
-      <input class="categoria-actividad" type="text" placeholder="Categoría" name="categoriaActividad" required><br><br>
+      <input [(ngModel)]="categorias" class="categoria-actividad" type="text" placeholder="Categoría" name="categoriaActividad" required><br><br>
     </section>
 
 
     <section class="information">
         <div class="information-block">
           <section class="subsection">
-              <input class="hora-actividad" type="text" placeholder="Hora" name="hora" required><br><br>
-              <input class="fecha-actividad" type="text" placeholder="Fecha" name="fecha" required><br><br>
+              <input [(ngModel)]="hora" class="hora-actividad" type="text" placeholder="Hora" name="hora" required><br><br>
+              <input [(ngModel)]="fecha" class="fecha-actividad" type="text" placeholder="Fecha" name="fecha" required><br><br>
           </section>
           
           <input class="tipo-actividad" type="text" placeholder="Tipo" name="tipo" required><br><br>  
 
           <section class="subsection">
-            <input class="max-voluntarios" type="text" placeholder="Max. voluntarios" name="maxVoluntarios" required><br><br>
-            <input class="max-socios" type="text" placeholder="Max. socios" name="maxSocios" required><br><br>
+            <input [(ngModel)]="voluntarios" class="max-voluntarios" type="text" placeholder="Max. voluntarios" name="maxVoluntarios" required><br><br>
+            <input [(ngModel)]="socios" class="max-socios" type="text" placeholder="Max. socios" name="maxSocios" required><br><br>
           </section>
         </div>
   
-        <input class="descripcion-voluntario" type="text" placeholder="Descripción" name="descripcion" required><br><br>
+        <input [(ngModel)]="actividad.descripcion" class="descripcion-voluntario" type="text" placeholder="Descripción" name="descripcion" required><br><br>
     </section>
 
     

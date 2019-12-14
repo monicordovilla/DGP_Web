@@ -41,9 +41,14 @@ export class ProveedorService {
     return this.http.get('http://192.168.56.200:3000/actividades/categorias');
   }
 
-  /*obtenerFamiliar(): Observable<any>{
-    return this.http.get('http://192.168.1.148:3000/usuarios/familiaresDelSocio?id=5');
-  }*/
+  obtenerCategoriasDeActividad(id): Observable<any>{
+    console.log(id);
+    return this.http.get('http://192.168.56.200:3000/actividades/categoriasDeActividad?idAct='+id);
+  }
+
+  obtenerFamiliarSocio(id): Observable<any>{
+    return this.http.get('http://192.168.1.148:3000/usuarios/familiaresDelSocio?id=' + id);
+  }
 
   obtenerFamiliares(): Observable<any>{
     return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
@@ -55,7 +60,6 @@ export class ProveedorService {
     }
     else
       return this.http.get('http://192.168.56.200:3000/usuarios/familiares?id='+id);
-    //return this.http.get('http://192.168.56.200:3000/usuarios/familiares');
   }
 
   obtenerUsuario(id:string): Observable<any>{
@@ -78,6 +82,7 @@ export class ProveedorService {
     if (id == null){
       return this.http.get('http://192.168.56.200:3000/usuarios/voluntarios');
     }
+    //te dice las valoraciones de este voluntario
     else
       return this.http.get('http://192.168.56.200:3000/usuarios/voluntarios?id='+id);
   }
@@ -204,7 +209,7 @@ export class ProveedorService {
 
   //METODOS PARA ELIMINAR
   eliminarUsuario(username): Observable<any>{
-    
+
     console.log("Borrando " + username);
     return this.http.delete('http://192.168.56.200:3000/usuarios?username=' + username);
   }
