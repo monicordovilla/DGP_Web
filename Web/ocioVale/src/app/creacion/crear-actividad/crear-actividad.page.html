@@ -21,23 +21,30 @@
       <ion-input [(ngModel)]="actividad.nombreActividad" class="inputLeft" type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
       <ion-input [(ngModel)]="actividad.lugar" class="inputRight" type="text" placeholder="Lugar" id="lugar" name="lugar" required></ion-input><br>
       
-      <span class="inputLeft"><ion-label>Fecha</ion-label></span>
-      <span class="inputRight"><ion-label>Duración</ion-label></span><br>
-
-      <ion-datetime [(ngModel)]="actividad.fecha" class="inputLeft" placeholder="Dia Mes Año Hora Minutos" displayFormat="D MMM YYYY H:mm" name="fecha" required></ion-datetime>
-      <ion-input [(ngModel)]="actividad.duracion" class="inputRight" type="number" placeholder="Duracion de la actividad" id="duracion" name="duracion" required></ion-input><br>
 
       <span class="inputLeft"><ion-label>Numero de voluntarios</ion-label></span>
-      <span class="inputRight"><ion-label>Descripcion</ion-label></span><br>
+      <span class="inputRight"><ion-label>Duración</ion-label></span><br>
+
       <ion-input [(ngModel)]="maxvoluntarios" class="inputLeft" type="number" placeholder="Numero maximo de voluntarios" id="numVoluntarios" name="numVoluntarios" required></ion-input>
+      <ion-input [(ngModel)]="actividad.duracion" class="inputRight" type="number" placeholder="Duracion de la actividad" id="duracion" name="duracion" required></ion-input><br>
+
+      <span class="inputLeft"><ion-label>Numero de socios</ion-label></span>
+      <span class="inputRight"><ion-label>Imagen</ion-label></span><br>
+      
+      <ion-input [(ngModel)]="maxsocios" class="inputLeft" type="number" placeholder="Numero maximo de socios" id="numSocios" name="numSocios" required></ion-input>
+      <ion-input [(ngModel)]="actividad.imagen" class="inputRight" type="url" placeholder="url de la imagen" id="imagen" name="imagen" required></ion-input>
+      <br>
+
+      <span class="inputLeft"><ion-label>Fecha</ion-label></span>
+      <span class="inputRight"><ion-label>Descripcion</ion-label></span><br>
+
       <ion-input [(ngModel)]="actividad.descripcion" class="inputRight" type="text" placeholder="Descripcion de la actividad" id="descripcion" name="descripcion" required></ion-input><br>
 
-      <span class="inputLeft"><ion-label>Numero de socios</ion-label></span><br>
-      <ion-input [(ngModel)]="maxsocios" class="inputLeft" type="number" placeholder="Numero maximo de socios" id="numSocios" name="numSocios" required></ion-input><br>
-  
-      <span><ion-label>Imagen</ion-label></span><br>
-      <ion-input [(ngModel)]="actividad.imagen" type="url" placeholder="url de la imagen" id="imagen" name="imagen" required></ion-input><br>
-
+      <div class="inputLeftDate">
+        <ion-datetime [(ngModel)]="actividad.fecha" placeholder="Dia Mes Año Hora Minutos" displayFormat="D MMM YYYY H:mm" name="fecha" required></ion-datetime>
+      </div>
+      <br>
+      <br>
       <ion-button (ngSubmit)="crearActividad()" (click)='crearActividad()' type="submit" size="large" color="dark"> Añadir </ion-button>
     </form>
   </div>

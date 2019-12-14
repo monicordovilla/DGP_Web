@@ -10,15 +10,15 @@ export class ProveedorService {
 
   //METODO PARA LA EXTRACCION DE DATOS DE LA BD
   obtenerActividades(): Observable<any>{
-    return this.http.get('http://192.168.56.200:3000/actividades');
+    return this.http.get('http://192.168.56.141:3000/actividades');
   }
 
   obtenerActividad(id:string): Observable<any>{
     if (id == null){
-      return this.http.get('http://192.168.56.200:3000/actividades');
+      return this.http.get('http://192.168.56.141:3000/actividades');
     }
     else
-      return this.http.get('http://192.168.56.200:3000/actividades?id='+id);
+      return this.http.get('http://192.168.56.141:3000/actividades?id='+id);
   }
 
   obtenerUsuarios(): Observable<any>{
@@ -116,7 +116,7 @@ export class ProveedorService {
       })
     }
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.56.200:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.141:3000/actividades/addActividadGrupal", JSON.stringify(postData), httpOptions);
   }
 
   enviarCategoria(postData): Observable<any>{
@@ -212,12 +212,12 @@ export class ProveedorService {
   eliminarActividad(id): Observable<any>{
 
     console.log("Borrando " + id);
-    return this.http.delete('http://192.168.56.200:3000/actividades?id=' + id);
+    return this.http.delete('http://192.168.56.141:3000/actividades?id=' + id);
   }
 
   eliminarCategoria(id): Observable<any>{
 
     console.log("Borrando " + id);
-    return this.http.delete('http://192.168.56.200:3000/actividades/categorias?id=' + id);
+    return this.http.delete('http://192.168.56.141:3000/actividades/categorias?id=' + id);
   }
 }
