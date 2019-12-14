@@ -11,6 +11,7 @@ export class PerfilUsuarioPage implements OnInit {
   mostrarSocio=false;
   mostrarVoluntario = false;
   mostrarFamiliar = false;
+  mostrar = false;
 
   rol = '';
   id = "";
@@ -35,6 +36,8 @@ export class PerfilUsuarioPage implements OnInit {
     "id" : '',
     "idPersona" : '',
   };
+
+  familiares = [];
 
   ngOnInit() {}
   verRol(username) {
@@ -146,7 +149,18 @@ export class PerfilUsuarioPage implements OnInit {
   }
 
 
-
+  consultarFamiliar(){
+    this.mostrar = true;
+    this.proveedor.obtenerFamiliarSocio(this.id).subscribe(
+      (data) => {
+        //console.log(data);
+        this.familiares = data;
+      },
+      (error) =>{
+        console.error(error);
+      }
+    );
+  }
 
 
 

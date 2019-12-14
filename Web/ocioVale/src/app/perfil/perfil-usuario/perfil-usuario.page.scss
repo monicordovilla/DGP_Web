@@ -114,4 +114,34 @@
       --padding-start: 10px;
       --padding-end: 10px;
     }
+
+    .flex-columna{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: space-around;
+    }
+
+    .info-usuario{
+      display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       align-content: center;
+       justify-content: space-around;
+       width: 9
+       0%;
+       background-color: $bgcolorSec;
+       height: 10%;
+       border: 2px solid $textcolorSec;
+       margin-top: 3%;
+    }
+    
+    .imagen-actividades{
+      background: transparent;
+      width: 20%;
+      height: 20%;
+      margin: 2% 0 2% 0;
+      border: 5px solid white;
+    }
   

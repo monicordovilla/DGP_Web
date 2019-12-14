@@ -41,9 +41,14 @@ export class ProveedorService {
     return this.http.get('http://192.168.1.141:3000/actividades/categorias');
   }
 
-  /*obtenerFamiliar(): Observable<any>{
-    return this.http.get('http://192.168.1.148:3000/usuarios/familiaresDelSocio?id=5');
-  }*/
+  obtenerCategoriasDeActividad(id): Observable<any>{
+    console.log(id);
+    return this.http.get('http://192.168.56.200:3000/actividades/categoriasDeActividad?idAct='+id);
+  }
+
+  obtenerFamiliarSocio(id): Observable<any>{
+    return this.http.get('http://192.168.1.148:3000/usuarios/familiaresDelSocio?id=' + id);
+  }
 
   obtenerFamiliares(): Observable<any>{
     return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
@@ -54,8 +59,7 @@ export class ProveedorService {
       return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
     }
     else
-      return this.http.get('http://192.168.1.141:3000/usuarios/familiares?id='+id);
-    //return this.http.get('http://192.168.1.141:3000/usuarios/familiares');
+      return this.http.get('http://192.168.56.200:3000/usuarios/familiares?id='+id);
   }
 
   obtenerUsuario(id:string): Observable<any>{
@@ -78,6 +82,7 @@ export class ProveedorService {
     if (id == null){
       return this.http.get('http://192.168.1.141:3000/usuarios/voluntarios');
     }
+    //te dice las valoraciones de este voluntario
     else
       return this.http.get('http://192.168.1.141:3000/usuarios/voluntarios?id='+id);
   }

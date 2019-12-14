@@ -84,4 +84,15 @@ export class Actividades {
     ) 
   }
 
+  cancelarActividad(id: String){
+    this.proveedor.eliminarActividad(id).subscribe(
+      (res) =>{
+        console.log(res);
+      },
+      error =>{
+        console.error(error);
+      }
+    );
+  }
+
 }
