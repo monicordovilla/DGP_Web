@@ -14,7 +14,10 @@ $tamHeader: 50px;
 /* Clases */
 .container{
  background-color: $bgcolor;
- padding: 5%;
+ margin-top: 3%;
+ margin-left: 5%;
+ margin-right: 5%;
+ margin-bottom: 3%;
  font-family: $fontFamily;
 }
 
@@ -22,6 +25,8 @@ h2{
   font-family: $fontFamily;
   color: $textcolor;
   font-size: $fontsize;
+  margin-left: 2%;
+  margin-bottom: 15px;
 }
 
 ion-input{

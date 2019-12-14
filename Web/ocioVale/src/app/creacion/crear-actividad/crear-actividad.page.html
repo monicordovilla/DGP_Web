@@ -1,20 +1,20 @@
 <app-header></app-header>
 
 <ion-content>
-  <div class="container">
-
     <ion-item>
-      <p>Crear actividad </p>
-    </ion-item>
+        <h2><br>Crear actividad </h2>
+      </ion-item>
 
-    <h2>Introduce los datos</h2><br>
+  <div class="container">
+    
+    <!--<h2>Introduce los datos</h2>-->
 
-    <form (ngSubmit)="crearActividad()">
-      <span><ion-label>Categoria</ion-label></span><br>
+    <form (ngSubmit)="crearActividad()" position="stacked">
+      <span><ion-label>Categoria</ion-label></span><br><br>
       <ion-select multiple="true"  okText="Aceptar" cancelText="Cancelar" [(ngModel)]="actividad.categorias" name="categoria" id="rol" class="select" placeholder="Escoja la categoria de la actividad" required>
         <ion-select-option *ngFor="let categoria of categorias; let indice=index" id={{categoria.id}} value={{categoria.id}}>{{categoria.nombre}}</ion-select-option>
       </ion-select>
-
+      <br><br>
       <span class="inputLeft"><ion-label>Nombre actividad</ion-label></span>
       <span class="inputRight"><ion-label>Lugar</ion-label></span><br>
 
