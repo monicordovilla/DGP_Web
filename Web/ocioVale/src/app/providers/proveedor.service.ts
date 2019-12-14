@@ -129,7 +129,7 @@ export class ProveedorService {
     }
 
     console.log(JSON.stringify(postData));
-    return this.http.post("http://192.168.56.200:3000/actividades/addCategoria", JSON.stringify(postData), httpOptions);
+    return this.http.post("http://192.168.56.200:3000/actividades/addCategoria", postData, httpOptions);
   }
 
   //añadir usuarios
@@ -201,5 +201,23 @@ export class ProveedorService {
   esFamiliar(username): Observable<any>{
     return this.http.get('http://192.168.56.200:3000/usuarios/esFamiliar?username=' + username);
   }
+
+  //METODOS PARA ELIMINAR
+  eliminarUsuario(username): Observable<any>{
     
+    console.log("Borrando " + username);
+    return this.http.delete('http://192.168.56.200:3000/usuarios?username=' + username);
+  }
+    
+  eliminarActividad(id): Observable<any>{
+
+    console.log("Borrando " + id);
+    return this.http.delete('http://192.168.56.200:3000/actividades?id=' + id);
+  }
+
+  eliminarCategoria(id): Observable<any>{
+
+    console.log("Borrando " + id);
+    return this.http.delete('http://192.168.56.200:3000/actividades/categorias?id=' + id);
+  }
 }

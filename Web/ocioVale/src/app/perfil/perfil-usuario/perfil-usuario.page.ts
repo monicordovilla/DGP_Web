@@ -135,6 +135,28 @@ export class PerfilUsuarioPage implements OnInit {
 
   }
 
+
+  eliminarUsuario(){
+    this.proveedor.eliminarUsuario(this.usuario.username).subscribe(
+      
+      error =>{
+        console.error(error);
+      }
+    );
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
   cargaVoluntario(){
     
     let nombre;

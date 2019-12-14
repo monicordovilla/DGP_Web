@@ -30,4 +30,15 @@ export class Categorias {
 
   }
 
+  eliminarCategoria(ident: String){
+    this.proveedor.eliminarActividad(ident).subscribe(
+      (res) =>{
+        console.log(res);
+      },
+      error =>{
+        console.error(error);
+      }
+    );
+  }
+
 }
