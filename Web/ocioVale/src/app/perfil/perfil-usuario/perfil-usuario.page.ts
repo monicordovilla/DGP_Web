@@ -11,7 +11,7 @@ export class PerfilUsuarioPage implements OnInit {
   mostrarSocio=false;
   mostrarVoluntario = false;
   mostrarFamiliar = false;
-  mostrar = false;
+  mostrar = true; //cambiar luego a falso
 
   rol = '';
   id = "";
