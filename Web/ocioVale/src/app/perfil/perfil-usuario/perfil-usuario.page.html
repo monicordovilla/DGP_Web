@@ -2,7 +2,9 @@
 
 <ion-content>
 
-  <div class="navegation"> Admistrar usuarios</div>
+  <ion-item>
+    <div class=cabecera><br>Administrar usuarios</div>
+  </ion-item>
  
   <div class="container">
   <form>
@@ -51,8 +53,35 @@
       <ion-textarea [(ngModel)]="descripcionPrivada" class="inputCenter" type="text" placeholder="Descripcion privada del usuario" name="descripcionPrivada"></ion-textarea><br>
     </div>
 
+    <div *ngIf="mostrar" class="datos-familiar">
+
+      <div id="lista" ion-item >
+
+          <div class = "info-usuario">
+              <a class="imagen-actividades"><img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png"
+                 alt="imagen usuario"/></a>
+
+              <div class="datos-familiar">
+                <h5>nombre familiar</h5>
+                <h5>apellido familiar</h5>
+                <h5>@nombre usuario familiar</h5>
+              </div>
+
+              <div class="datos-familiar">
+                  <h5> Valoración media: </h5>
+              </div>
+
+              <div class="datos-familiar">
+                  <ion-button href='/perfil-usuario/1' size="large" color="dark"> Administrar </ion-button>
+              </div>
+          </div>
+
+      </div>
+
+    </div>
     
     <div class="botonesUsuario">
+       
       <ion-button  size="large" color="dark" type="submit">MODIFICAR</ion-button>
       <ion-button (click)="eliminarUsuario()" size="large" color="danger" type="submit">ELIMINAR</ion-button>
 
@@ -63,32 +92,7 @@
 
     </div>
 
-    <div *ngIf="mostrar" class="flex-columna">
-
-      <div id="lista" ion-item >
-
-          <div class = "info-usuario">
-              <a class="imagen-actividades"><img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png"
-                 alt="imagen usuario"/></a>
-
-              <div class="flex-columna">
-                <h5>nombre familiar</h5>
-                <h5>apellido familiar</h5>
-                <h5>@nombre usuario familiar</h5>
-              </div>
-
-              <div class="flex-columna">
-                  <h5> Valoración media: </h5>
-              </div>
-
-              <div class="flex-columna">
-                  <ion-button href='/perfil-usuario/1' size="large" color="dark"> Administrar </ion-button>
-              </div>
-          </div>
-
-      </div>
-
-  </div>
+    
   </form>
 
   </div>
