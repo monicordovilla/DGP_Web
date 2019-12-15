@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 @Injectable()
 export class ProveedorService {
 
-  url = 'http://192.168.56.200:3000';
+  url = 'http://192.168.1.148:3000';
 
   constructor(public http:HttpClient) { }
 
@@ -105,12 +105,11 @@ export class ProveedorService {
   enviarLogin(postData): Observable<any>{// Http Options
       let httpOptions = {
         headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : '*'
+          'Content-Type': 'application/json'
         })
       }
       console.log(JSON.stringify(postData));
-      return this.http.post(this.url + '/loginGestor', JSON.stringify(postData));
+      return this.http.post(this.url + '/usuarios/loginGestor', JSON.stringify(postData), httpOptions);
   }
 
   //METODOS PARA AÑADIR

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {ProveedorService} from '../providers/proveedor.service';
+import {AlertController} from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-home',
@@ -8,16 +11,24 @@ import {ProveedorService} from '../providers/proveedor.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-
-  sesion =[
+  sesion =
     {
-      "usuario": '',
+      "username": '',
       "password": ''
-    },
-  ]
+    }
 
-  constructor(public proveedor:ProveedorService) {}
+  constructor(public alertController: AlertController, public proveedor:ProveedorService) {}
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Fallo de login',
+      message: 'Compruebe que los datos que ha insertado son correctos.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
   login(){
     console.log("login");
 
@@ -31,11 +42,19 @@ export class HomePage implements OnInit{
 
     this.proveedor.enviarLogin(this.sesion).subscribe(
       (res) => {
-        this.sesion = res['results'],
-        console.log(res['results']);
+        //this.sesion = res['results'],
+        //this.router.navigate(['actividades']); //Descomentar si podemos hacer bien el enrutado
+        console.log(res);
+        if(res.length == 0){
+            this.presentAlert();
+        }
+        else {
+            location.assign(location.origin + '/actividades' ); //Borrar si podemos hacer bien el enrutado
+        }
       },
       error =>{
         console.error(error);
+        this.presentAlert();
       }
     )
   }
