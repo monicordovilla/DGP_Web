@@ -17,10 +17,35 @@
   padding: 5%;
   font-family: $fontFamily;
  }
- h2{
+
+ .cabecera{
   font-family: $fontFamily;
   color: $textcolor;
   font-size: $fontsize;
+  margin-left: 2%;
+  margin-bottom: 15px;
+}
+
+h2{
+  font-family: $fontFamily;
+  color: $textcolor;
+  font-size: 19px;
+  margin-left: 0%;
+  margin-top: 0%;
+}
+
+.inputLeft{
+  margin-top: 1%;
+  margin-left: 5%;
+float: left;
+width: 40%;
+}
+
+.inputRight{
+  margin-top: 1%;
+margin-right: 5%;
+float: right;
+width: 40%;
 }
  .navegation{
   padding: 3% 0% 0% 3%;
