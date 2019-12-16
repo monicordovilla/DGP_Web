@@ -2,7 +2,9 @@
 
 <ion-content>
 
-  <div class="navegation"> Admistrar usuarios</div>
+  <ion-item>
+    <div class=cabecera><br>Administrar usuarios</div>
+  </ion-item>
  
   <div class="container">
   <form>
@@ -46,49 +48,50 @@
     <ion-label class="inputCenter" >Descripcion</ion-label>
     <ion-textarea [(ngModel)]="usuario.descripcion" class = "inputCenter" type="text" placeholder="Descripcion" name="descripcion" required></ion-textarea><br>
 
-    <div *ngIf="mostrar">
+    <div *ngIf="mostrarSocio">
       <ion-label class="inputCenter" >Descripcion privada (oculta a la aplicacion)</ion-label>
       <ion-textarea [(ngModel)]="descripcionPrivada" class="inputCenter" type="text" placeholder="Descripcion privada del usuario" name="descripcionPrivada"></ion-textarea><br>
     </div>
 
-    
-    <div class="botonesUsuario">
-      <ion-button  size="large" color="dark" type="submit">MODIFICAR</ion-button>
-      <ion-button (click)="eliminarUsuario()" size="large" color="danger" type="submit">ELIMINAR</ion-button>
+    <div *ngIf="mostrarBoton" class="datos-familiar">
 
-      <ion-button *ngIf="mostrarVoluntario"  size="large" color="danger" type="submit">CENSURAR</ion-button>
-      <ion-button *ngIf="mostrarVoluntario"  size="large" color="dark" type="submit">CONSULTAR INFORMACIÓN</ion-button>
-      <ion-button *ngIf="mostrarSocio" (click)="consultarFamiliar()" class="union" size="large" color="dark"> Familiar </ion-button>
-      <ion-button *ngIf="mostrarFamiliar" (click)="consultarSocio()" class="union" size="large" color="dark"> Familiar </ion-button>
-
-    </div>
-
-    <div *ngIf="mostrarFamiliar" class="flex-columna">
-
-      <div id="lista" ion-item >
+      <div id="lista" ion-item *ngFor="let familiar of familiares; let indice=index">
 
           <div class = "info-usuario">
               <a class="imagen-actividades"><img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png"
                  alt="imagen usuario"/></a>
 
-              <div class="flex-columna">
-                <h5>nombre familiar</h5>
-                <h5>apellido familiar</h5>
-                <h5>@nombre usuario familiar</h5>
+              <div class="datos-familiar">
+                <h5>{{familiar.nombre}}</h5>
+                <h5>{{familiar.apellidos}}</h5>
+                <h5>@{{familiar.username}}</h5>
               </div>
 
-              <div class="flex-columna">
+              <div class="datos-familiar">
                   <h5> Valoración media: </h5>
               </div>
 
-              <div class="flex-columna">
-                  <ion-button href='/perfil-usuario/1' size="large" color="dark"> Administrar </ion-button>
+              <div class="datos-familiar">
+                  <ion-button href='/perfil-usuario/{{familiar.id}}' size="large" color="dark"> Administrar </ion-button>
               </div>
           </div>
 
       </div>
 
-  </div>
+    </div>
+    
+    <div class="botonesUsuario">
+       
+      <ion-button  size="large" color="dark" type="submit">MODIFICAR</ion-button>
+      <ion-button (click)="eliminarUsuario()" size="large" color="danger" type="submit">ELIMINAR</ion-button>
+
+      <ion-button *ngIf="mostrarVoluntario"  size="large" color="danger" type="submit">CENSURAR</ion-button>
+      <ion-button *ngIf="mostrarVoluntario"  size="large" color="dark" type="submit">CONSULTAR INFORMACIÓN</ion-button>
+      <ion-button *ngIf="mostrarBotonFamiliar" (click)="consultarFamiliar()" class="union" size="large" color="dark"> Familiar </ion-button>
+
+    </div>
+
+    
   </form>
 
   </div>

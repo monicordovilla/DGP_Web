@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProveedorService } from 'src/app/providers/proveedor.service';
 
@@ -7,7 +7,7 @@ import { ProveedorService } from 'src/app/providers/proveedor.service';
   templateUrl: 'actividad.page.html',
   styleUrls: ['actividad.page.scss'],
 })
-export class actividad {
+export class actividad implements OnInit {
   id = null;
 
   constructor(private activeRoute: ActivatedRoute, public proveedor:ProveedorService) {

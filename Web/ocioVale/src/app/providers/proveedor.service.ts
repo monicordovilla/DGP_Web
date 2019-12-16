@@ -52,6 +52,11 @@ export class ProveedorService {
     return this.http.get(this.url + '/usuarios/familiaresDelSocio?id=' + id);
   }
 
+  obtenerSocioDeFamiliar(id): Observable<any>{
+    console.log("proveedor " + id);
+    return this.http.get(this.url + '/usuarios/sociosDeFamiliar?id=' + id);
+  }
+
   obtenerFamiliares(): Observable<any>{
     return this.http.get(this.url + '/usuarios/familiares');
   }
@@ -84,7 +89,6 @@ export class ProveedorService {
     if (id == null){
       return this.http.get(this.url + '/usuarios/voluntarios');
     }
-    //te dice las valoraciones de este voluntario
     else
       return this.http.get(this.url + '/usuarios/voluntarios?id='+id);
   }
@@ -97,8 +101,13 @@ export class ProveedorService {
       return this.http.get(this.url + '/usuarios/socios?id='+id);
   }
 
-  obtenerValoracion(): Observable<any>{
-    return this.http.get(this.url + '/usuarios/familiares');
+  obtenerValoracion(id:string): Observable<any>{
+    if (id == null){
+    return this.http.get(this.url + '/usuarios/puntuaciones');
+    }
+    else{
+      return this.http.get(this.url + '/usuarios/puntuaciones?id=' + id);
+    }
   }
 
   //METODO PARA INICIAR SESION
@@ -225,5 +234,32 @@ export class ProveedorService {
 
     console.log("Borrando " + id);
     return this.http.delete(this.url + '/actividades/categorias?id=' + id);
+  }
+
+  //METODOS PARA MODIFICAR
+  modificarActividad(postData): Observable<any>{
+
+       // Http Options
+       let httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      }
+
+    console.log("Modificando actividad " + postData);
+    return this.http.post(this.url + '/actividades/modificarActividad', postData, httpOptions);
+  }
+
+  modificarUsuario(postData): Observable<any>{
+
+    // Http Options
+    let httpOptions = {
+     headers: new HttpHeaders({
+       'Content-Type': 'application/json'
+     })
+   }
+
+    console.log("Modificando usuario " + postData);
+    return this.http.post(this.url + '/actividades/modificarUser', postData, httpOptions);
   }
 }

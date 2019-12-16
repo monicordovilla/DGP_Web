@@ -18,10 +18,20 @@
   font-family: $fontFamily;
   }
 
-  h2{
+  .cabecera{
     font-family: $fontFamily;
     color: $textcolor;
     font-size: $fontsize;
+    margin-left: 2%;
+    margin-bottom: 15px;
+  }
+
+  h2{
+    font-family: $fontFamily;
+    color: $textcolor;
+    font-size: 19px;
+    margin-left: 5%;
+    margin-top: 0%;
   }
 
   ion-input{
@@ -144,4 +154,18 @@
       margin: 2% 0 2% 0;
       border: 5px solid white;
     }
+
+    .datos-familiar{
+      float: left;
+      margin-left: 22%;
+      margin-top: 1%;
+      width: 46%;
+    }
   
+    .flex-columna{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: space-around;
+    }

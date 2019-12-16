@@ -2,11 +2,18 @@
 
 <ion-content>
 
-  <div class="navegation"> Admistrar actividades</div>
+  <ion-item>
+    <div class="cabecera"><br>Administrar actividad </div>
+  </ion-item>
  
   <div class="container">
     <h2>Informacion de una actividad</h2><br>
+    <ion-label class="inputLeft">Nombre de actividad</ion-label>
+    <ion-label class="inputRight">Lugar</ion-label>
 
+    <ion-input [(ngModel)]="actividad.nombre" class="inputLeft" type="text" placeholder="Nombre de actividad" name="nombreActividad" required></ion-input><br>
+    <ion-input [(ngModel)]="actividad.lugar" class="inputRight" type="text" placeholder="Lugar" name="lugarActividad" required></ion-input><br>      
+    <!--
     <section class="information">
       <div class="information-block">
         <input [(ngModel)]="actividad.nombre" class="nombre-actividad" type="text" placeholder="Nombre de actividad" name="nombreActividad" required><br><br>    
@@ -39,6 +46,6 @@
       <ion-button size="large" color="dark" type="submit">MODIFICAR</ion-button>
       <ion-button size="large" color="danger" (click)="eliminarActividad()" type="submit">ELIMINAR</ion-button>
     </div>
-
+-->
   </div>
 </ion-content>

@@ -16,6 +16,7 @@ export class HomePage implements OnInit{
       "username": '',
       "password": ''
     }
+  router: any;
 
   constructor(public alertController: AlertController, public proveedor:ProveedorService, public auth: AuthenticationService) {}
 
