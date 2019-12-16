@@ -66,7 +66,7 @@ export class Usuarios implements OnInit {
 
   cargaValoracion(){
 
-    this.proveedor.obtenerValoracion().subscribe(
+    /*this.proveedor.obtenerValoracion().subscribe(
       (data) => {
         this.datos = data;
 
@@ -77,7 +77,7 @@ export class Usuarios implements OnInit {
       error => {
           console.log(<any>error);
       }
-    ) 
+    ) */
   }
 
   cargaUsuarios(){

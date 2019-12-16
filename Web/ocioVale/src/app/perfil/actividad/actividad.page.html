@@ -3,49 +3,56 @@
 <ion-content>
 
   <ion-item>
-    <div class="cabecera"><br>Administrar actividad </div>
+    <div class="cabecera"><br>Información de una actividad</div>
   </ion-item>
  
   <div class="container">
-    <h2>Informacion de una actividad</h2><br>
-    <ion-label class="inputLeft">Nombre de actividad</ion-label>
-    <ion-label class="inputRight">Lugar</ion-label>
-
-    <ion-input [(ngModel)]="actividad.nombre" class="inputLeft" type="text" placeholder="Nombre de actividad" name="nombreActividad" required></ion-input><br>
-    <ion-input [(ngModel)]="actividad.lugar" class="inputRight" type="text" placeholder="Lugar" name="lugarActividad" required></ion-input><br>      
-    <!--
-    <section class="information">
-      <div class="information-block">
-        <input [(ngModel)]="actividad.nombre" class="nombre-actividad" type="text" placeholder="Nombre de actividad" name="nombreActividad" required><br><br>    
-        <input [(ngModel)]="actividad.lugar" class="lugar-actividad" type="text" placeholder="Lugar" name="lugarActividad" required><br><br>
-      </div>
-      <input [(ngModel)]="categorias" class="categoria-actividad" type="text" placeholder="Categoría" name="categoriaActividad" required><br><br>
-    </section>
-
-
-    <section class="information">
-        <div class="information-block">
-          <section class="subsection">
-              <input [(ngModel)]="hora" class="hora-actividad" type="text" placeholder="Hora" name="hora" required><br><br>
-              <input [(ngModel)]="fecha" class="fecha-actividad" type="text" placeholder="Fecha" name="fecha" required><br><br>
-          </section>
-          
-          <input class="tipo-actividad" type="text" placeholder="Tipo" name="tipo" required><br><br>  
-
-          <section class="subsection">
-            <input [(ngModel)]="voluntarios" class="max-voluntarios" type="text" placeholder="Max. voluntarios" name="maxVoluntarios" required><br><br>
-            <input [(ngModel)]="socios" class="max-socios" type="text" placeholder="Max. socios" name="maxSocios" required><br><br>
-          </section>
-        </div>
-  
-        <input [(ngModel)]="actividad.descripcion" class="descripcion-voluntario" type="text" placeholder="Descripción" name="descripcion" required><br><br>
-    </section>
-
+     <!--Nana puede que te sirva para el modificar esta linea
+       <form (ngSubmit)="crearActividad()" position="stacked">-->
+          <span><ion-label>Categoría</ion-label></span><br><br>
+          <ion-select multiple="true"  okText="Aceptar" cancelText="Cancelar" [(ngModel)]="actividad.categorias" name="categoria" id="rol" class="select" placeholder="Escoja la categoria de la actividad" required>
+            <ion-select-option *ngFor="let categoria of categorias; let indice=index" id={{categoria.id}} value={{categoria.id}}>{{categoria.nombre}}</ion-select-option>
+          </ion-select>
+          <br><br>
+          <span class="inputLeft"><ion-label>Nombre actividad</ion-label></span>
+          <span class="inputRight"><ion-label>Lugar</ion-label></span><br>
     
-    <div class="button-container">
-      <ion-button size="large" color="dark" type="submit">MODIFICAR</ion-button>
-      <ion-button size="large" color="danger" (click)="eliminarActividad()" type="submit">ELIMINAR</ion-button>
-    </div>
--->
+          <ion-input [(ngModel)]="actividad.nombre" class="inputLeft" type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
+          <ion-input [(ngModel)]="actividad.lugar" class="inputRight" type="text" placeholder="Lugar" id="lugar" name="lugar" required></ion-input><br>
+          
+    
+          <span class="inputLeft"><ion-label>Número de voluntarios</ion-label></span>
+          <span class="inputRight"><ion-label>Duración</ion-label></span><br>
+    
+          <ion-input [(ngModel)]="voluntarios" class="inputLeft" type="number" placeholder="Número maximo de voluntarios" id="numVoluntarios" name="numVoluntarios" required></ion-input>
+          <ion-input [(ngModel)]="actividad.duracion" class="inputRight" type="number" placeholder="Duración de la actividad" id="duracion" name="duracion" required></ion-input><br>
+    
+          <span class="inputLeft"><ion-label>Número de socios</ion-label></span>
+          <span class="inputRight"><ion-label>Descripción</ion-label></span><br>
+          
+          <ion-input [(ngModel)]="socios" class="inputLeft" type="number" placeholder="Número maximo de socios" id="numSocios" name="numSocios" required></ion-input>
+          <ion-input [(ngModel)]="actividad.descripcion" class="inputRight" type="text" placeholder="Descripción de la actividad" id="descripcion" name="descripcion" required></ion-input><br>
+          
+    
+          <span class="inputLeft"><ion-label>Fecha</ion-label></span>
+          <span class="inputRight"><ion-label>Imagen</ion-label></span><br>
+    
+          <ion-input [(ngModel)]="actividad.imagen" class="inputRight" type="url" placeholder="url de la imagen" id="imagen" name="imagen" required></ion-input>
+          
+          <div class="inputLeftDate">
+            <ion-datetime [(ngModel)]="actividad.fecha" placeholder="Dia Mes Año Hora Minutos" displayFormat="D MMM YYYY H:mm" name="fecha" required></ion-datetime>
+          </div>
+          <br>
+          <br>
+          <a class="inputRightImagen" href="/actividad"><img src={{imagen}} alt="imagen"/></a>
+          <br><br><br><br><br><br><br><br>
+          <ion-button (ngSubmit)="crearActividad()" (click)='crearActividad()' type="submit" size="large" color="dark"> Añadir </ion-button>
+              
+          <div id="loginPopUp" class="alert">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <div id="messageBox"></div>
+          </div>
+          
+         <!--</form>-->  
   </div>
 </ion-content>

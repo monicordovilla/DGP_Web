@@ -27,6 +27,7 @@ export class actividad implements OnInit {
   hora= '';
   voluntarios = 1;
   socios = 1;
+  imagen = "http://www.arasaac.org/repositorio/thumbs/10/200/3/30387.png"
 
   ngOnInit(){
     
