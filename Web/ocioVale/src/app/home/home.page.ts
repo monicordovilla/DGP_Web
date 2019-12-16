@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {ProveedorService} from '../providers/proveedor.service';
 import {AlertController} from '@ionic/angular';
-
+import {AuthenticationService} from '../services/authentication.service'
 
 
 @Component({
@@ -18,7 +18,7 @@ export class HomePage implements OnInit{
     }
   router: any;
 
-  constructor(public alertController: AlertController, public proveedor:ProveedorService) {}
+  constructor(public alertController: AlertController, public proveedor:ProveedorService, public auth: AuthenticationService) {}
 
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -50,6 +50,7 @@ export class HomePage implements OnInit{
             this.presentAlert();
         }
         else {
+            this.auth.login(this.sesion.username);
             location.assign(location.origin + '/actividades' ); //Borrar si podemos hacer bien el enrutado
         }
       },
