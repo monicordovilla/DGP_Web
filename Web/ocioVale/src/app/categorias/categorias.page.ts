@@ -34,6 +34,7 @@ export class Categorias {
     this.proveedor.eliminarCategoria(ident).subscribe(
       (res) =>{
         console.log(res);
+        location.reload();
       },
       error =>{
         console.error(error);

@@ -90,21 +90,23 @@ export class PerfilUsuarioPage implements OnInit {
             (data) => {
               if(data.length == 0) console.log("no tiene socio asociado ");
               else{
-                this.mostrarBotonFamiliar = true;
-                idfam = data[0].idPersona;
-                console.log("data " + data);
-                console.log("familiar " + idfam);
+                for(var i=0; i<data.length; i++){
+                  this.mostrarBotonFamiliar = true;
+                  idfam = data[i].idPersona;
+                  console.log("data " + data);
+                  console.log("familiar " + idfam);
                 
-                //saca la información del socio
-                this.proveedor.obtenerUsuario(idfam).subscribe(
-                  (data) => {
-                    this.familiares = data;
-                    console.log(data);
-                  },
-                  (error) =>{
-                    console.error(error);
-                  }
-                );
+                  //saca la información del socio
+                  this.proveedor.obtenerUsuario(idfam).subscribe(
+                    (data) => {
+                      this.familiares.push(data[0]);
+                      console.log(data[0]);
+                    },
+                    (error) =>{
+                      console.error(error);
+                    }
+                  );
+                }
               }
             },
             (error) =>{

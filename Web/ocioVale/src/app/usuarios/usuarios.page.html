@@ -77,12 +77,13 @@
                    alt="imagen usuario"/></a>
 
                 <div class="flex-columna">
+                  <h5>{{user.rol}}</h5>
                   <h5>{{user.nombre}}</h5>
                   <h5>{{user.apellidos}}</h5>
                   <h5>@{{user.username}}</h5>
                 </div>
 
-                <div class="flex-columna">
+                <div *ngIf="valoracion" class="flex-columna">
                     <h5> Valoración media: </h5>
                 </div>
 

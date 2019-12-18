@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {ProveedorService} from '../providers/proveedor.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'usuarios',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['usuarios.page.scss'],
 })
 export class Usuarios implements OnInit {
-
+  valoracion = false;
   datos = [ ];
 
   users = [ ];
@@ -40,44 +40,35 @@ export class Usuarios implements OnInit {
     //var CurText = (<HTMLSelectElement>opt).text;
     //console.log(rol);
     //console.log(opt);
-    console.log('valor del select'+ rol);
+    //console.log('valor del select'+ rol);
   }
 
   constructor(public proveedor:ProveedorService, private router: Router) {
-    this.cargaValoracion();
     this.cargaUsuarios();
   }
 
-  irPerfilUsuario(username){
 
-    /*if(this.proveedor.esSocio(username) != null){
-      this.router.navigate(['/perfilSocio', 'eugenio']);
-    }
-    if(this.proveedor.esFamiliar(username) != null){
-      this.router.navigate(['/perfilSocioFamiliar', username]);
-    }
-    if(this.proveedor.esVoluntario(username) != null){
-      this.router.navigate(['/perfilVoluntario', username]);
-    }
-    if(this.proveedor.esGestor(username) != null){
-      this.router.navigate(['/perfilGestor', username]);
-    }*/
-  }
+  cargaValoracion(id){
+    var suma = 0;
+    var valoracionMedia = 0;
 
-  cargaValoracion(){
-
-    this.proveedor.obtenerValoracion().subscribe(
+    this.proveedor.obtenerValoracion(id).subscribe(
       (data) => {
         this.datos = data;
-
         for(var i=0; i<this.datos.length; i++){          
-          this.perfil.valoracion = this.datos[i].puntuacion;
+          suma = parseInt(this.datos[i].puntuacion) + suma;
+          //console.log(suma);
         }
+        if(this.datos.length > 0) valoracionMedia = suma/this.datos.length;
+        
+        //console.log("valoracion media: " + valoracionMedia);
       },
       error => {
           console.log(<any>error);
       }
-    ) 
+    )
+
+    return valoracionMedia;
   }
 
   cargaUsuarios(){
@@ -93,18 +84,14 @@ export class Usuarios implements OnInit {
         this.users = data;
 
         for(var i=0; i<this.users.length; i++){
-          nombre = this.users[i].nombre;
+          this.verRol(this.users[i].username, i);
+          console.log(this.users[i].rol);
+          nombre = this.users[i].nombre
           apellidos = this.users[i].apellidos;
           nombreUsuario = "@" + this.users[i].username;
 
-          //console.log(this.users[i].id);
-
-          // para cada socio, cojo el familiar segun su id
-          this.proveedor.obtenerUsuario(this.users[i].id).subscribe(
-            (query_part) => {
-              //this.usuario = query_part; 
-            }
-          )
+          this.cargaValoracion(this.users[i].id);
+          //console.log("valoracion: " + this.users[i].id);
         }
       },
       error => {
@@ -117,4 +104,63 @@ export class Usuarios implements OnInit {
   ngOnInit() {
   }
 
+  verRol(username, i) {
+    var rol;
+    
+    this.proveedor.esSocio(username).subscribe(
+      (data) => {
+        if(data.length > 0){
+          console.log("es gestor");
+          rol = 'socio';
+        }
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
+
+    this.proveedor.esFamiliar(username).subscribe(
+      (data) => {
+        if(data.length > 0){
+          console.log("es gestor");          
+          rol = 'familiar de un socio';
+        }
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
+
+    this.proveedor.esVoluntario(username).subscribe(
+      (data) => {
+        if(data.length > 0){
+          console.log("es gestor");
+          rol = 'voluntario';
+        }
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
+
+    this.proveedor.esGestor(username).subscribe(
+      (data) => {
+        if(data.length > 0){
+          console.log("es gestor");
+          rol = 'gestor';
+        }
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
+
+
+    /*this.users[i].rol = this.verRol(this.users[i].username, i);
+          console.log("usuario: " + this.users[i].username);
+          console.log(this.verRol(this.users[i].username));*/
+    console.log(rol);
+    return rol;
+  }
+  
 }
