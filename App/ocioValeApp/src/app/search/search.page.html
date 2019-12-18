@@ -7,50 +7,45 @@
         <h2>BÚSQUEDA</h2>
 
         <div id="busqueda">
-            <input type="search" name="barra de busqueda" placeholder="Introduce una actividad..." id="">
-            <ion-button class="button-small" fill="clear" (click)='filtros()'><img src="../assets/icon/mas.png" alt="mas"></ion-button>
-
+            <ion-searchbar color="light" showCancelButton="never" clearIcon="open" debounce="500" (ionChange)="buscar($event)" placeholder="Busca una actividad..."></ion-searchbar>
+            <ion-button class="button-small" fill="clear" (click)='mostrarFiltros()'><img src="../assets/icon/mas.png" alt="mas"></ion-button>
         </div>
 
 
         <div id="filtros" class="filtros">
-
-            <h3>Categoría</h3>
-            <div id="filtro">
-            <div class="filtro" *ngFor="let categoria of todas_categorias">
-                <div class="opcion"><input type="checkbox" name={{categoria.nombre}} value={{categoria.nombre}} checked> 
-                    <h4>{{categoria.nombre}}</h4> 
-                    <img src={{categoria.imagen}}/>
+            <form>
+                <h3>Categoría</h3>
+                <div id="filtro">
+                <div class="filtro" *ngFor="let categoria of mis_categorias; let indice=index">
+                    <div class="opcion">
+                        <ion-button color="{{categoria.select}}" (click)="change(indice)"><img src={{categoria.imagen}}></ion-button>
+                    </div>
                 </div>
-            </div>
-            </div>
+                </div>
 
-            <h3>Fecha</h3>
-            <div class="filtro">
-                <h4>Desde <input type="date" name="inicio" value="Inicio"></h4>
-                <h4>Hasta <input type="date" name="fin" value="Fin"></h4>
-            </div>
+                <h3>Fecha</h3>
+                <div class="filtro">
+                    <div class="opcion"><h4>Desde: </h4> <ion-input [(ngModel)]="filtros.fecha_inicio" type="date" name="inicio" value="Inicio"></ion-input></div>
+                    <div class="opcion"><h4>Hasta: </h4> <ion-input [(ngModel)]="filtros.fecha_fin" type="date" name="fin" value="Fin"></ion-input></div>
+                </div>
 
-
-            <div class="filtro">
-                <h3>Ordenar Por</h3>
-                <select name="" id="">
-                    <option value=""><h4>Fecha</h4></option>
-                    <option value=""><h4>Precio</h4></option>
-                </select>
-            </div>
-
-            <div class="filtro">
-                    <h3>Tipo</h3>
-                    <select name="" id="">
-                        <option value=""><h4>Individual</h4></option>
-                        <option value=""><h4>Grupal</h4></option>
-                    </select>
-            </div>
-
+                <div class="filtro">
+                    <ion-item>
+                        <h3>Tipo</h3>
+                        <ion-select [(ngModel)]="filtros.tipo" [ngModelOptions]="{standalone: true}" interface="popover" required>
+                            <ion-select-option value="1" name="1" id="1" selected><h4>Todas</h4></ion-select-option>
+                            <ion-select-option value="2" name="2" id="2"><h4>Individual</h4></ion-select-option>
+                            <ion-select-option value="3" name="3" id="3"><h4>Grupal</h4></ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+                <div class="boton">
+                    <ion-button color=dark (ngSubmit)='aplicarFiltros()' (click)='aplicarFiltros()' type="submit"><ion-icon name="checkmark-circle-outline" size="large"></ion-icon></ion-button>
+                </div>
+            </form>
         </div>
 
-        <div id="lista" ion-item *ngFor="let actividad of actividades">
+        <div id="lista" ion-item *ngFor="let actividad of actividades; let indice=index">
             <div class="actividad">
                 <h5><a [routerLink]="['/actividad', actividad.id]">{{actividad.nombre}}</a></h5>
                 <div id="contenido">
@@ -67,6 +62,5 @@
                 </div>
             </div>
         </div>
-
     </main>
 </ion-content>

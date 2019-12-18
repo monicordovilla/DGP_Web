@@ -14,28 +14,29 @@ export class ActividadPage {
     lugar:null,
     fecha: null,
     duracion: "",
-    imagen: null
+    imagen: null,
+    finalizada: false
   };
 
   id = null;
 
   categorias = []
 
-  usuario = 4;
-  esSocio = true;
-  apuntado = true;
-
+  usuario;
+  esSocio;
   accion="";
+  color_button="dark";
 
   constructor(private rutaActiva: ActivatedRoute,  public proveedor:ProveedorService){
     this.rutaActiva.snapshot.params;
     this.id =  this.rutaActiva.snapshot.params.id;
     this.id=parseInt(this.id);
     this.ionViewDidLoad();
+    this.usuario=proveedor.getIdTipo();
+    this.esSocio=proveedor.getEsSocio();
   }
 
   ionViewDidLoad(){
-    let finalizada=false;
 
     this.proveedor.obtenerActividad(this.id).subscribe(
       (data) => {
@@ -66,7 +67,7 @@ export class ActividadPage {
       
         let fecha = new Date(parts[0], parts[1]-1, parts[2], parts[3], parts[4]);
         let actual = new Date();
-        finalizada = actual.getTime() > fecha.getTime();
+        this.actividad.finalizada = actual.getTime() > fecha.getTime();
       },
       error => {
           console.log(<any>error);
@@ -81,23 +82,32 @@ export class ActividadPage {
           console.log(<any>error);
         }
       )
+      
+      this.actualizar();
 
-      this.proveedor.apuntadoActividad(this.usuario, this.id, this.esSocio).subscribe(
-        (data) => {
-          console.log("FINALIZADA: "+ finalizada);
-          if(data[0]!=undefined)
-            if(finalizada)
-              this.accion="Valorar";
-            else
-              this.accion="Desapuntar";
-          else
-            this.accion="Apuntar";         
-        },
-        error => {
-          console.log(<any>error);
-        }
-      )
+  }
 
+
+  actualizar(){
+    this.proveedor.apuntadoActividad(this.usuario, this.id, this.esSocio).subscribe(
+      (data) => {
+        if(data[0]!=undefined)
+          if( this.actividad.finalizada){
+            this.accion="Valorar";
+            this.color_button="danger";
+          }else{
+            this.accion="Desapuntar";
+            this.color_button="danger";
+          }
+        else{
+          this.accion="Apuntar";  
+          this.color_button="dark"; 
+        }      
+      },
+      error => {
+        console.log(<any>error);
+      }
+    )
   }
 
   realizarAccion(){
@@ -110,13 +120,25 @@ export class ActividadPage {
       this.proveedor.apuntarse(postData, this.esSocio).subscribe(
         (res) => { 
           postData = res['results'];
+          this.actualizar();
         },
         error =>{
           console.error(error);
         }
       )
-      this.accion="Desapuntar";
-    }//else(this.accion=="Desapuntar"){    }
+    }else if(this.accion=="Desapuntar"){
+      this.proveedor.desapuntarse(postData, this.esSocio).subscribe(
+        (res) => { 
+          postData = res['results'];
+          this.actualizar();
+        },
+        error =>{
+          console.error(error);
+        }
+      )
+    }else{
+      location.href ="/valoracion";
+    }
   }
 
 }

@@ -4,10 +4,10 @@
 <ion-content>
   <main>
     <div id="busqueda">
-      <input type="text" name="barra de busqueda" placeholder="Introduce una actividad..." id="">
-      <a href="/search"><img src="../assets/icon/lupa.png" alt="lupa"></a>
+      <ion-searchbar color="light" showCancelButton="never" clearIcon="open" debounce="500" (ionChange)="buscar($event)" placeholder="Busca una actividad..."></ion-searchbar>
     </div>
-    <h2>ACTIVIDADES RECOMENDADAS</h2>
+
+    <h2>ACTIVIDADES {{tipo}}</h2>
     <div id="lista" ion-item *ngFor="let actividad of actividades; let indice=index">
       
       <div class="actividad">

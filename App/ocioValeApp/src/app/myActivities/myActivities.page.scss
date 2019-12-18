@@ -9,6 +9,9 @@
  $fontFamily: Tahoma;
  $headerSize : 20px;
 
+ .my-custom-menu {
+  --width: 500px;
+}
 
  /* Clases */
 
@@ -19,48 +22,21 @@
 
 main{
   background-color: $bgcolor;
-  padding: 7.5% 2.5%;
+  padding: 4% 2.5%;
   color: $textcolor;
-  font-size: $fontsize;
-  font-family: $fontFamily;
-}
-
-#busqueda{
-  background-color: $textcolor;
-  padding: 2.5%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-radius: 8px;
-}
-
-#busqueda > input{
-  width: 280px;
-  font-size: 12px;
-}
-
-#busqueda > a{
-  background: transparent;
-  width: 40px;
-  padding-left: 10px;
-}
-
-#lista{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 10%;
+  //font-size: $fontsize;
+  //font-family: $fontFamily;
 }
 
 
-#lista > h2{
-  font-family: $fontFamily;
+h2{
+  text-align: center;
   color: $textcolor;
-  font-size: 18px;
+  font-size: 20px;
+  padding-bottom: 4%;
   font-weight: bold;
 }
+
 #lista > .bloque{
   background-color: $bgcolorSec;
   width: 100%;
@@ -68,11 +44,10 @@ main{
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 5%;
-
-  border-width: 7.5px;
+  border-width: 3px;
   border-color:  $textcolor ;
   border-style: inset;
+  margin-bottom: 5%;
 }
 
 #lista >  .bloque > .actividades{
@@ -88,14 +63,15 @@ main{
 
 #lista > .bloque > .actividades > h2{
   width: 75%;
-  font-size: 19px;
+  font-weight: normal;
+  color: white;
 }
 
 #lista >  .bloque > .actividades > ion-button > img{
   background: transparent;
   width: 35px;
 }
-
+/*
 #lista > .bloque > #proximas > .actividad, 
 #lista > .bloque > #realizadas > .actividad{
   background-color: $bgcolor;
@@ -112,35 +88,79 @@ main{
   border-color:  $textcolor ;
   border-style: inset;
 }
-
-#lista > .bloque > #proximas > .actividad > a,
-#lista > .bloque > #realizadas > .actividad > a{
-  width: 50%;
-}
-
-#lista > .bloque > #proximas > .actividad > #contenido,
-#lista > .bloque > #realizadas > .actividad > #contenido{
-  width: 50%;
-  padding-left: 10%;
-}
-
-#lista > .bloque > #proximas >  .actividad > #contenido > h3,
-#lista > .bloque > #realizadas >  .actividad > #contenido > h3{
-  font-size: 16px;
-  margin-top: 0;
-  font-weight: bold;
-}
-
-#lista > .bloque > #proximas > .actividad > #contenido > h4,
-#lista > .bloque > #realizadas > .actividad > #contenido > h4{
-  font-size: 14px;
-  margin: 2.5%;
-}
-
+*/
 .proximas, .realizadas{
   display: none;
   position: absolute;
   min-width: 160px;
   overflow: auto;
+}
 
+
+
+////
+
+.actividad{
+  width: 95%;
+  margin: 2.5%;
+  background-color: $bgcolor;
+  border-radius: 20px;
+  border-width: 0.1em;
+  border-color:  $textcolor ;
+  border-style: inset;
+  margin-bottom: 5%;
+  padding-top: 2%;
+}
+
+.actividad > #contenido{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: row;
+  justify-content: center;
+}
+
+.actividad >#contenido > #datos{
+  width: 50%;
+  align-items: center;
+  flex-wrap: row;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  padding-left: 2%;
+  
+}
+
+.actividad > #contenido > a{
+  padding-left: 2.5%;
+  width: 50%;
+}
+
+.actividad > h3{
+  font-size: 16px;
+  text-align: center;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.actividad > #contenido > #datos{
+  width: 55%;
+  padding-left: 5%;
+  text-align: center;
+}
+
+.actividad > #contenido > #datos > h4{
+  font-size: 16px;
+  margin: 2.5%;
+}
+
+.actividad > #contenido > #datos > #categorias{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.actividad > #contenido > #datos > #categorias > .categorias{
+  width: 30%;
 }

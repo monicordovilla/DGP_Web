@@ -13,6 +13,7 @@ import {ComponentsModule} from './components.module';
 import {ProveedorService} from './providers/proveedor.service';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

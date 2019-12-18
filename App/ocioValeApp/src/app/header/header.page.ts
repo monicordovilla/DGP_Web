@@ -1,7 +1,6 @@
-import { Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-
-
+import {AuthenticationService} from '../services/authentication.service'
 
 @Component({
   selector: 'app-header',
@@ -9,18 +8,20 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['header.page.scss']
 
 })
-export class HeaderPage {
-  constructor(private menuCtrls: MenuController) {
+export class HeaderPage implements OnInit {
+  constructor(private menuCtrls: MenuController, public auth: AuthenticationService) {
+  }
+
+  ngOnInit() {
+      console.log(this.auth);
+      console.log(location.pathname);
+      if(!this.auth.isAuthenticated() && location.pathname != '' && location.pathname != '/inicio') {
+          console.log("Auth failed");
+          location.assign(location.origin);
+      }
   }
 
   toggleMenu(){
-    if(this.menuCtrls.isOpen){
       this.menuCtrls.toggle();
-      //document.getElementById("menu").style.display ='none';
-    }
-    else{
-     // document.getElementById("menu").style.display ='block';
-      this.menuCtrls.toggle();
-    }
   }
 }

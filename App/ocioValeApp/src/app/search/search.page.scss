@@ -20,7 +20,7 @@
 
 main{
   background-color: $bgcolor;
-  padding: 4.5% 2.5%;
+  padding: 4% 2.5%;
   color: $textcolor;
   font-size: $fontsize;
  // font-family: $fontFamily;
@@ -28,24 +28,21 @@ main{
 
 #busqueda{
   background-color: $textcolor;
-  padding: 2%;
-  margin-bottom: -2px;
   display: flex;
+  border-style: solid;
+  border-width: 2px;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
   border-radius: 8px;
 }
 
-#busqueda > input{
-  width: 280px;
-  font-size: 12px;
+#busqueda > ion-searchbar{
+  width: 295px;
 }
 
-#busqueda > a{
-  background: transparent;
+#busqueda > ion-button{
   width: 40px;
-  padding-left: 10px;
 }
 
 ion-button{
@@ -91,7 +88,6 @@ ion-button{
 h3{
     margin: 0;
     font-size: 16px;
-    margin-bottom: 0;
     font-weight: bold;
     padding-top: 15px;
 }
@@ -104,8 +100,8 @@ h4{
     padding-left: 10px;
 }
 
-#filtros > .filtro > .opcion, #filtro > .filtro >.opcion{
-    display: flex;
+#filtros > form >.filtro > .opcion, #filtro > .filtro >.opcion{
+    display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
@@ -113,35 +109,47 @@ h4{
     margin: 2.5%;
 }
 
-#filtros > #filtro > .filtro > .opcion > input[type=checkbox]{
-    transform: scale(1.6);
-    margin-bottom: 8px;
-    border: none;
-}
-
-#filtros > #filtro > .filtro > .opcion > img{
+#filtros > form > #filtro > .filtro > .opcion > ion-button{
   width: 75px;
+  height: 65px;
 }
 
-#filtros > .filtro > input[type=date]{
-    margin-left: 5px;
-    width: 100px;
-    font-size: 10px;
+#filtros > form > #filtro > .filtro > .opcion > ion-button > img{
+  width: 80%;
+  height: 80%;
 }
 
-#filtros > .filtro > select{
+#filtros > form > .filtro > .opcion > ion-input{
+    font-size: 14px;
+}
 
-  margin-top: 15px;
+#filtros > form > .filtro > ion-item > h3{
+  color: $textcolor;
+  text-align: center;
+  padding: 0;
+}
+
+#filtros > form > .filtro > ion-item > ion-select{
   margin-left: 15px;
   padding: 2px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 h2{
   color: $textcolor;
-  font-size: 18px;
+  font-size: 20px;
+  padding-bottom: 4%;
   font-weight: bold;
   text-align: center;
+}
+
+#filtros > form > .boton{
+  height: 50px;
+}
+#filtros > form > .boton > ion-button{
+  float: right;
+  width: 50px;
+  height: 50px;
 }
 
 
@@ -182,6 +190,7 @@ h2{
 
 #lista > .actividad > #contenido > a{
   width: 50%;
+  padding-left: 2.5%;
 }
 
 #lista > .actividad > h5{

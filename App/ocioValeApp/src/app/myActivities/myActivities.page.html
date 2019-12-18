@@ -4,13 +4,8 @@
 
 <ion-content>
   <main>
-    <div id="busqueda">
-      <input type="text" name="barra de busqueda" placeholder="Introduce una actividad..." id="">
-      <a href="/search"><img src="../assets/icon/lupa.png" alt="lupa"></a>
-    </div>
-
+    <h2>MIS ACTIVIDADES</h2>
     <div id="lista">
-      <h2>MIS ACTIVIDADES</h2>
 
       <div class="bloque">
         <div class="actividades">
@@ -18,25 +13,21 @@
           <ion-button color="dark" fill="clear"  (click)='desplegar("proximas")'><img src="../assets/icon/mas.png" alt="mas"></ion-button>
         </div>
         <div id = "proximas" class = "proximas">
-          <div class="actividad">
-            <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
-            <div id="contenido">
-              <h3><a href="/actividad">TITULO</a></h3>
-              <h4>Fecha y Hora</h4>
-              <h4>Lugar</h4>
-              <h4>Precio</h4>
+            <div class="actividad" ion-item *ngFor="let actividad of actividadesProximas; let indice=index">
+              <h3><a [routerLink]="['/actividad', actividad.id]">{{actividad.nombre}}</a></h3>
+              <div id="contenido">
+                  <a [routerLink]="['/actividad', actividad.id]" ><img src={{actividad.imagen}} alt="imagen"/></a>
+                <div id="datos">
+                  <h4>{{actividad.lugar}}</h4>
+                  <h4>{{actividad.fecha}}</h4>
+                  <div id="categorias" >
+                    <div class="categorias" *ngFor="let categoria of categoriasProximas[indice]">  
+                        <img src={{categoria.imagen}} alt="imagen"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="actividad">
-            <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
-            <div id="contenido">
-              <h3><a href="/actividad">TITULO</a></h3>
-              <h4>Fecha y Hora</h4>
-              <h4>Lugar</h4>
-              <h4>Precio</h4>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -46,25 +37,21 @@
           <ion-button color="dark" fill="clear"  (click)='desplegar("realizadas")'><img src="../assets/icon/mas.png" alt="mas"></ion-button>
         </div>
         <div id = "realizadas" class = "realizadas">
-          <div class="actividad">
-            <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
-            <div id="contenido">
-              <h3><a href="/actividad">TITULO</a></h3>
-              <h4>Fecha y Hora</h4>
-              <h4>Lugar</h4>
-              <h4>Precio</h4>
+            <div class="actividad" ion-item *ngFor="let actividad of actividadesRealizadas; let indice=index">
+              <h3><a [routerLink]="['/actividad', actividad.id]">{{actividad.nombre}}</a></h3>
+              <div id="contenido">
+                  <a [routerLink]="['/actividad', actividad.id]" ><img src={{actividad.imagen}} alt="imagen"/></a>
+                <div id="datos">
+                  <h4>{{actividad.lugar}}</h4>
+                  <h4>{{actividad.fecha}}</h4>
+                  <div id="categorias" >
+                    <div class="categorias" *ngFor="let categoria of categoriasRealizadas[indice]">  
+                        <img src={{categoria.imagen}} alt="imagen"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="actividad">
-            <a href="/actividad"><img src="../assets/img/imagen.jpg" alt="imagen"/></a>
-            <div id="contenido">
-              <h3><a href="/actividad">TITULO</a></h3>
-              <h4>Fecha y Hora</h4>
-              <h4>Lugar</h4>
-              <h4>Precio</h4>
-            </div>
-          </div>
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-<ion-menu menuId="menu" contentId="principal">
+<ion-menu menuId="menu" contentId="principal" mode="md">
   <header>
     <ion-button color="dark" fill="clear" (click)="toggleMenu()" slot="start"> <img src="../assets/icon/menu.png" alt="menu"/> </ion-button>
   </header>
@@ -13,6 +13,6 @@
   </ion-content>
 
 <footer>
-    <ion-item color="dark"><a href='/inicio'>Cerrar Sesión</a></ion-item>
+    <ion-item color="dark"><ion-button size="large" color="danger" (click)="logout()"><p>Cerrar Sesión</p></ion-button></ion-item>
 </footer>
 </ion-menu>
