@@ -33,7 +33,6 @@ export class actividad implements OnInit {
     
   }
 
-
   cargaActividad(){
     let dateTime;
     let parts;
@@ -42,6 +41,7 @@ export class actividad implements OnInit {
       (data) => {
         console.log(data);
         this.actividad = data[0];
+        this.cargaCategoriasDeActividad(this.actividad.id);
         this.voluntarios = data[1];
         this.socios = data[2];
 
@@ -57,7 +57,18 @@ export class actividad implements OnInit {
   }
 
   cargaCategorias(){
-    this.proveedor.obtenerCategoriasDeActividad(this.id).subscribe(
+    this.proveedor.obtenerCategorias().subscribe(
+      (data) => {
+        this.categorias = data;
+      },
+      error => {
+          console.log(<any>error);
+      }
+    )
+  }
+
+  cargaCategoriasDeActividad(id){
+    this.proveedor.obtenerCategoriasDeActividad(id).subscribe(
       (data) => {
         console.log(data);
         this.categorias = data;
