@@ -82,7 +82,7 @@
     
     <div class="botonesUsuario">
        
-      <ion-button  size="large" color="dark" type="submit">MODIFICAR</ion-button>
+      <ion-button  (click)="modificarUsuario()" size="large" color="dark" type="submit">MODIFICAR</ion-button>
       <ion-button (click)="eliminarUsuario()" size="large" color="danger" type="submit">ELIMINAR</ion-button>
 
       <ion-button *ngIf="mostrarVoluntario"  size="large" color="danger" type="submit">CENSURAR</ion-button>

@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 export class ProveedorService {
 
   //url = 'http://192.168.1.141:3000';
-  url = 'http://192.168.56.200:3000';
+  //url = 'http://192.168.56.200:3000';
+  url = 'http://192.168.1.45:3000';
 
   constructor(public http:HttpClient) { }
 
@@ -102,14 +103,14 @@ export class ProveedorService {
       return this.http.get(this.url + '/usuarios/socios?id='+id);
   }
 
-  obtenerValoracion(id:string): Observable<any>{
+  /*aloracion(id:string): Observable<any>{
     if (id == null){
     return this.http.get(this.url + '/usuarios/puntuaciones');
     }
     else{
       return this.http.get(this.url + '/usuarios/puntuaciones?id=' + id);
     }
-  }
+  }*/
 
   //METODO PARA INICIAR SESION
   enviarLogin(postData): Observable<any>{// Http Options
@@ -261,6 +262,6 @@ export class ProveedorService {
    }
 
     console.log("Modificando usuario " + postData);
-    return this.http.post(this.url + '/actividades/modificarUser', postData, httpOptions);
+    return this.http.post(this.url + '/usuarios/modificarUser', postData, httpOptions);
   }
 }

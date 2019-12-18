@@ -14,14 +14,87 @@
  /* Clases */
  .container{
   background-color: $bgcolor;
-  padding: 5%;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
   font-family: $fontFamily;
  }
- h2{
+
+ .select{
+  color: $textcolorSec;
+  font-family: $fontFamily;
+  margin: 3px;
+  margin-left: 10px;
+  border: 2px solid $colorSec;
+  border-radius: 3px;
+}
+
+ .cabecera{
   font-family: $fontFamily;
   color: $textcolor;
   font-size: $fontsize;
+  margin-left: 2%;
+  margin-bottom: 15px;
 }
+
+h2{
+  font-family: $fontFamily;
+  color: $textcolor;
+  font-size: 19px;
+  margin-left: 0%;
+  margin-top: 0%;
+}
+
+.inputLeft{
+  width: 45%;
+ }
+
+ .inputRight{
+  float: right;
+ width: 45%;
+}
+
+.inputRightImagen{
+  float: right;
+  align-content: center;
+  padding-right: 15%;
+}
+
+.alert {
+  display:none;
+  opacity: 0.8;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 17px;
+  width: 45%;
+  background-color: #FF7C93;
+  color: white;
+  text-align:center;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.inputLeftDate{
+
+  margin-left: 15%;
+  width: 17.5%;
+  border:outset;
+ }
+
  .navegation{
   padding: 3% 0% 0% 3%;
   font-family: $fontFamily;

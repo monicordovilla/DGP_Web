@@ -25,7 +25,7 @@ export class Usuarios implements OnInit {
   };
   idUsuarioSeleccionado;
 
-  
+
   // 0 pagina usuarios, 1 gestor, 2 socio, 3 socio familiar y 4 voluntario
   mostrado = 0;
 
@@ -55,12 +55,12 @@ export class Usuarios implements OnInit {
     this.proveedor.obtenerValoracion(id).subscribe(
       (data) => {
         this.datos = data;
-        for(var i=0; i<this.datos.length; i++){          
+        for(var i=0; i<this.datos.length; i++){
           suma = parseInt(this.datos[i].puntuacion) + suma;
           //console.log(suma);
         }
         if(this.datos.length > 0) valoracionMedia = suma/this.datos.length;
-        
+
         //console.log("valoracion media: " + valoracionMedia);
       },
       error => {
@@ -72,7 +72,7 @@ export class Usuarios implements OnInit {
   }
 
   cargaUsuarios(){
-    
+
     let nombre;
     let apellidos;
     let nombreUsuario;
@@ -97,7 +97,7 @@ export class Usuarios implements OnInit {
       error => {
           console.log(<any>error);
       }
-    ) 
+    )
 
   }
 
@@ -106,7 +106,7 @@ export class Usuarios implements OnInit {
 
   verRol(username, i) {
     var rol;
-    
+
     this.proveedor.esSocio(username).subscribe(
       (data) => {
         if(data.length > 0){
@@ -122,7 +122,7 @@ export class Usuarios implements OnInit {
     this.proveedor.esFamiliar(username).subscribe(
       (data) => {
         if(data.length > 0){
-          console.log("es gestor");          
+          console.log("es gestor");
           rol = 'familiar de un socio';
         }
       },
@@ -162,5 +162,5 @@ export class Usuarios implements OnInit {
     console.log(rol);
     return rol;
   }
-  
+
 }

@@ -187,6 +187,16 @@ export class PerfilUsuarioPage implements OnInit {
     );
   }
 
+  modificarUsuario(){
+    this.proveedor.modificarUsuario(this.usuario).subscribe( 
+      
+      error =>{
+        console.error(this.usuario);
+        console.error(error);
+      }
+    );
+  }
+
 
   consultarFamiliar(){
     let id;
