@@ -13,6 +13,7 @@ export class ProveedorService {
   constructor(public http:HttpClient) { }
 
   //METODO PARA LA EXTRACCION DE DATOS DE LA BD
+  //Actividades
   obtenerActividades(): Observable<any>{
     return this.http.get(this.url + '/actividades');
   }
@@ -25,6 +26,20 @@ export class ProveedorService {
       return this.http.get(this.url + '/actividades?id='+id);
   }
 
+  obtenerCategorias(): Observable<any>{
+    return this.http.get(this.url + '/actividades/categorias');
+  }
+
+  obtenerCategoriasDeActividad(id: String): Observable<any>{
+    console.log("Obtener categorias de:" + id);
+    return this.http.get(this.url + '/actividades/categoriasDeActividad?id=' + id);
+  }
+
+  obtenerMaxParticipantes(id: String): Observable<any>{
+    return this.http.get(this.url + '/actividades/obtenerMaximo?id=' + id);
+  }
+
+  //Usuarios
   obtenerUsuarios(): Observable<any>{
     return this.http.get(this.url + '/usuarios');
   }
@@ -39,15 +54,6 @@ export class ProveedorService {
 
   obtenerSocios(): Observable<any>{
     return this.http.get(this.url + '/usuarios/socios');
-  }
-
-  obtenerCategorias(): Observable<any>{
-    return this.http.get(this.url + '/actividades/categorias');
-  }
-
-  obtenerCategoriasDeActividad(id: String): Observable<any>{
-    console.log("Obtener categorias de:" + id);
-    return this.http.get(this.url + '/actividades/categoriasDeActividad?idAct='+id);
   }
 
   obtenerFamiliarSocio(id): Observable<any>{

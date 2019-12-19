@@ -14,14 +14,22 @@ export class actividad implements OnInit {
     this.id = this.activeRoute.snapshot.paramMap.get("id");
     this.cargaActividad();
     this.cargaCategorias();
+    this.obtenerParticipantes();
   }
 
   actividad = {
     "fecha" : '',
     "id" : this.id,
+    "categorias": ''
   };
 
-  categorias=[];
+  categorias=[
+
+  ];
+
+  categoriasActividad=[
+    
+  ];
 
   fecha= '';
   hora= '';
@@ -39,9 +47,8 @@ export class actividad implements OnInit {
 
     this.proveedor.obtenerActividad(this.id).subscribe(
       (data) => {
-        console.log(data);
         this.actividad = data[0];
-        this.cargaCategoriasDeActividad(this.actividad.id);
+        this.cargaCategoriasDeActividad(this.id);
         this.voluntarios = data[1];
         this.socios = data[2];
 
@@ -54,6 +61,24 @@ export class actividad implements OnInit {
           console.log(<any>error);
       }
     ) 
+  }
+
+  obtenerParticipantes(){
+    this.proveedor.obtenerMaxParticipantes(this.id).subscribe(
+      (data) => {
+        if( data.lenght > 0 ){
+          this.voluntarios = data[0].max_voluntarios;
+          this.socios = data[0].max_socios;
+        }
+        else{
+          this.voluntarios = 1;
+          this.socios = 1;
+        }
+      },
+      error => {
+          console.log(<any>error);
+      }
+    )
   }
 
   cargaCategorias(){
@@ -71,7 +96,7 @@ export class actividad implements OnInit {
     this.proveedor.obtenerCategoriasDeActividad(id).subscribe(
       (data) => {
         console.log(data);
-        this.categorias = data;
+        this.categoriasActividad = data;
       },
       error => {
           console.log(<any>error);
