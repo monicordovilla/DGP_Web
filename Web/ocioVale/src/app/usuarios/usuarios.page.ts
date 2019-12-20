@@ -9,7 +9,6 @@ import { Router, RouterLink } from '@angular/router';
   styleUrls: ['usuarios.page.scss'],
 })
 export class Usuarios implements OnInit {
-  valoracion = false;
   datos = [ ];
 
   users = [ ];
@@ -48,7 +47,7 @@ export class Usuarios implements OnInit {
   }
 
 
-  cargaValoracion(id){
+  cargaValoracion(id, j){
     var suma = 0;
     var valoracionMedia = 0;
 
@@ -57,11 +56,11 @@ export class Usuarios implements OnInit {
         this.datos = data;
         for(var i=0; i<this.datos.length; i++){
           suma = parseInt(this.datos[i].puntuacion) + suma;
-          //console.log(suma);
+          console.log(suma);
         }
         if(this.datos.length > 0) valoracionMedia = suma/this.datos.length;
-
-        //console.log("valoracion media: " + valoracionMedia);
+        this.users[j].valoracion = valoracionMedia;
+        console.log("valoracion media: " + valoracionMedia);
       },
       error => {
           console.log(<any>error);
@@ -89,8 +88,7 @@ export class Usuarios implements OnInit {
           apellidos = this.users[i].apellidos;
           nombreUsuario = "@" + this.users[i].username;
 
-          this.cargaValoracion(this.users[i].id);
-          //console.log("valoracion: " + this.users[i].id);
+          this.cargaValoracion(this.users[i].id, i);
         }
       },
       error => {
@@ -109,7 +107,6 @@ export class Usuarios implements OnInit {
     this.proveedor.esSocio(username).subscribe(
       (data) => {
         if(data.length > 0){
-          console.log("es socio");
           rol = 'socio';
           this.users[i].rol = rol
         }
@@ -122,7 +119,6 @@ export class Usuarios implements OnInit {
     this.proveedor.esFamiliar(username).subscribe(
       (data) => {
         if(data.length > 0){
-          console.log("es familiar");
           rol = 'familiar de un socio';
           this.users[i].rol = rol
         }
@@ -135,7 +131,6 @@ export class Usuarios implements OnInit {
     this.proveedor.esVoluntario(username).subscribe(
       (data) => {
         if(data.length > 0){
-          console.log("es voluntario");
           rol = 'voluntario';
           this.users[i].rol = rol
         }
@@ -148,7 +143,6 @@ export class Usuarios implements OnInit {
     this.proveedor.esGestor(username).subscribe(
       (data) => {
         if(data.length > 0){
-          console.log("es gestor");
           rol = 'gestor';
           this.users[i].rol = rol
         }
@@ -157,12 +151,6 @@ export class Usuarios implements OnInit {
         console.log(<any>error);
       }
     );
-
-    /*this.users[i].rol = rol;
-    console.log("usuario: " + this.users[i].username);
-    console.log(rol);*/
-    
-    //return rol;
   }
 
 }

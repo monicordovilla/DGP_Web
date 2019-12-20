@@ -83,8 +83,8 @@
                   <h5>@{{user.username}}</h5>
                 </div>
 
-                <div *ngIf="valoracion" class="flex-columna">
-                    <h5> Valoración media: </h5>
+                <div  *ngIf="user.valoracion>0" class="flex-columna">
+                    <h5> Valoración media: {{user.valoracion}}</h5>
                 </div>
 
                 <div class="flex-columna">
