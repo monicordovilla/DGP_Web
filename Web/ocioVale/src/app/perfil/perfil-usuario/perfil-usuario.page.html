@@ -79,6 +79,28 @@
       </div>
 
     </div>
+
+    <div *ngIf="mostrarValoraciones" class="datos-familiar">
+
+      <div id="lista" ion-item *ngFor="let valoracion of valoraciones; let indice=index">
+
+          <div class = "info-usuario">
+              <a class="imagen-actividades"><img src="{{valoracion.imagen}}"
+                 alt="{{valoracion.imagen}}"/></a>
+
+              <div class="datos-familiar">
+                <h5>{{valoracion.nombre}}</h5>
+                <h5>{{valoracion.puntuacion}}</h5>
+              </div>
+
+              <div class="datos-familiar">
+                  <ion-button href='/actividad/{{valoracion.idActividad}}' size="large" color="dark"> Administrar </ion-button>
+              </div>
+          </div>
+
+      </div>
+
+    </div>
     
     <div class="botonesUsuario">
        
@@ -86,7 +108,7 @@
       <ion-button (click)="eliminarUsuario()" size="large" color="danger" type="submit">ELIMINAR</ion-button>
 
       <ion-button *ngIf="mostrarVoluntario"  size="large" color="danger" type="submit">CENSURAR</ion-button>
-      <ion-button *ngIf="mostrarVoluntario"  size="large" color="dark" type="submit">CONSULTAR VALORACIONES</ion-button>
+      <ion-button *ngIf="mostrarVoluntario" (click)="consultarValoracion()"  size="large" color="dark" type="submit">CONSULTAR VALORACIONES</ion-button>
       <ion-button *ngIf="mostrarBotonFamiliar" (click)="consultarFamiliar()" class="union" size="large" color="dark"> Familiar </ion-button>
 
     </div>

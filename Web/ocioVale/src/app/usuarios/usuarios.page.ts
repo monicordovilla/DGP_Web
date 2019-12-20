@@ -54,13 +54,14 @@ export class Usuarios implements OnInit {
     this.proveedor.obtenerValoracion(id).subscribe(
       (data) => {
         this.datos = data;
+        console.log(data);
         for(var i=0; i<this.datos.length; i++){
           suma = parseInt(this.datos[i].puntuacion) + suma;
-          console.log(suma);
+          //console.log(suma);
         }
         if(this.datos.length > 0) valoracionMedia = suma/this.datos.length;
         this.users[j].valoracion = valoracionMedia;
-        console.log("valoracion media: " + valoracionMedia);
+        //console.log("valoracion media: " + valoracionMedia);
       },
       error => {
           console.log(<any>error);
