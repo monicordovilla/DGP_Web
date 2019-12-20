@@ -29,6 +29,7 @@ export class PerfilUsuarioPage implements OnInit {
     "username" : '',
     "id" : '',
     "idPersona" : '',
+    "fecha_nacimiento" : ''
   };
 
   familiares = [ ];
@@ -157,6 +158,9 @@ export class PerfilUsuarioPage implements OnInit {
     let apellidos;
     let nombreUsuario;
     let valoracionMedia;
+    let fechanacimiento;
+    let dateTime;
+    let parts;
 
 
     this.proveedor.obtenerUsuario(this.id).subscribe(
@@ -169,6 +173,13 @@ export class PerfilUsuarioPage implements OnInit {
         apellidos = this.usuario.apellidos;
         nombreUsuario = "@" + this.usuario.username;
         this.verRol(this.usuario.username);
+
+        dateTime = this.usuario.fecha_nacimiento;
+        parts= dateTime.split(/[- :TZ]/);
+        fechanacimiento = parts[0] + "-" + parts[1] + "-" + parts[2] + " " + parts[3] + ":" + parts[4];
+        this.usuario.fecha_nacimiento = fechanacimiento;
+        console.log(this.usuario.fecha_nacimiento);
+
       },
       (error) => {
           console.log(<any>error);
@@ -191,12 +202,12 @@ export class PerfilUsuarioPage implements OnInit {
 
   modificarUsuario(){
     this.proveedor.modificarUsuario(this.usuario).subscribe( 
-      
       error =>{
-        console.error(this.usuario);
+        //console.error(this.usuario);
         console.error(error);
       }
     );
+    location.reload();
   }
 
 
