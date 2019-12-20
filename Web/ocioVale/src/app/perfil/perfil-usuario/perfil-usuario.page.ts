@@ -180,7 +180,9 @@ export class PerfilUsuarioPage implements OnInit {
 
   eliminarUsuario(){
     this.proveedor.eliminarUsuario(this.usuario.username).subscribe(
-      
+      data=>{
+        location.assign(location.origin + '/usuarios' );
+      },
       error =>{
         console.error(error);
       }

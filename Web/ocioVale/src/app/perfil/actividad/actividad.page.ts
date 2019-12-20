@@ -107,6 +107,7 @@ export class actividad implements OnInit {
   eliminarActividad(){
     this.proveedor.eliminarActividad(this.id).subscribe(
       (res) =>{
+        location.assign(location.origin + '/actividades' );
         console.log(res);
       },
       error =>{
