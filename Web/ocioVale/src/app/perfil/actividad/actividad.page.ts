@@ -72,7 +72,9 @@ export class actividad implements OnInit {
   obtenerParticipantes(){
     this.proveedor.obtenerMaxParticipantes(this.id).subscribe(
       (data) => {
-        if( data.lenght > 0 ){
+        
+        console.log(data);
+        if( data.length > 0 ){
           this.voluntarios = data[0].max_voluntarios;
           this.socios = data[0].max_socios;
         }
