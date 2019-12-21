@@ -5,39 +5,39 @@
   <ion-item>
     <div class="cabecera"><br>Información de una actividad</div>
   </ion-item>
- 
+
   <div class="container">
     <form position="stacked">
           <span><ion-label>Categoría</ion-label></span><br><br>
           <ion-select multiple="true"  okText="Aceptar" cancelText="Cancelar" [(ngModel)]="actividad.categorias" name="categoria" id="rol" class="select" placeholder="Escoja la categoria de la actividad" required>
-            <ion-select-option *ngFor="let categoria of categorias; let indice=index"  id={{categoria.id}} value={{categoria.id}} >{{categoria.nombre}}</ion-select-option>
+            <ion-select-option *ngFor="let categoria of categorias; let indice=index" id={{categoria.id}} value={{categoria.id}} >{{categoria.nombre}}</ion-select-option>
           </ion-select>
           <br><br>
           <span class="inputLeft"><ion-label>Nombre actividad</ion-label></span>
           <span class="inputRight"><ion-label>Lugar</ion-label></span><br>
-    
+
           <ion-input [(ngModel)]="actividad.nombre" class="inputLeft" type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
           <ion-input [(ngModel)]="actividad.lugar" class="inputRight" type="text" placeholder="Lugar" id="lugar" name="lugar" required></ion-input><br>
-          
-    
+
+
           <span class="inputLeft"><ion-label>Número de voluntarios</ion-label></span>
           <span class="inputRight"><ion-label>Duración</ion-label></span><br>
-    
+
           <ion-input [(ngModel)]="voluntarios" class="inputLeft" type="number" placeholder="Número maximo de voluntarios" id="numVoluntarios" name="numVoluntarios" required></ion-input>
           <ion-input [(ngModel)]="actividad.duracion" class="inputRight" type="number" placeholder="Duración de la actividad" id="duracion" name="duracion" required></ion-input><br>
-    
+
           <span class="inputLeft"><ion-label>Número de socios</ion-label></span>
           <span class="inputRight"><ion-label>Descripción</ion-label></span><br>
-          
+
           <ion-input [(ngModel)]="socios" class="inputLeft" type="number" placeholder="Número maximo de socios" id="numSocios" name="numSocios" required></ion-input>
           <ion-input [(ngModel)]="actividad.descripcion" class="inputRight" type="text" placeholder="Descripción de la actividad" id="descripcion" name="descripcion" required></ion-input><br>
-          
-    
+
+
           <span class="inputLeft"><ion-label>Fecha</ion-label></span>
           <span class="inputRight"><ion-label>Imagen</ion-label></span><br>
-    
+
           <ion-input [(ngModel)]="actividad.imagen" class="inputRight" type="url" placeholder="url de la imagen" id="imagen" name="imagen" required></ion-input>
-          
+
           <div class="inputLeftDate">
             <ion-datetime [(ngModel)]="actividad.fecha" placeholder="Dia Mes Año Hora Minutos" displayFormat="D MMM YYYY H:mm" name="fecha" required></ion-datetime>
           </div>
@@ -47,12 +47,12 @@
           <br><br><br><br><br><br><br><br>
           <ion-button  (click)='modificarActividad()' type="submit" size="large" color="dark">MODIFICAR</ion-button>
           <ion-button  (click)='eliminarActividad()' type="submit" size="large" color="danger">ELIMINAR</ion-button>
-              
+
           <div id="loginPopUp" class="alert">
-              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
               <div id="messageBox"></div>
           </div>
-          
-    </form>  
+
+    </form>
   </div>
 </ion-content>
