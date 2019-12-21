@@ -44,6 +44,10 @@ export class ProveedorService {
     return this.http.get(this.url + '/usuarios');
   }
 
+  obtenerDescripcionPrivada(id:string): Observable<any>{
+    return this.http.get(this.url + '/usuarios/infoSocio?id=' + id);
+  }
+
   obtenerParticipantes(id:string): Observable<any>{
     if (id == null){
       return this.http.get(this.url + '/usuarios/participantes');
@@ -51,14 +55,6 @@ export class ProveedorService {
     else
       return this.http.get(this.url + '/usuarios/participantes?id='+id);
   }
-
-  obtenerParticipantesVoluntarios(id:string): Observable<any>{
-      return this.http.get(this.url + '/usuarios/participantesVolutario?id='+id);
-  }
-
-  obtenerParticipanteSocios(id:string): Observable<any>{
-    return this.http.get(this.url + '/usuarios/participantesSocio?id='+id);
-}
 
   obtenerSocios(): Observable<any>{
     return this.http.get(this.url + '/usuarios/socios');

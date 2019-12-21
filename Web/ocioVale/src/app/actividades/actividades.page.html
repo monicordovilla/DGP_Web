@@ -72,9 +72,11 @@
               </div>
 
               <div class="flex-columna">
-                  <h5> Participantes</h5>
-                  <div ion-item *ngFor="let participante of participantes[indice]; let indice=index">
-                    <h5>{{participante.nombre}}</h5>
+                  <h5> Participantes</h5><!-- -->
+                  <div ion-item  *ngFor="let participante of participantes; let i=index">
+                    <a  href="/perfil-usuario/{{participante.idPersona}}">
+                      <h5 *ngIf="participante.idActividad == actividad.id">{{participante.nombre}} {{participante.apellidos}} </h5>
+                    </a>
                   </div>
               </div>
 

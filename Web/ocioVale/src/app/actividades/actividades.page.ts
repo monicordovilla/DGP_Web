@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ProveedorService} from '../providers/proveedor.service';
 import { Router } from '@angular/router';
+import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'actividades',
@@ -63,8 +64,14 @@ export class Actividades {
     // para cada actividad, cojo los participantes segun su id
     this.proveedor.obtenerParticipantes(this.actividades[i].id).subscribe(
       (data) => {
-        console.log("participante de actividad " + this.actividades[i].id + ": " + data[0]);
-        this.participantes[i] = data;
+        //console.log("participante de actividad " + this.actividades[i].id + ": ");
+        //console.log(data);
+        if(data.length > 0){
+          for(var j=0; j<data.length; j++){
+            this.participantes.push(data[j]);
+            this.infoParticipantes(this.participantes.length-1);
+          }
+        }
       },
       (error) => {
         console.log(error);
@@ -73,16 +80,16 @@ export class Actividades {
   }
 
   infoParticipantes(i){
-    //dado el id, cojo la info de los usuarios y los meto en un array
-    this.proveedor.obtenerUsuario(this.participantes[i].id).subscribe(
-      (data) => {
-        console.log("info usuario " + this.participantes[i].id + ": " + data);
-        this.participantes[i].nombre = data[0].nombre; 
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
+      //dado el id, cojo la info de los usuarios y los meto en un array
+      this.proveedor.obtenerUsuario(this.participantes[i].idPersona).subscribe(
+        (data) => {
+          this.participantes[i].nombre = data[0].nombre;
+          this.participantes[i].apellidos = data[0].apellidos; 
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
   }
 
   cancelarActividad(id: String){
