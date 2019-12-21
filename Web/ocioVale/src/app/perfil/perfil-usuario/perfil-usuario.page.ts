@@ -15,6 +15,8 @@ export class PerfilUsuarioPage implements OnInit {
   mostrar = false;
   mostrarBoton = false;
   mostrarValoracion = false;
+  censurado = false;
+  descripcionPrivada = '';
 
   rol = '';
   id = "";
@@ -39,15 +41,21 @@ export class PerfilUsuarioPage implements OnInit {
 
   ngOnInit() {}
   verRol(username) {
-
-    //console.log("ver rol");
-    //console.log(username);
     this.proveedor.esSocio(username).subscribe(
       (data) => {
         if(data.length > 0){
           this.rol = 'socio';
           //console.log(this.rol);
           this.mostrarSocio = true;
+
+          this.proveedor.obtenerDescripcionPrivada(this.id).subscribe(
+            (data) => {
+              this.descripcionPrivada = data[0].descripcionPrivada;
+            },
+            (error) => {
+              console.error(error);
+            }
+          )
 
           let idfam;
           //obtiene el id del familiar
@@ -130,6 +138,17 @@ export class PerfilUsuarioPage implements OnInit {
           this.mostrarVoluntario = true;
 
           this.cargaValoracion(this.id);
+
+          this.proveedor.obtenerCensurados(this.id).subscribe(
+            (data) => {
+              console.log("ver si esta censurado");
+              console.log(data);
+              if(data[0].censurado == "1") this.censurado = true;
+            },
+            (error) => {
+              console.error(error);
+            }
+          )
         }
       },
       (error) => {

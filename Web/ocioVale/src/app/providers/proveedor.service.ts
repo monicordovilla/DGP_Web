@@ -48,6 +48,15 @@ export class ProveedorService {
     return this.http.get(this.url + '/usuarios/infoSocio?id=' + id);
   }
 
+  obtenerCensurados(id:string): Observable<any>{
+    if(id == null){
+    return this.http.get(this.url + '/usuarios/censurado?');
+    }
+    else{
+    return this.http.get(this.url + '/usuarios/censurado?id=' + id);
+    }
+  }
+
   obtenerParticipantes(id:string): Observable<any>{
     if (id == null){
       return this.http.get(this.url + '/usuarios/participantes');
