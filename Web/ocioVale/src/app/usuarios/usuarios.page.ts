@@ -54,12 +54,13 @@ export class Usuarios implements OnInit {
     this.proveedor.obtenerValoracion(id).subscribe(
       (data) => {
         this.datos = data;
-        console.log(data);
+        //console.log(data);
         for(var i=0; i<this.datos.length; i++){
           suma = parseInt(this.datos[i].puntuacion) + suma;
           //console.log(suma);
         }
         if(this.datos.length > 0) valoracionMedia = suma/this.datos.length;
+
         this.users[j].valoracion = valoracionMedia;
         //console.log("valoracion media: " + valoracionMedia);
       },
@@ -109,7 +110,7 @@ export class Usuarios implements OnInit {
       (data) => {
         if(data.length > 0){
           rol = 'socio';
-          this.users[i].rol = rol
+          this.users[i].rol = rol;
         }
       },
       (error) => {
@@ -121,7 +122,7 @@ export class Usuarios implements OnInit {
       (data) => {
         if(data.length > 0){
           rol = 'familiar de un socio';
-          this.users[i].rol = rol
+          this.users[i].rol = rol;
         }
       },
       (error) => {
@@ -133,7 +134,8 @@ export class Usuarios implements OnInit {
       (data) => {
         if(data.length > 0){
           rol = 'voluntario';
-          this.users[i].rol = rol
+          this.users[i].rol = rol;
+
         }
       },
       (error) => {
@@ -145,7 +147,7 @@ export class Usuarios implements OnInit {
       (data) => {
         if(data.length > 0){
           rol = 'gestor';
-          this.users[i].rol = rol
+          this.users[i].rol = rol;
         }
       },
       (error) => {

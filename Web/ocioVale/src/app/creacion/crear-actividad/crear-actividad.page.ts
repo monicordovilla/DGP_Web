@@ -65,9 +65,7 @@ export class CrearActividadPage implements OnInit {
     this.proveedor.enviarActividad(postData).subscribe(
       (res) => { 
         modalLogin.style.backgroundColor= '#58E8C6';
-        this.mostrarMensaje(modalLogin, "info", "La actividad se ha creado correctamente");
-        postData = res['results'];
-        
+        this.mostrarMensaje(modalLogin, "info", "La actividad se ha creado correctamente");        
       },
       error =>{
         modalLogin.style.backgroundColor= '#FF7C93';
