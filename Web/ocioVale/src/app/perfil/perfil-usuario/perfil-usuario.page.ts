@@ -141,8 +141,6 @@ export class PerfilUsuarioPage implements OnInit {
 
           this.proveedor.obtenerCensurados(this.id).subscribe(
             (data) => {
-              console.log("ver si esta censurado");
-              console.log(data);
               if(data[0].censurado == "1") this.censurado = true;
             },
             (error) => {
@@ -174,7 +172,6 @@ export class PerfilUsuarioPage implements OnInit {
       (data) => {
         this.valoraciones[i].nombre = data[0].nombre;
         this.valoraciones[i].imagen = data[0].imagen;
-        console.log(this.valoraciones);
       },
       error => {
           console.log(<any>error);
@@ -270,9 +267,29 @@ export class PerfilUsuarioPage implements OnInit {
     this.mostrarValoracion = true;
   }
 
+  censurar(){
+    this.proveedor.censurarVoluntario(this.id).subscribe(
+      (data) => {
+        //console.log(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+    location.reload();
+  }
 
-
-
+  aprobar(){
+    this.proveedor.aprobarVoluntario(this.id).subscribe(
+      (data) => {
+        //console.log(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+    location.reload();
+  }
 
 
 

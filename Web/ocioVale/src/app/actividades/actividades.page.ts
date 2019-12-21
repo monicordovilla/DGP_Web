@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {ProveedorService} from '../providers/proveedor.service';
 import { Router } from '@angular/router';
-import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'actividades',

@@ -57,6 +57,18 @@ export class ProveedorService {
     }
   }
 
+  censurarVoluntario(id:string): Observable<any>{
+    console.log("censurar " + id);
+    let ident = {"id": id};
+    return this.http.post(this.url + '/usuarios/censurar', ident);
+  }
+
+  aprobarVoluntario(id:string): Observable<any>{
+    console.log("aprobar " + id);
+    let ident = {"id": id};
+    return this.http.post(this.url + '/usuarios/aprobar', ident);
+  }
+
   obtenerParticipantes(id:string): Observable<any>{
     if (id == null){
       return this.http.get(this.url + '/usuarios/participantes');
