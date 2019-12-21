@@ -88,6 +88,7 @@ export class Actividades {
     this.proveedor.eliminarActividad(id).subscribe(
       (res) =>{
         console.log(res);
+        location.reload();
       },
       error =>{
         console.error(error);

@@ -259,7 +259,6 @@ export class ProveedorService {
   }
 
   modificarUsuario(postData): Observable<any>{
-
     // Http Options
     let httpOptions = {
      headers: new HttpHeaders({

@@ -14,6 +14,7 @@ export class PerfilUsuarioPage implements OnInit {
   mostrarFamiliar = false;
   mostrar = false;
   mostrarBoton = false;
+  mostrarValoracion = false;
 
   rol = '';
   id = "";
@@ -29,20 +30,23 @@ export class PerfilUsuarioPage implements OnInit {
     "username" : '',
     "id" : '',
     "idPersona" : '',
+    "fecha_nacimiento" : ''
   };
 
   familiares = [ ];
 
+  valoraciones = [ ];
+
   ngOnInit() {}
   verRol(username) {
 
-    console.log("ver rol");
-    console.log(username);
+    //console.log("ver rol");
+    //console.log(username);
     this.proveedor.esSocio(username).subscribe(
       (data) => {
         if(data.length > 0){
           this.rol = 'socio';
-          console.log(this.rol);
+          //console.log(this.rol);
           this.mostrarSocio = true;
 
           let idfam;
@@ -82,7 +86,7 @@ export class PerfilUsuarioPage implements OnInit {
         if(data.length > 0){          
           this.rol = 'familiar de un socio';
           this.mostrarFamiliar = true;
-          console.log(this.rol);
+          //console.log(this.rol);
 
           let idfam;
           //obtiene el id del socio
@@ -93,14 +97,11 @@ export class PerfilUsuarioPage implements OnInit {
                 for(var i=0; i<data.length; i++){
                   this.mostrarBotonFamiliar = true;
                   idfam = data[i].idPersona;
-                  console.log("data " + data);
-                  console.log("familiar " + idfam);
                 
                   //saca la información del socio
                   this.proveedor.obtenerUsuario(idfam).subscribe(
                     (data) => {
                       this.familiares.push(data[0]);
-                      console.log(data[0]);
                     },
                     (error) =>{
                       console.error(error);
@@ -126,9 +127,9 @@ export class PerfilUsuarioPage implements OnInit {
     this.proveedor.esVoluntario(username).subscribe(
       (data) => {
         if(data.length > 0){
-          this.rol = 'voluntario';
           this.mostrarVoluntario = true;
-          console.log(this.rol);
+
+          this.cargaValoracion(this.id);
         }
       },
       (error) => {
@@ -138,11 +139,8 @@ export class PerfilUsuarioPage implements OnInit {
 
     this.proveedor.esGestor(username).subscribe(
       (data) => {
-        console.log(data);
-        console.log("ver si es gestor " + data.length);
         if(data.length > 0){
           this.rol = 'gestor';
-          console.log(this.rol);
         }
       },
       (error) => {
@@ -151,12 +149,45 @@ export class PerfilUsuarioPage implements OnInit {
     );
   }
 
+  cargarActividad(i, idActividad){
+    //obtener informacion de actividad necesaria
+    this.proveedor.obtenerActividad(idActividad).subscribe(
+      (data) => {
+        this.valoraciones[i].nombre = data[0].nombre;
+        this.valoraciones[i].imagen = data[0].imagen;
+        console.log(this.valoraciones);
+      },
+      error => {
+          console.log(<any>error);
+      }
+    )
+  }
+
+  cargaValoracion(id){
+    this.proveedor.obtenerValoracion(id).subscribe(
+      (data) => {
+        for(var i=0; i<data.length; i++){
+          console.log(data[i]);
+          this.valoraciones[i] = data[i];
+          
+          this.cargarActividad(i, data[i].idActividad);
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    )
+  };
+
   cargaUsuario(){
     
     let nombre;
     let apellidos;
     let nombreUsuario;
     let valoracionMedia;
+    let fechanacimiento;
+    let dateTime;
+    let parts;
 
 
     this.proveedor.obtenerUsuario(this.id).subscribe(
@@ -169,6 +200,13 @@ export class PerfilUsuarioPage implements OnInit {
         apellidos = this.usuario.apellidos;
         nombreUsuario = "@" + this.usuario.username;
         this.verRol(this.usuario.username);
+
+        dateTime = this.usuario.fecha_nacimiento;
+        parts= dateTime.split(/[- :TZ]/);
+        fechanacimiento = parts[0] + "-" + parts[1] + "-" + parts[2] + " " + parts[3] + ":" + parts[4];
+        this.usuario.fecha_nacimiento = fechanacimiento;
+        //console.log(this.usuario.fecha_nacimiento);
+
       },
       (error) => {
           console.log(<any>error);
@@ -180,7 +218,9 @@ export class PerfilUsuarioPage implements OnInit {
 
   eliminarUsuario(){
     this.proveedor.eliminarUsuario(this.usuario.username).subscribe(
-      
+      data=>{
+        location.assign(location.origin + '/usuarios' );
+      },
       error =>{
         console.error(error);
       }
@@ -189,21 +229,26 @@ export class PerfilUsuarioPage implements OnInit {
 
   modificarUsuario(){
     this.proveedor.modificarUsuario(this.usuario).subscribe( 
-      
       error =>{
-        console.error(this.usuario);
+        //console.error(this.usuario);
         console.error(error);
       }
     );
+    location.reload();
   }
 
 
   consultarFamiliar(){
-    let id;
     console.log("ver familiares");
 
     //muestra el familiar
     this.mostrarBoton = true;
+  }
+
+  consultarValoracion(){
+    console.log("ver valoraciones");
+    console.log(this.valoraciones);
+    this.mostrarValoracion = true;
   }
 
 

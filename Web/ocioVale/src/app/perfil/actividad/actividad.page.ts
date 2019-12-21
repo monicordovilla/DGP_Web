@@ -18,6 +18,10 @@ export class actividad implements OnInit {
   }
 
   actividad = {
+    "nombre" : '',
+    "lugar" : '',
+    "duracion" : 0,
+    "descripción": '',
     "fecha" : '',
     "id" : this.id,
     "categorias": ''
@@ -54,8 +58,10 @@ export class actividad implements OnInit {
 
         dateTime = this.actividad.fecha;
         parts= dateTime.split(/[- :TZ]/);
-        this.fecha = parts[2] + "-" + parts[1] + "-" + parts[0];
-        this.hora = parts[3] + ":" + parts[4];          
+        this.fecha = parts[0] + "-" + parts[1] + "-" + parts[2];
+        this.hora = parts[3] + ":" + parts[4];
+        this.actividad.fecha = this.fecha + " " + this.hora;
+        this.actividad.duracion = 20;
       },
       error => {
           console.log(<any>error);
@@ -104,9 +110,24 @@ export class actividad implements OnInit {
     )
   }
 
+  modificarActividad(){
+
+    console.log(this.actividad.duracion);
+    this.proveedor.modificarActividad(this.actividad).subscribe(
+      (res) =>{
+        console.log(res);
+      },
+      error =>{
+        console.error(error);
+      }
+    );
+    //location.reload();
+  }
+
   eliminarActividad(){
     this.proveedor.eliminarActividad(this.id).subscribe(
       (res) =>{
+        location.assign(location.origin + '/actividades' );
         console.log(res);
       },
       error =>{
