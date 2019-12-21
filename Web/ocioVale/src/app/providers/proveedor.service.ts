@@ -6,8 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 @Injectable()
 export class ProveedorService {
 
-  url = 'http://192.168.1.134:3000';
-  //url = 'http://192.168.56.200:3000';
+  //url = 'http://192.168.1.134:3000';
+  url = 'http://192.168.56.200:3000';
   //url = 'http://192.168.1.45:3000';
 
   constructor(public http:HttpClient) { }
@@ -51,6 +51,14 @@ export class ProveedorService {
     else
       return this.http.get(this.url + '/usuarios/participantes?id='+id);
   }
+
+  obtenerParticipantesVoluntarios(id:string): Observable<any>{
+      return this.http.get(this.url + '/usuarios/participantesVolutario?id='+id);
+  }
+
+  obtenerParticipanteSocios(id:string): Observable<any>{
+    return this.http.get(this.url + '/usuarios/participantesSocio?id='+id);
+}
 
   obtenerSocios(): Observable<any>{
     return this.http.get(this.url + '/usuarios/socios');

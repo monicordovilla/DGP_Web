@@ -50,38 +50,39 @@ export class Actividades {
           dateTime = this.actividades[i].fecha;
           parts= dateTime.split(/[- :TZ]/);
           this.actividades[i].fecha = parts[2] + "-" + parts[1] + "-" + parts[0] + " | " + parts[3] + ":" + parts[4];
-          this.categorias.push([
-            {
-              "id": 1,
-              "imagen": "http://www.arasaac.org/repositorio/thumbs/10/200/3/30387.png"
-            }
-          ]);
-
-          // para cada actividad, cojo los participantes segun su id
-          this.proveedor.obtenerParticipantes(this.actividades[i].id).subscribe(
-            (query_part) => {
-              console.log(query_part);
-            }
-          )
+          this.participantesActividad(i);
         }
-
-        
-          /*/dado el id, cojo la info de los usuarios y los meto en un array
-          this.proveedor.obtenerUsuario(this.actividades[i].id).subscribe(
-            (query_usuario) => {
-              console.log(query_usuario);
-
-              
-              this.participantes = query_usuario; 
-            }
-          )*/
-
-          
       },
       error => {
           console.log(<any>error);
       }
     ) 
+  }
+
+  participantesActividad(i){
+    // para cada actividad, cojo los participantes segun su id
+    this.proveedor.obtenerParticipantes(this.actividades[i].id).subscribe(
+      (data) => {
+        console.log("participante de actividad " + this.actividades[i].id + ": " + data[0]);
+        this.participantes[i] = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  }
+
+  infoParticipantes(i){
+    //dado el id, cojo la info de los usuarios y los meto en un array
+    this.proveedor.obtenerUsuario(this.participantes[i].id).subscribe(
+      (data) => {
+        console.log("info usuario " + this.participantes[i].id + ": " + data);
+        this.participantes[i].nombre = data[0].nombre; 
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
 
   cancelarActividad(id: String){

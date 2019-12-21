@@ -10,6 +10,7 @@ export class HeaderPage implements OnInit {
 
 
   constructor(public auth: AuthenticationService) {}
+  autentificado  = this.auth.authenticationState;
 
   ngOnInit() {
       console.log(this.auth);
