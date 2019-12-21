@@ -6,8 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 @Injectable()
 export class ProveedorService {
 
-  //url = 'http://192.168.1.141:3000';
-  url = 'http://192.168.56.200:3000';
+  url = 'http://192.168.1.134:3000';
+  //url = 'http://192.168.56.200:3000';
   //url = 'http://192.168.1.45:3000';
 
   constructor(public http:HttpClient) { }
