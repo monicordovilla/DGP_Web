@@ -16,8 +16,15 @@ export class HeaderPage implements OnInit {
       console.log(location.pathname);
       if(!this.auth.isAuthenticated() && location.pathname != '' && location.pathname != '/home') {
           console.log("Auth failed");
-          //location.assign(location.origin);
+          location.assign(location.origin);
       }
   }
 
+  logout(){
+      if(this.auth.isAuthenticated()){
+          this.auth.logout();
+          console.log(this.auth);
+          location.assign(location.origin + '/home' );
+      }
+  }
 }

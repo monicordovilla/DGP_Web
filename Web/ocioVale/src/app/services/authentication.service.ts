@@ -14,7 +14,7 @@ export class AuthenticationService {
     }
 
     checkToken() {
-        if(this.auth != "") {
+        if(this.auth != null && this.auth != "") {
           this.authenticationState = true;
         }
         else { this.authenticationState = false; }
