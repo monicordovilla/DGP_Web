@@ -32,7 +32,7 @@ export class actividad implements OnInit {
   ];
 
   categoriasActividad=[
-    
+
   ];
 
   fecha= '';
@@ -42,7 +42,7 @@ export class actividad implements OnInit {
   imagen = "http://www.arasaac.org/repositorio/thumbs/10/200/3/30387.png"
 
   ngOnInit(){
-    
+
   }
 
   cargaActividad(){
@@ -66,13 +66,13 @@ export class actividad implements OnInit {
       error => {
           console.log(<any>error);
       }
-    ) 
+    )
   }
 
   obtenerParticipantes(){
     this.proveedor.obtenerMaxParticipantes(this.id).subscribe(
       (data) => {
-        
+
         console.log(data);
         if( data.length > 0 ){
           this.voluntarios = data[0].max_voluntarios;
@@ -105,6 +105,15 @@ export class actividad implements OnInit {
       (data) => {
         console.log(data);
         this.categoriasActividad = data;
+        console.log(this.actividad);
+        this.actividad.categorias = [];
+
+        var cat;
+        for(cat of this.categoriasActividad) {
+            console.log(cat.nombre);
+            this.actividad.categorias.push(cat.id.toString());
+        }
+        console.log(this.actividad);
       },
       error => {
           console.log(<any>error);
@@ -114,6 +123,7 @@ export class actividad implements OnInit {
 
   modificarActividad(){
 
+      console.log(this.actividad);
     console.log(this.actividad.duracion);
     this.proveedor.modificarActividad(this.actividad).subscribe(
       (res) =>{
