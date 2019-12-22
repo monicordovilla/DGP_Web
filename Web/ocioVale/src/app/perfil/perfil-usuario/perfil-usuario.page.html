@@ -84,7 +84,8 @@
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
         <div id="messageBox"></div>
     </div>
-    <!--<div id="loginPopUp" *ngIf="mostrarValoraciones" class="datos-familiar">
+
+    <!--<div id="loginPopUp" *ngIf="mostrarValoracion" class="datos-familiar">
       
       <div id="lista" ion-item *ngFor="let valoracion of valoraciones; let indice=index">
 
@@ -104,6 +105,27 @@
       </div>
 
     </div>-->
+
+    <div *ngIf="mostrarValoracion" class="datos-familiar">
+      <div id="lista" ion-item *ngFor="let valoracion of valoraciones; let indice=index">
+        <div id="messageBox" class = "info-usuario">
+          <a class="imagen-actividades"><img src="{{valoracion.imagen}}" alt="{{valoracion.imagen}}"/></a>
+
+        <div class="datos-familiar">
+          <h5>{{valoracion.nombre}}</h5>
+          <h5>Puntuacion: {{valoracion.puntuacion}}</h5>
+        </div>
+
+        <div class="datos-familiar">
+            <ion-button href='/actividad/{{valoracion.idActividad}}' size="large" color="dark"> Administrar </ion-button>
+        </div>
+
+        </div>
+      </div>
+      <div *ngIf="valoraciones.length==0" class="datos-familiar">
+        <div id="messageBox" class = "info-usuario"> No hay valoraciones para este usuario </div>
+      </div>
+    </div>
     
     <div class="botonesUsuario">
        
@@ -112,7 +134,7 @@
 
       <ion-button *ngIf="mostrarVoluntario && !censurado" (click)="censurar()" size="large" color="danger" type="submit">CENSURAR</ion-button>
       <ion-button *ngIf="mostrarVoluntario && censurado" (click)="aprobar()" size="large" color="danger" type="submit">APROBAR</ion-button>
-      <ion-button *ngIf="mostrarVoluntario" (ngSubmit)="consultarValoracion()" (click)="consultarValoracion()"  type="submit" size="large" color="dark" >CONSULTAR VALORACIONES</ion-button>
+      <ion-button *ngIf="mostrarVoluntario " (ngSubmit)="consultarValoracion()" (click)="consultarValoracion()"  type="submit" size="large" color="dark" >CONSULTAR VALORACIONES</ion-button>
       
 
       <ion-button *ngIf="mostrarBotonFamiliar" (click)="consultarFamiliar()" class="union" size="large" color="dark"> Familiar </ion-button>

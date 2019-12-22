@@ -278,8 +278,8 @@ export class PerfilUsuarioPage implements OnInit {
 
     
     console.log(this.valoraciones);
-    this.mostrarValoracion = true;
-
+    this.mostrarValoracion = !this.mostrarValoracion;
+/*
     this.proveedor.enviarMensaje().subscribe(
       (res) => { 
         modalLogin.style.backgroundColor= '#58E8C6';
@@ -290,7 +290,7 @@ export class PerfilUsuarioPage implements OnInit {
         this.mostrarMensaje(modalLogin, "info", "No se ha podido crear la actividad, intentelo de nuevo");
         console.error(error);
       }
-    )
+    )*/
   }
 
   censurar(){

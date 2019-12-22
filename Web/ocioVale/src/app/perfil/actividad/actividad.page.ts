@@ -105,12 +105,12 @@ export class actividad implements OnInit {
         console.log(data);
         this.categoriasActividad = data;
         console.log(this.actividad);
-       // this.actividad.categorias = [];
+        this.actividad.categorias = [];
 
         var cat;
         for(cat of this.categoriasActividad) {
             console.log(cat.nombre);
-           // this.actividad.categorias.push(cat.id.toString());
+           this.actividad.categorias.push(cat.id.toString());
         }
         console.log(this.actividad);
       },
