@@ -16,6 +16,11 @@
       <ion-input [(ngModel)]="categoria.imagen" type="text" placeholder="URL imagen" id="imagen" name="imagen" required></ion-input>
 
       <ion-button (click)="crearCategoria()" size="large" color="dark"> Añadir </ion-button>
+      <div id="loginPopUp" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <div id="messageBox"></div>
+      </div>
+      
     </form>
   </div>
 </ion-content>

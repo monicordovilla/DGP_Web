@@ -132,7 +132,7 @@ export class actividad implements OnInit {
         console.error(error);
       }
     );
-    //location.reload();
+    location.reload();
   }
 
   eliminarActividad(){
