@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProveedorService } from 'src/app/providers/proveedor.service';
-import { of } from 'rxjs';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-crear',
@@ -8,6 +8,7 @@ import { of } from 'rxjs';
   styleUrls: ['./crear.page.scss'],
 })
 export class CrearPage{
+ 
  
   categorias=[];
   actividad={
@@ -17,18 +18,56 @@ export class CrearPage{
     lugar: "",
     duracion: null,
     descripcion: "",
-    categorias: null,
+    categorias: [],
     imagen: ""
   };
 
-  id;
+  usuario=null;
+  esSocio=null;
 
-  constructor(public proveedor:ProveedorService){
+  constructor(public proveedor:ProveedorService,  public auth: AuthenticationService){
     this.ionViewDidLoad();
-    this.id=proveedor.getId();
   }
 
-  ionViewDidLoad(){
+  inicializarUsuario() {
+      if(!this.auth.isAuthenticated() && location.pathname != '' && location.pathname != '/inicio') {
+          console.log("Auth failed");
+          location.assign(location.origin);
+      }
+      else{
+        this.proveedor.esSocio(this.auth.auth).subscribe(
+          (data) => {
+            if(data.length>0){
+              this.esSocio=true;
+              this.usuario = data[0].id;
+            }
+          },
+          error => {
+              console.log(<any>error);
+          }
+        )
+        this.proveedor.esVoluntario(this.auth.auth).subscribe(
+          (data) => {
+            if(data.length>0){
+              this.esSocio=false;
+              this.usuario = data[0].id;
+            }
+          },
+          error => {
+              console.log(<any>error);
+          }
+        )
+
+      }
+  }
+
+  async ionViewDidLoad(){
+    this.inicializarUsuario();
+
+    while(this.usuario==null){
+      await new Promise(r => setTimeout(r, 2000));
+    }
+
     this.proveedor.obtenerCategorias().subscribe(
       (data) => {
         this.categorias = data;
@@ -39,7 +78,6 @@ export class CrearPage{
     )
     
   }
-
 
   mostrarMensaje(modal, type, message) {
     let css = (type == "info" ? "message_box_info" : "message_box_error");
@@ -83,9 +121,38 @@ export class CrearPage{
         fecha:  this.actividad.fecha + " " + this.actividad.hora,
         categorias: this.actividad.categorias
       };
-
+      
       this.proveedor.crearActividad(postData).subscribe(
-        (res) => {
+        async (res) => {
+
+          let postData2 ={
+            idParticipante: this.usuario,
+            idActividad: null
+          };
+
+          this.proveedor.obtenerActividades().subscribe(
+            (res) => {
+              postData2.idActividad=res[res.length-1].id;
+            },
+            error =>{
+              console.error(error);
+            }
+          )
+          
+          while(postData2.idActividad==null){
+            await new Promise(r => setTimeout(r, 1000));
+          }
+
+
+          this.proveedor.apuntarse(postData2, this.esSocio).subscribe(
+            (res) => { 
+              postData2 = res['results'];
+            },
+            error =>{
+              console.error(error);
+            }
+          )
+
           modalLogin.style.backgroundColor= '#36ff33';
           this.mostrarMensaje(modalLogin, "info", "La actividad se ha creado correctamente");
           postData = res['results'];
@@ -103,4 +170,3 @@ export class CrearPage{
   }
 
 }
-

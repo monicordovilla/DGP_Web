@@ -11,107 +11,100 @@
 
  main{
     background-color: $bgcolor;
-    padding: 7.5% 2.5%;
+    padding: 4% 2.5%;
     color: $textcolor;
     font-size: $fontsize;
-    font-family: $fontFamily;
     text-align: center;
-  }
-
-  h2 {
-    width: 100%;
-    font-family: $fontFamily;
-    color: $textcolor;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  h3{
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    font-weight: bold;
-  }
-
-  h4{
-    font-size: 18px;
-    margin: 7px;
-
-  }
-
-  ul{
-    font-size: 14px;
-    margin: 5px;
-    padding: 0;
-  }
-
-  p{
-    font-size: 14px;
-    margin: 5px;
-    padding: 0;
-  }
-
-  #datos{
-    align-items: center;
-    padding: 3%;
-
-    border-top-width: 3px;
-    border-top-color:  $textcolor ;
-    border-top-style: solid;
-    border-bottom-width: 3px;
-    border-bottom-color:  $textcolor ;
-    border-bottom-style: solid;
-  }
-
-  #gustos{
-    align-items: center;
-    padding: 3%;
-
-    border-bottom-width: 3px;
-    border-bottom-color:  $textcolor ;
-    border-bottom-style: solid;
-  }
-
-  ion-button{
-    padding-top: 10px;
-  }
-
-  .privado{
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    overflow: auto;
-  
-  }
-
-  .mas_gustos{
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    overflow: auto;
-  
-  }
-  
-  .filtro{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: left;
-  }
-
-.filtro > .opcion{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    margin: 2.5%;
 }
 
-.filtro > .opcion > input[type=checkbox]{
-    transform: scale(1.6);
-    margin-bottom: 8px;
-    border: none;
+h2 {
+  width: 100%;
+  color: $textcolor;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h3{
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+h4{
+  font-size: 18px;
+}
+
+ul{
+  font-size: 14px;
+  margin: 5px;
+  padding: 0;
+}
+
+p{
+  font-size: 14px;
+  margin: 5px;
+  padding: 0;
+}
+
+ion-button{
+  padding-bottom: 7.5px;
+}
+
+#gustos{
+  align-items: center;
+}
+
+.privado{
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  overflow: auto;
+}
+
+#info{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
+  padding-left: 5%;
+}
+
+
+.mas_gustos{
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  overflow: auto;
+
+}
+
+.gustos {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
+}
+  
+.gustos > .opcion{
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2.5%;
+}
+
+.gustos > .opcion > ion-button{
+  width: 85px;
+  height: 65px;
+}
+
+.gustos > .opcion > ion-button > img{
+  width: 140%;
+  height: 80%;
 }

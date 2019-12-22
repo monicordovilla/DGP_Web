@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'crear', loadChildren: './actividad/crear/crear.module#CrearPageModule' },
   { path: 'inicio', loadChildren: './inicio/inicio.module#InicioPageModule' },
   { path: 'notificaciones', loadChildren: './notificaciones/notificaciones.module#NotificacionesPageModule' },
-  { path: 'participantes', loadChildren: './actividad/participantes/participantes.module#ParticipantesPageModule' }
+  { path: 'participantes/:id', loadChildren: './actividad/participantes/participantes.module#ParticipantesPageModule' }
 
 ];
 @NgModule({

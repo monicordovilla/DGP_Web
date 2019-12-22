@@ -17,6 +17,7 @@ export class CrearActividadPage implements OnInit {
   maxvoluntarios = 1;
 
   actividad = {
+    "categorias": []
   };
 
   constructor(public proveedor:ProveedorService) {
@@ -55,13 +56,13 @@ export class CrearActividadPage implements OnInit {
     //modal.style.display='block'
 
     parseInt(localStorage.getItem("categoria.id"));
-    console.log(this.actividad.categorias);
-    let categorias = []
+    //console.log(this.actividad.categorias);
+    let categorias = [];
     for(var i= 0; i<this.actividad.categorias.length; i++){
       categorias.push(parseInt(this.actividad.categorias[i]));
     }
     this.actividad.categorias = categorias;
-    console.log(this.actividad.categorias);
+    //console.log(this.actividad.categorias);
 
     let postData =[
       this.actividad,

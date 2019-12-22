@@ -11,18 +11,16 @@
 
  main{
     background-color: $bgcolor;
-    padding: 7.5% 2.5%;
+    padding: 5% 2.5%;
     color: $textcolor;
     font-size: $fontsize;
-    font-family: $fontFamily;
     text-align: center;
   }
 
   h2 {
     width: 100%;
-    font-family: $fontFamily;
     color: $textcolor;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
   }
 
@@ -34,6 +32,7 @@
     font-size: 16px;
     margin-top: 10px;
     margin-bottom:0;
+    font-weight: bold;
   }
 
   h5{
@@ -49,12 +48,6 @@
 
   #participantes{
     margin: 15px;
-    border-top-width: 2px;
-    border-top-color:  $textcolor ;
-    border-top-style: solid;
-    border-bottom-width: 2px;
-    border-bottom-color:  $textcolor ;
-    border-bottom-style: solid;
   }
 
   .participante{
@@ -63,11 +56,14 @@
     align-items: center;
     flex-wrap: row;
     justify-content: center;
-
-    border-top-width: 1px;
-    border-top-color:  $textcolor ;
-    border-top-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color:  $textcolor ;
-    border-bottom-style: solid;
+    padding-bottom: 5%;
   }
+
+footer {
+  text-decoration: none;
+  color: white;
+  padding: 10%;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+}

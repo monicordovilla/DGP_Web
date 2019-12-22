@@ -24,7 +24,7 @@ export class actividad implements OnInit {
     "descripción": '',
     "fecha" : '',
     "id" : this.id,
-    "categorias": ''
+    "categorias": []
   };
 
   categorias=[
@@ -105,7 +105,6 @@ export class actividad implements OnInit {
         console.log(data);
         this.categoriasActividad = data;
         console.log(this.actividad);
-        this.actividad.categorias = [];
 
         var cat;
         for(cat of this.categoriasActividad) {

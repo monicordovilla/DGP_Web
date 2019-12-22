@@ -6,13 +6,10 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Injectable()
 export class ProveedorService {
 
-  private idPersona=null //Id en la tabla de personas
-  private idTipo=null  //Id en la tabla de tipo de persona (Socio o Voluntario)
-  private esSocio=null //Si es de tipo socio -> true
-
   constructor(public http:HttpClient) { }
 
-  ip = "http://localhost:3000"
+  //ip = "http://localhost:3000"
+  ip = 'http://192.168.0.9:3000';
 
   obtenerActividades(): Observable<any>{
     return this.http.get(this.ip + '/actividades');
@@ -70,7 +67,7 @@ export class ProveedorService {
       })
     }
     console.log(JSON.stringify(postData));
-    return this.http.post(this.ip + "3000/actividades/eliminarParticipacion?tipo="+ tipo, JSON.stringify(postData), httpOptions);
+    return this.http.post(this.ip + "/actividades/eliminarParticipacion?tipo="+ tipo, JSON.stringify(postData), httpOptions);
   }
 
   enviarLogin(postData): Observable<any>{// Http Options
@@ -126,8 +123,9 @@ export class ProveedorService {
     var tipo=1;
     if(esSocio)
       tipo=0;
-      return this.http.get(this.ip + '/actividades/misCategorias?id='+ id + '&tipo=' + tipo); 
+      return this.http.get(this.ip + '/actividades/misCategorias?id='+ id + '&tipo=' + tipo);
   }
+
 
   crearActividad(actividad): Observable<any>{
     let httpOptions = {
@@ -139,33 +137,15 @@ export class ProveedorService {
     return this.http.post(this.ip + "/actividades/addActividadIndividual", JSON.stringify(actividad), httpOptions);
   }
 
-  getId(){
-    return this.idPersona;
+  esSocio(nombre): Observable<any>{
+    return this.http.get(this.ip + '/usuarios/esSocio?username=' + nombre);
   }
 
-  getEsSocio(){
-    return this.esSocio;
+  esVoluntario(nombre): Observable<any>{
+    return this.http.get(this.ip + '/usuarios/esVoluntario?username=' + nombre);
   }
 
-  getIdTipo(){
-    return this.idTipo;
-  }
-
-  setUsuario(id, username){
-    this.idPersona=id;
-
-    this.http.get(this.ip + '/usuarios/esSocio?username=' + username).subscribe(
-      (res) => {
-        console.log();
-        if(res[0]!=null){
-          this.esSocio=true;
-          this.idTipo=res[0].id;
-          console.log("ID: " + this.getId() + " ID TIPO: " + this.getIdTipo() + "ES_SOCIO: " + this.getEsSocio());
-        }
-      },
-      error => {
-        console.log(<any>error);
-      }
-    )
+  obtenerParticipantes(id):  Observable<any>{
+    return this.http.get(this.ip + '/usuarios/participantesInfo?id=' + id);
   }
 }

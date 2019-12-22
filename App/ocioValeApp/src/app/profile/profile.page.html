@@ -6,39 +6,31 @@
 <ion-content>
   <main>
     <h2>MI PERFIL</h2>
-    <div id="datos">
-      <h4>Nombre Apellido</h4>
-      <h4>Edad</h4>
-    </div>
+    <h4>{{usuario.nombre}} {{usuario.apellidos}}</h4>
+    <hr>
     <div id="gustos">
-      <h3>Gustos:</h3>
-      <ul>
-          <li>Categoria1</li>
-          <li>Categoria2</li>
-          <li>Categoria3</li>
-      </ul>
-      <ion-button (click)='desplegar("mas_gustos")' color="dark">Modificar</ion-button>
+      <ion-button (click)='desplegar("mas_gustos")' color="dark" expand="block">Gustos</ion-button>
       <div id="mas_gustos" class="mas_gustos">
-        <div class="filtro">
-            <div class="opcion"><input type="checkbox" name="cat1" value="Cultura" checked> <p>Cultura</p></div>
-            <div class="opcion"><input type="checkbox" name="cat2" value="Deportes"> <p>Deportes</p></div>
-            <div class="opcion"><input type="checkbox" name="cat3" value="Arte"> <p>Arte</p></div>
-            <div class="opcion"><input type="checkbox" name="cat3" value="Cocina"> <p>Cocina</p></div>
+          <div class="gustos">
+            <div class="opcion" *ngFor="let categoria of categorias; let indice=index">
+                <ion-button color="{{categoria.select}}" (click)="change(indice)"><img src={{categoria.imagen}}></ion-button>
+            </div>
         </div>
-        <ion-button color="dark">Guardar</ion-button>
       </div>
     </div>
-
-    <ion-button (click)='desplegar("privado")' color="dark">Ver Información Privada</ion-button>
+    <hr>
+    <ion-button (click)='desplegar("privado")' color="dark" expand="block">Información Privada</ion-button>
     <div id="privado" class="privado">
-      <p>Usuario <input type="text" name="" placeholder="Usuario" id=""></p>
-      <p>Contraseña <input type="password" name="" placeholder="Contraseña" id=""></p>
-      <p>Email <input type="email" name="" placeholder="Email" id=""></p>
-      <p>Teléfono <input type="tel" pattern="[0-9]{9}" name="" placeholder="Telefono" id=""></p>
-      <p>Localidad <input type="text" name="" placeholder="Localidad" id=""></p>
-      <p>Provincia <input type="text" name="" placeholder="Provincia" id=""></p>
-      <p>Descripción <textarea name="" form="descripcion" id="">Descripción</textarea></p>
-      <ion-button color="dark">Guardar</ion-button>
+      <div id="info">
+        <p>Usuario <input type="text" name="" value="{{usuario.username}}" id=""></p>
+        <p>Contraseña <input type="password" name="" value="{{usuario.password}}" id=""></p>
+        <p>Email <input type="email" name="" value="{{usuario.email}}" id=""></p>
+        <p>Teléfono <input type="tel" pattern="[0-9]{9}" name="" value="{{usuario.telefono}}" id=""></p>
+        <p>Localidad <input type="text" name="" value="{{usuario.localidad}}" id=""></p>
+        <p>Provincia <input type="text" name="" value="{{usuario.provincia}}" id=""></p>
+        <p>Descripción <textarea name="" form="descripcion" id="">{{usuario.descripcion}}</textarea></p>
+      </div>
+      <ion-button color="danger">Guardar</ion-button>
     </div>
   </main>
 </ion-content>

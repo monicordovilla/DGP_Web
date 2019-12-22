@@ -4,32 +4,23 @@
 
 <ion-content>
   <main>
-    <h2>TÍTULO DE LA ACTIVIDAD</h2>
+    <h2>{{actividad}}</h2>
     <h3>Participantes</h3>
     <div id=participantes>
-
-      <div class="participante">
-        <img src="../../../assets/icon/letra.png" alt="inicial"/>
+      <hr>
+      <div class="participante" ion-item *ngFor="let participante of participantes">
         <div class="info">
-          <h4>Nombre Apellido</h4>
-          <h5>Rol</h5>
-          <h5>Gustos: Gusto1, Gusto2</h5>
+          <h4>{{participante.nombre}} {{participante.apellidos}}</h4>
+          <h5>{{participante.rol}}</h5>
+          <h5>{{participante.descripcion}}</h5>
         </div>
-      </div>
-
-      <div class="participante">
-          <img src="../../../assets/icon/letra.png" alt="inicial"/>
-          <div class="info">
-            <h4>Nombre Apellido</h4>
-            <h5>Rol</h5>
-            <h5>Gustos: Gusto1, Gusto2</h5>
-          </div>
-        </div>
-        
-    </div>
-
-    <div class="ion-text-center">
-        <ion-button expand="block" color="danger" href="/actividad">Volver</ion-button>
+      </div>  
     </div>
   </main>
 </ion-content>
+
+<footer>
+  <div class="ion-text-center">
+      <ion-button expand="block" color="danger" [routerLink]="['/actividad', id]" size="large">Volver</ion-button>
+  </div>
+</footer>

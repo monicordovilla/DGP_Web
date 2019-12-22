@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ProveedorService } from '../providers/proveedor.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-actividad',
@@ -22,21 +23,56 @@ export class ActividadPage {
 
   categorias = []
 
-  usuario;
-  esSocio;
+  usuario = null;
+  esSocio = null;
   accion="";
   color_button="dark";
 
-  constructor(private rutaActiva: ActivatedRoute,  public proveedor:ProveedorService){
+  constructor(private rutaActiva: ActivatedRoute,  public proveedor:ProveedorService, public auth: AuthenticationService){
     this.rutaActiva.snapshot.params;
     this.id =  this.rutaActiva.snapshot.params.id;
     this.id=parseInt(this.id);
     this.ionViewDidLoad();
-    this.usuario=proveedor.getIdTipo();
-    this.esSocio=proveedor.getEsSocio();
   }
 
-  ionViewDidLoad(){
+  inicializarUsuario() {
+      if(!this.auth.isAuthenticated() && location.pathname != '' && location.pathname != '/inicio') {
+          console.log("Auth failed");
+          location.assign(location.origin);
+      }
+      else{
+        this.proveedor.esSocio(this.auth.auth).subscribe(
+          (data) => {
+            if(data.length>0){
+              this.esSocio=true;
+              this.usuario = data[0].id;
+            }
+          },
+          error => {
+              console.log(<any>error);
+          }
+        )
+        this.proveedor.esVoluntario(this.auth.auth).subscribe(
+          (data) => {
+            if(data.length>0){
+              this.esSocio=false;
+              this.usuario = data[0].id;
+            }
+          },
+          error => {
+              console.log(<any>error);
+          }
+        )
+
+      }
+  }
+
+  async ionViewDidLoad(){
+    this.inicializarUsuario();
+
+    while(this.usuario==null){
+      await new Promise(r => setTimeout(r, 1000));
+    }
 
     this.proveedor.obtenerActividad(this.id).subscribe(
       (data) => {
@@ -74,16 +110,16 @@ export class ActividadPage {
       }
     )
 
-      this.proveedor.obtenerCategoriasActividad(this.id).subscribe(
-        (data) => {
-          this.categorias=data;
-        },
-        error => {
-          console.log(<any>error);
-        }
-      )
-      
-      this.actualizar();
+    this.proveedor.obtenerCategoriasActividad(this.id).subscribe(
+      (data) => {
+        this.categorias=data;
+      },
+      error => {
+        console.log(<any>error);
+      }
+    )
+    
+    this.actualizar();
 
   }
 
@@ -91,18 +127,18 @@ export class ActividadPage {
   actualizar(){
     this.proveedor.apuntadoActividad(this.usuario, this.id, this.esSocio).subscribe(
       (data) => {
-        if(data[0]!=undefined)
-          if( this.actividad.finalizada){
+        if(data[0]!=undefined){
+          if(this.actividad.finalizada){
             this.accion="Valorar";
             this.color_button="danger";
           }else{
             this.accion="Desapuntar";
             this.color_button="danger";
           }
-        else{
+        }else{
           this.accion="Apuntar";  
           this.color_button="dark"; 
-        }      
+        }   
       },
       error => {
         console.log(<any>error);
@@ -128,7 +164,7 @@ export class ActividadPage {
       )
     }else if(this.accion=="Desapuntar"){
       this.proveedor.desapuntarse(postData, this.esSocio).subscribe(
-        (res) => { 
+        (res) => {
           postData = res['results'];
           this.actualizar();
         },

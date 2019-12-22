@@ -1,68 +1,68 @@
 <ion-header>
-    <app-header></app-header>
+  <app-header></app-header>
 </ion-header>
 
 <ion-content>
-  <main>
-    <div class="container">
+<main>
+  <div class="container">
 
-      <div class="ion-text-center">
-          <h2>CREAR ACTIVIDAD</h2>
-      </div>
-      <hr><br>
-
-      <form>
-        <div class="campo">
-          <ion-label>Nombre</ion-label>
-          <ion-input [(ngModel)]="actividad.nombre" type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
-        </div>
-
-        <div class="campo">
-          <ion-label>Lugar</ion-label>
-          <ion-input [(ngModel)]="actividad.lugar" type="text" placeholder="Lugar" id="lugar" name="lugar" required></ion-input>
-        </div>
-
-        <div class="campo">
-          <ion-label>Fecha</ion-label>
-          <ion-input [(ngModel)]="actividad.fecha" type="date" placeholder="Fecha" id="fecha" name="fecha" required></ion-input>
-          <ion-input [(ngModel)]="actividad.hora" type="time" placeholder="Hora" id="hora" name="hora" required></ion-input>
-        </div>
-
-        <div class="campo">
-          <ion-label>Duración</ion-label>
-          <ion-input [(ngModel)]="actividad.duracion" type="time" placeholder="Duración" id="duracion" name="duracion" required></ion-input>
-        </div>
-
-        <div class="campo">
-          <ion-label>Imagen</ion-label>
-          <ion-input type="file"  [(ngModel)]="actividad.imagen" placeholder="Imagen" id="imagen" name="imagen" accept=".jpg" accept="*.jpg" required></ion-input>
-        </div>
-
-        <div class="campo">
-          <ion-label>Categorias</ion-label>
-
-          <ion-select name="cat" id="rol" placeholder=""  okText="Aceptar" cancelText="Cancelar" [(ngModel)]="actividad.categorias" required multiple>
-            <ion-select-option *ngFor="let categoria of categorias" value={{categoria.id}}>
-              {{categoria.nombre}}
-            </ion-select-option>
-          </ion-select>
-        </div>
-
-        
-        <br>
-
-        <ion-label>Descripcion</ion-label>
-        <ion-textarea [(ngModel)]="actividad.descripcion" placeholder="Descripcion de la actividad" id="descripcion" name="descripcion" required></ion-textarea>
-
-
-        <ion-button expand="block" color="dark" (ngSubmit)='crear()' (click)='crear()' type="submit"> Añadir </ion-button>
-
-        <div id="loginPopUp" class="alert">
-          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-          <div id="messageBox"></div>
-      </div>
-      
-      </form>
+    <div class="ion-text-center">
+        <h2>CREAR ACTIVIDAD</h2>
     </div>
-  </main>
+    <hr><br>
+
+    <form>
+      <div class="campo">
+        <ion-label>Nombre</ion-label>
+        <ion-input [(ngModel)]="actividad.nombre" type="text" placeholder="Nombre actividad" id="nombre" name="nombre" required></ion-input>
+      </div>
+
+      <div class="campo">
+        <ion-label>Lugar</ion-label>
+        <ion-input [(ngModel)]="actividad.lugar" type="text" placeholder="Lugar" id="lugar" name="lugar" required></ion-input>
+      </div>
+
+      <div class="campo">
+        <ion-label>Fecha</ion-label>
+        <ion-input [(ngModel)]="actividad.fecha" type="date" placeholder="Fecha" id="fecha" name="fecha" required></ion-input>
+        <ion-input [(ngModel)]="actividad.hora" type="time" placeholder="Hora" id="hora" name="hora" required></ion-input>
+      </div>
+
+      <div class="campo">
+        <ion-label>Duración</ion-label>
+        <ion-input [(ngModel)]="actividad.duracion" type="time" placeholder="Duración" id="duracion" name="duracion" required></ion-input>
+      </div>
+
+      <div class="campo">
+        <ion-label>Imagen</ion-label>
+        <ion-input type="file"  [(ngModel)]="actividad.imagen" placeholder="Imagen" id="imagen" name="imagen" accept=".jpg" accept="*.jpg" required></ion-input>
+      </div>
+
+      <div class="campo">
+        <ion-label>Categorias</ion-label>
+
+        <ion-select name="cat" id="rol" placeholder=""  okText="Aceptar" cancelText="Cancelar" [(ngModel)]="actividad.categorias" multiple>
+          <ion-select-option *ngFor="let categoria of categorias" value={{categoria.id}}>
+            {{categoria.nombre}}
+          </ion-select-option>
+        </ion-select>
+      </div>
+
+      
+      <br>
+
+      <ion-label>Descripcion</ion-label>
+      <ion-textarea [(ngModel)]="actividad.descripcion" placeholder="Descripcion de la actividad" id="descripcion" name="descripcion" required></ion-textarea>
+
+
+      <ion-button expand="block" color="dark" (ngSubmit)='crear()' (click)='crear()' type="submit"> Añadir </ion-button>
+
+      <div id="loginPopUp" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <div id="messageBox"></div>
+    </div>
+    
+    </form>
+  </div>
+</main>
 </ion-content>

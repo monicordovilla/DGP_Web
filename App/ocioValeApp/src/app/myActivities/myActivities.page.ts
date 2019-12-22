@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderPage } from '../header/header.page';
 import { ProveedorService } from '../providers/proveedor.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-myActivities',
@@ -14,16 +15,53 @@ export class myActivitiesPage {
   categoriasProximas=[];
   categoriasRealizadas=[];
 
-  usuario;
-  esSocio;
 
-  constructor(public proveedor:ProveedorService){
+  usuario=null;
+  esSocio=null;
+
+  constructor(public proveedor:ProveedorService, public auth: AuthenticationService){
     this.ionViewDidLoad();
-    this.usuario=proveedor.getIdTipo();
-    this.esSocio=proveedor.getEsSocio();
   }
 
-  ionViewDidLoad(){
+  inicializarUsuario() {
+      if(!this.auth.isAuthenticated() && location.pathname != '' && location.pathname != '/inicio') {
+          console.log("Auth failed");
+          location.assign(location.origin);
+      }
+      else{
+        this.proveedor.esSocio(this.auth.auth).subscribe(
+          (data) => {
+            if(data.length>0){
+              this.esSocio=true;
+              this.usuario = data[0].id;
+            }
+          },
+          error => {
+              console.log(<any>error);
+          }
+        )
+        this.proveedor.esVoluntario(this.auth.auth).subscribe(
+          (data) => {
+            if(data.length>0){
+              this.esSocio=false;
+              this.usuario = data[0].id;
+            }
+          },
+          error => {
+              console.log(<any>error);
+          }
+        )
+
+      }
+  }
+
+  async ionViewDidLoad(){
+    this.inicializarUsuario();
+
+    while(this.usuario==null){
+      await new Promise(r => setTimeout(r, 1000));
+    }
+
     let dateTime;
     let parts;
     this.proveedor.misActividadesRealizadas(this.usuario, this.esSocio).subscribe(

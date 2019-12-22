@@ -21,5 +21,7 @@ export class MenuComponent implements OnInit {
   logout(){
       this.auth.logout();
       console.log(this.auth);
+      location.assign(location.origin + '/inicio' );
+
   }
 }
