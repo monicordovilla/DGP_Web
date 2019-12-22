@@ -80,13 +80,16 @@
 
     </div>
 
-    <div *ngIf="mostrarValoraciones" class="datos-familiar">
-
+    <div id="loginPopUp" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <div id="messageBox"></div>
+    </div>
+    <!--<div id="loginPopUp" *ngIf="mostrarValoraciones" class="datos-familiar">
+      
       <div id="lista" ion-item *ngFor="let valoracion of valoraciones; let indice=index">
 
-          <div class = "info-usuario">
-              <a class="imagen-actividades"><img src="{{valoracion.imagen}}"
-                 alt="{{valoracion.imagen}}"/></a>
+          <div id="messageBox" class = "info-usuario">
+              <a class="imagen-actividades"><img src="{{valoracion.imagen}}" alt="{{valoracion.imagen}}"/></a>
 
               <div class="datos-familiar">
                 <h5>{{valoracion.nombre}}</h5>
@@ -100,7 +103,7 @@
 
       </div>
 
-    </div>
+    </div>-->
     
     <div class="botonesUsuario">
        
@@ -109,7 +112,9 @@
 
       <ion-button *ngIf="mostrarVoluntario && !censurado" (click)="censurar()" size="large" color="danger" type="submit">CENSURAR</ion-button>
       <ion-button *ngIf="mostrarVoluntario && censurado" (click)="aprobar()" size="large" color="danger" type="submit">APROBAR</ion-button>
-      <ion-button *ngIf="mostrarVoluntario" (click)="consultarValoracion()"  size="large" color="dark" type="submit">CONSULTAR VALORACIONES</ion-button>
+      <ion-button *ngIf="mostrarVoluntario" (ngSubmit)="consultarValoracion()" (click)="consultarValoracion()"  type="submit" size="large" color="dark" >CONSULTAR VALORACIONES</ion-button>
+      
+
       <ion-button *ngIf="mostrarBotonFamiliar" (click)="consultarFamiliar()" class="union" size="large" color="dark"> Familiar </ion-button>
 
     </div>

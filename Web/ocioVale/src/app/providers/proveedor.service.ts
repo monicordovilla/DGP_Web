@@ -155,6 +155,18 @@ export class ProveedorService {
       return this.http.post(this.url + '/usuarios/loginGestor', JSON.stringify(postData), httpOptions);
   }
 
+  enviarMensaje(): Observable<any>{
+
+    // Http Options
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    //console.log(JSON.stringify());
+    return this.http.post(this.url + '/actividades/addActividadGrupal', httpOptions);
+  }
+
   //METODOS PARA AÑADIR
   enviarActividad(postData): Observable<any>{
 
