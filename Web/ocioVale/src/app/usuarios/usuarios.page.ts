@@ -155,5 +155,5 @@ export class Usuarios implements OnInit {
       }
     );
   }
-
+  return rol;
 }

@@ -61,7 +61,6 @@ export class actividad implements OnInit {
         this.fecha = parts[0] + "-" + parts[1] + "-" + parts[2];
         this.hora = parts[3] + ":" + parts[4];
         this.actividad.fecha = this.fecha + " " + this.hora;
-        this.actividad.duracion = 20;
       },
       error => {
           console.log(<any>error);
@@ -123,7 +122,7 @@ export class actividad implements OnInit {
 
   modificarActividad(){
 
-      console.log(this.actividad);
+    console.log(this.actividad);
     console.log(this.actividad.duracion);
     this.proveedor.modificarActividad(this.actividad).subscribe(
       (res) =>{
@@ -133,7 +132,7 @@ export class actividad implements OnInit {
         console.error(error);
       }
     );
-    location.reload();
+    //location.reload();
   }
 
   eliminarActividad(){
