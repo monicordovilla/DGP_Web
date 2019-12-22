@@ -9,7 +9,7 @@
     
     <!--<h2>Introduce los datos</h2>-->
 
-    <form (ngSubmit)="crearActividad()" position="stacked">
+    <form position="stacked">
       <span><ion-label>Categoria</ion-label></span><br><br>
       <ion-select multiple="true"  okText="Aceptar" cancelText="Cancelar" [(ngModel)]="actividad.categorias" name="categoria" id="rol" class="select" placeholder="Escoja la categoria de la actividad" required>
         <ion-select-option *ngFor="let categoria of categorias; let indice=index" id={{categoria.id}} value={{categoria.id}}>{{categoria.nombre}}</ion-select-option>
@@ -46,7 +46,7 @@
       <br>
       <br>
 
-      <ion-button (ngSubmit)="crearActividad()" (click)='crearActividad()' type="submit" size="large" color="dark"> Añadir </ion-button>
+      <ion-button (click)='crearActividad()' type="submit" size="large" color="dark"> Añadir </ion-button>
           
       <div id="loginPopUp" class="alert">
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 

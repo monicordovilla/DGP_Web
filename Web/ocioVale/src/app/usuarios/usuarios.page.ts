@@ -154,6 +154,7 @@ export class Usuarios implements OnInit {
         console.log(<any>error);
       }
     );
+    console.log(rol);
+    return rol;
   }
-
 }

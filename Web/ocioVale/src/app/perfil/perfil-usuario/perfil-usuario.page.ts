@@ -136,7 +136,7 @@ export class PerfilUsuarioPage implements OnInit {
       (data) => {
         if(data.length > 0){
           this.mostrarVoluntario = true;
-
+          this.rol = 'voluntario';
           this.cargaValoracion(this.id);
 
           this.proveedor.obtenerCensurados(this.id).subscribe(
